@@ -114,8 +114,8 @@
           <tr><td>2</td><td>03, 04, Appendix B/C</td><td>Task framing, toolbox selection, repo setup, smoke tests.</td></tr>
           <tr><td>3</td><td>05, 06</td><td>Data rights, dataset schema, metadata, reproducibility basics.</td></tr>
           <tr><td>4</td><td>07</td><td>Annotation systems, auto-labeling, review queues.</td></tr>
-          <tr><td>5</td><td>08, 09</td><td>Baselines, evaluation slices, embeddings and retrieval as fast baselines.</td></tr>
-          <tr><td>6</td><td>10, 12</td><td>Transformers, multimodal fusion, model shortlisting for the case study.</td></tr>
+          <tr><td>5</td><td>08, 09</td><td>Baselines, evaluation slices, and the core vision-model track for the chosen project.</td></tr>
+          <tr><td>6</td><td>10, 11 or 12</td><td>Audio models plus the relevant generative-model track for the case study.</td></tr>
           <tr><td>7</td><td>15 or 17</td><td>Modality-specialized synthetic data lab: image or audio track.</td></tr>
           <tr><td>8</td><td>16 or 18</td><td>Video or simulation lab depending on course emphasis.</td></tr>
           <tr><td>9</td><td>19, 20</td><td>Judge loops, filtering, stress tests, and hidden evaluation slices.</td></tr>
@@ -126,7 +126,7 @@
         <div class="label">Book Improvements Needed</div>
         <ul>
           <li>Mark a `core undergraduate engineering path` directly in the front matter.</li>
-          <li>Add simpler worked examples for Chapter 10 and Chapter 12.</li>
+          <li>Add simpler worked examples for the four-track model section, especially Chapters 09-12.</li>
           <li>Create explicit `minimum viable math` callouts tied to Appendix A instead of leaving students to guess.</li>
         </ul>
       </section>
@@ -145,8 +145,8 @@
           <tr><th>Week</th><th>Book Mapping</th><th>Focus</th></tr>
           <tr><td>1</td><td>FM, FM2, 01, 03</td><td>Research framing, recurring case studies, project question selection.</td></tr>
           <tr><td>2</td><td>05, 06, 08</td><td>Data rights, dataset design, claim/baseline/ablation planning.</td></tr>
-          <tr><td>3</td><td>09, 10</td><td>Representations, transformers, and architecture reading skills.</td></tr>
-          <tr><td>4</td><td>11, 12</td><td>Generative families, foundation models, and model-selection heuristics.</td></tr>
+          <tr><td>3</td><td>09, 10</td><td>Vision and audio model internals as preparation for research design.</td></tr>
+          <tr><td>4</td><td>11, 12</td><td>Generative models for vision and audio, plus model-selection heuristics for synthetic-data studies.</td></tr>
           <tr><td>5</td><td>07, 13</td><td>Annotation systems plus pre-deployment debugging as research instrumentation.</td></tr>
           <tr><td>6</td><td>14, 20</td><td>Synthetic data engine design and training-vs-evaluation-vs-stress-test distinction.</td></tr>
           <tr><td>7</td><td>15, 16, 17</td><td>Choose one modality branch and build the first study dataset.</td></tr>
@@ -178,9 +178,9 @@
           <tr><th>Week</th><th>Book Mapping</th><th>Focus</th></tr>
           <tr><td>1</td><td>FM, 01, 02, 04</td><td>Book promise, fast-start pipeline, stack selection.</td></tr>
           <tr><td>2</td><td>05, 06, 07</td><td>Data governance, schemas, and annotation operations.</td></tr>
-          <tr><td>3</td><td>08, 09</td><td>Experimental rigor and embedding-driven workflows.</td></tr>
-          <tr><td>4</td><td>10, 11</td><td>Transformer mechanics and generative family tradeoffs.</td></tr>
-          <tr><td>5</td><td>12, 13</td><td>Foundation model selection and debugging instrumentation.</td></tr>
+          <tr><td>3</td><td>08, 09</td><td>Experimental rigor and the vision-model track.</td></tr>
+          <tr><td>4</td><td>10, 11</td><td>Audio models plus generative models for vision.</td></tr>
+          <tr><td>5</td><td>12, 13</td><td>Generative models for audio and debugging instrumentation.</td></tr>
           <tr><td>6</td><td>14, 15</td><td>Synthetic data engine and diffusion-based image pipelines.</td></tr>
           <tr><td>7</td><td>16, 17</td><td>Video and audio synthetic data operations.</td></tr>
           <tr><td>8</td><td>18, 19</td><td>Simulation, QA, reward models, and judge loops.</td></tr>
@@ -211,9 +211,9 @@
           <tr><th>Week</th><th>Book Mapping</th><th>Focus</th></tr>
           <tr><td>1</td><td>FM, FM2, 01, 08</td><td>Research positioning, claim discipline, and semester project proposals.</td></tr>
           <tr><td>2</td><td>05, 06, 07</td><td>Data provenance, schema design, annotation/weak-supervision systems.</td></tr>
-          <tr><td>3</td><td>09, 10</td><td>Representation learning and transformer/fusion internals.</td></tr>
-          <tr><td>4</td><td>11</td><td>Generative family internals: diffusion, flow matching, codecs, and tradeoffs.</td></tr>
-          <tr><td>5</td><td>12, 13</td><td>Foundation model selection, document AI, debugging, and diagnostic instrumentation.</td></tr>
+          <tr><td>3</td><td>09, 10</td><td>Vision-model and audio-model internals.</td></tr>
+          <tr><td>4</td><td>11, 12</td><td>Generative models for vision and generative models for audio.</td></tr>
+          <tr><td>5</td><td>13</td><td>Pre-deployment debugging and diagnostic instrumentation.</td></tr>
           <tr><td>6</td><td>14, 20</td><td>Synthetic-data engine design and evaluation/stress-test design.</td></tr>
           <tr><td>7</td><td>15–18</td><td>Modality-specific synthetic-data branch with controlled study design.</td></tr>
           <tr><td>8</td><td>19</td><td>Judge loops, calibration-aware filtering, memorization and contamination controls.</td></tr>
@@ -238,7 +238,7 @@
           <li>Add chapter-level tags: `Core`, `Advanced`, `Engineering-heavy`, `Research-heavy`, `Undergrad-friendly`, `Graduate-ready`.</li>
           <li>Add a dependency graph so instructors know which chapters can be skipped, compressed, or swapped.</li>
           <li>Add a `Research Methods Companion` section or appendix with paper-reading, ablation, claim-writing, and reproducibility templates.</li>
-          <li>Add `minimal prerequisite refresh` callouts at the start of Part III and Part IV for students who need math, signal, or transformer refreshers.</li>
+          <li>Add `minimal prerequisite refresh` callouts at the start of the four-track Part III and at the start of Part IV for students who need math, signal, or transformer refreshers.</li>
           <li>Add `instructor bundles` for each course type: sample pacing, assignments, rubric weight suggestions, and capstone scope guidance.</li>
           <li>Add `course-safe subsets` of the recurring case studies so instructors can choose a smaller implementation track without reauthoring the whole course.</li>
         </ul>
