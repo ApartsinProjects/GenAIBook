@@ -95,6 +95,14 @@
         </ul>
       </section>
       <section class="panel">
+        <h2>New Coverage</h2>
+        <ul class="summary">
+          <li><strong>Systems:</strong><br/>multimodal RAG, structured outputs, agent workflows, vector stores, and runtime selection.</li>
+          <li><strong>Data:</strong><br/>challenge sets, contamination checks, memorization audits, reward-model filtering, and data-mixture policy.</li>
+          <li><strong>Media:</strong><br/>document AI, streaming speech, diarization, provenance or watermarking, and real-to-sim-to-real pipelines.</li>
+        </ul>
+      </section>
+      <section class="panel">
         <h2>Parts</h2>
         <div class="part-link"><a href="#front">Front Matter</a><p>Positioning, reading paths, case studies, pedagogy, and companion assets.</p></div>
         <div class="part-link"><a href="#part1">Part I. Orientation and Fast Start</a><p>Book promise, end-to-end miniature system, task framing, and reader setup.</p></div>
@@ -368,8 +376,8 @@
               <li>Hugging Face stack: <code>transformers</code>, <code>diffusers</code>, <code>datasets</code>, <code>evaluate</code>, <code>peft</code>, <code>trl</code>, <code>accelerate</code>.</li>
               <li>Modality tools: <code>timm</code>, <code>kornia</code>, <code>open_clip</code>, OpenCV, <code>decord</code>, <code>PyAV</code>, <code>librosa</code>, <code>pyannote.audio</code>.</li>
               <li>QA and labeling tools: FiftyOne, Label Studio, CVAT, Argilla, Distilabel, supervision, and SAHI-style slicing workflows.</li>
-              <li>Experiment ops: DVC, MLflow, artifact stores, benchmark harnesses, contamination checks, and calibration tooling.</li>
-              <li>Deployment and export stack: ONNX Runtime, TensorRT, OpenVINO, Core ML paths, and vector database or retrieval-store options.</li>
+              <li>Experiment ops: DVC, MLflow, artifact stores, benchmark harnesses, contamination checks, memorization audits, W&amp;B-style tracking, and calibration tooling.</li>
+              <li>Deployment and export stack: ONNX Runtime, TensorRT, OpenVINO, Core ML paths, vector database or retrieval-store options, and observability or tracing hooks.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul>
@@ -395,7 +403,7 @@
             </div>
             <div class="label">Key Tools, Libraries, and Models</div>
             <ul>
-              <li>PyTorch, Transformers, Diffusers, Datasets, Evaluate, PEFT, TRL, timm, open_clip, FiftyOne, CVAT, supervision, SAHI, DVC, MLflow, ONNX Runtime, TensorRT, OpenVINO.</li>
+              <li>PyTorch, Transformers, Diffusers, Datasets, Evaluate, PEFT, TRL, timm, open_clip, FiftyOne, CVAT, supervision, SAHI, DVC, MLflow, W&amp;B-style tracking, ONNX Runtime, TensorRT, OpenVINO, vector stores, and observability tooling.</li>
             </ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul>
@@ -503,8 +511,8 @@
             <ol>
               <li>Real-only, synthetic-only, hybrid, and repurposed-data comparisons.</li>
               <li>Baseline design, hidden test sets, contamination checks, leakage checks, and slice construction.</li>
-              <li>What counts as a defensible synthetic-data claim, including calibration, uncertainty, and abstention reporting.</li>
-              <li>Replication discipline, confidence intervals, challenge sets, benchmark skepticism, and memorization audits.</li>
+              <li>What counts as a defensible synthetic-data claim, including calibration, uncertainty, abstention reporting, and documented benchmark mismatch.</li>
+              <li>Replication discipline, confidence intervals, challenge sets, benchmark skepticism, contamination controls, and memorization audits.</li>
             </ol>
             <div class="pedagogy">
               <div><strong>Milestone:</strong><br/>Experiment plan</div>
@@ -541,8 +549,8 @@
             <ol>
               <li>From features to embeddings: ViT patch tokens, AST spectrogram tokens, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>
               <li>Contrastive learning, masked modeling, DINO-style pretraining, CLIP-style alignment, and wav2vec2 / HuBERT-style self-supervision.</li>
-              <li>Retrieval, nearest neighbors, clustering, ANN indexes, and representation-driven QA with FAISS-like workflows.</li>
-              <li>Shared embedding spaces across text, image, audio, and video using CLIP, OpenCLIP, SigLIP, and audio-text alignment models.</li>
+              <li>Retrieval, nearest neighbors, clustering, ANN indexes, vector databases, and representation-driven QA with FAISS-like workflows.</li>
+              <li>Shared embedding spaces across text, image, audio, video, and documents using CLIP, OpenCLIP, SigLIP, audio-text alignment models, and document retrieval encoders.</li>
               <li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -602,8 +610,9 @@
               <li>Autoregressive models, tokenization choices, next-token objectives, and sequential generation for image tokens, audio tokens, and multimodal streams.</li>
               <li>Latent-variable models, VAEs, representation compression, latent bottlenecks, and reconstruction tradeoffs.</li>
               <li>Diffusion models: forward and reverse processes, DDPM/DDIM families, schedulers, samplers, classifier-free guidance, and latent diffusion U-Nets and DiTs.</li>
-              <li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, and faster-generation trends for image and video systems.</li>
+              <li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, turbo or distilled generators, and faster-generation trends for image and video systems.</li>
               <li>Codec-token and audio generation models for speech and sound, including neural codecs, residual vector quantization, and token-LM generation.</li>
+              <li>How model-family choice affects deployment format, latency, memory footprint, and downstream synthetic-data economics.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
@@ -640,10 +649,10 @@
             <ul>
               <li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>
               <li>When a generalist open model is enough and when a specialized stack is stronger.</li>
-              <li>How to shortlist models for later chapters using task, cost, latency, controllability, and governance criteria.</li>
+              <li>How to shortlist models for later chapters using task, cost, latency, controllability, governance, and deployment-target criteria.</li>
             </ul>
             <div class="label">Learning Outcomes</div>
-            <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, and task-specialized models.</li><li>Create a shortlist for the project pipeline.</li></ul>
+            <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, retrieval, and task-specialized models.</li><li>Create a shortlist for the project pipeline using explicit selection heuristics.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
             <ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>
@@ -664,6 +673,7 @@
               <li>Embedding inspection, error clustering, nearest-neighbor diagnostics, and slice dashboards in FiftyOne-style QA flows.</li>
               <li>Prompt sensitivity, hallucination, grounding failures, and brittle OCR or retrieval behavior in VLM systems.</li>
               <li>Temporal failure analysis for video, tracking drift, and overlap/noise analysis for audio and speech systems.</li>
+              <li>Benchmark mismatch analysis, contamination debugging, and separating retrieval failures from model failures.</li>
               <li>Debugging workflows from notebook experiments to production incidents using logs, traces, and dataset-level audits.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -750,10 +760,10 @@
             <p class="chapter-desc">Makes temporal annotation, tracking, segmentation, and consistency explicit rather than hiding them inside generic video coverage.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Clip schemas, event timelines, track IDs, keyframe structures, and annotation interpolation policies.</li>
+              <li>Clip schemas, event timelines, track IDs, keyframe structures, annotation interpolation policies, and reviewer handoff rules.</li>
               <li>Image-to-video, text-to-video, video editing, interpolation, keyframe-conditioned generation, and temporally conditioned pipelines.</li>
-              <li>Tracking, temporal grounding, segmentation propagation, interpolation-based annotation, SAM 2-style video tracking, event localization, and reviewer correction loops for clip labeling.</li>
-              <li>Temporal consistency, motion realism, and video-specific failure buckets.</li>
+              <li>Tracking, temporal grounding, segmentation propagation, interpolation-based annotation, SAM 2-style video tracking, event localization, tracker-assisted labeling, and reviewer correction loops for clip labeling.</li>
+              <li>Temporal consistency, motion realism, annotation productivity, and video-specific failure buckets.</li>
               <li>Repurposing video via captioning, slicing, relabeling, and track correction.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -793,10 +803,10 @@
               <li>How voice-related generation changes the governance story.</li>
             </ul>
             <div class="label">Learning Outcomes</div>
-            <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics.</li></ul>
+            <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics instead of perceptual realism alone.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Simulate channel, noise, and overlap conditions for one audio task.</li><li>Build a synthetic speech or event-augmentation workflow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the gap between transcription quality and downstream utility.</li><li>Compare augmentation-heavy and generation-heavy audio pipelines.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling.</li></ul>
+            <ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling, and ViSQOL/FAD-style evaluation references.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>LibriSpeech, FLEURS, VoxCeleb, AudioSet, ESC-50, AudioCaps, AMI-style diarization sets, and optional MusicCaps examples.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -896,7 +906,7 @@
               <li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, ViT, DETR-style, and segmentation backbones.</li>
               <li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>
               <li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>
-              <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules and sample weighting policies.</li>
+              <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules, sample weighting policies, and replay strategies.</li>
               <li>Slice-based evaluation across viewpoint, lighting, motion, occlusion, domain shift, and rare cases.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -923,8 +933,8 @@
             <p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, synthetic-speech adaptation, and streaming speech systems.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, and spoken-intent or meeting analytics.</li>
-              <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, and audio-language model training patterns.</li>
+              <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, spoken-intent or meeting analytics, and voiceprint-sensitive workflows.</li>
+              <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, speaker-ID-aware pipelines, and audio-language model training patterns.</li>
               <li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>
               <li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>
               <li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>
@@ -969,7 +979,7 @@
             <ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a multimodal retrieval-plus-generation prototype.</li><li>Implement one audio-video or image-text interaction flow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular and omni-style architectures on one case-study slice.</li><li>Measure where grounding improves reliability.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators.</li></ul>
+            <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators, and agent runtime frameworks.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Flickr30k retrieval, DocVQA, ChartQA, MMDocIR-style long-document retrieval, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -985,7 +995,7 @@
             <ol>
               <li>Quantization, QLoRA, quantization-aware training, adapter merging, KV-cache implications, and memory-aware inference.</li>
               <li>Serving stacks: vLLM, TGI, TEI, SGLang, FastAPI, Gradio, task-specific microservices, and structured-output or tool-calling serving paths.</li>
-              <li>Batch pipelines versus interactive applications, streaming speech pipelines, and asynchronous job queues.</li>
+              <li>Batch pipelines versus interactive applications, streaming speech pipelines, asynchronous job queues, and export-format compatibility checks.</li>
               <li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, runtime-selection heuristics, and cost forecasting.</li>
               <li>Regression testing, compatibility testing, eval-on-deploy checks, structured-output validation, and release checklists.</li>
             </ol>
@@ -999,7 +1009,7 @@
             <ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Serve one model path and benchmark throughput, latency, and cost.</li><li>Run a regression check after an optimization change.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how inference choices change measured model behavior.</li><li>Compare a deployable stack to a research-only stack.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices.</li></ul>
+            <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices, and deployment checklists.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Internal latency benchmark suites, throughput test prompts, streaming speech eval sets, and schema-validation test fixtures.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -1014,10 +1024,10 @@
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Operational metrics, latency regressions, quality drift, and abstention-rate drift.</li>
-              <li>Embedding drift, data drift, prompt drift, model-output drift, and retrieval-index drift.</li>
+              <li>Embedding drift, data drift, prompt drift, model-output drift, retrieval-index drift, and annotation-policy drift.</li>
               <li>Human escalation, rollback, safe fallback patterns, and abuse-response playbooks.</li>
               <li>User feedback loops, production trace capture, and post-deployment synthetic-data refresh cycles.</li>
-              <li>Incident review, root-cause analysis templates, multimodal prompt-injection or misuse checks, and provenance or watermark verification for generated media where relevant.</li>
+              <li>Incident review, root-cause analysis templates, multimodal prompt-injection, retrieval poisoning or misuse checks, and provenance or watermark verification for generated media where relevant.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
@@ -1029,7 +1039,7 @@
             <ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a monitoring and triage template for the selected case study.</li><li>Define one post-launch refresh loop using synthetic data.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame production drift as a research question about generalization.</li><li>Compare two refresh-loop strategies after a simulated deployment failure.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists.</li></ul>
+            <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists, and abuse-response playbooks.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Post-deployment logs, drift slices, failure replays, and curated incident-review examples.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -1133,6 +1143,7 @@
               <li>Omni models, any-to-any generation, unified embeddings, and modular alternatives.</li>
               <li>Preference optimization and multimodal post-training for VLMs and omni systems using DPO, GRPO, and related alignment methods.</li>
               <li>World models, simulation, embodied multimodal learning, and real-to-sim-to-real adaptation.</li>
+              <li>Watermarking, provenance, and utility tradeoffs for generated image, audio, and video media.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul><li>Recognize the main open research questions behind current system limitations.</li><li>Connect frontier topics to concrete project directions.</li><li>Read new multimodal papers with a stronger organizing framework.</li></ul>
