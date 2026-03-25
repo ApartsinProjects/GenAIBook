@@ -40,12 +40,12 @@
 <section class="part" id="part1">
 <div class="part-label">Part I</div>
 <h2>Orientation and Fast Start</h2>
-<p class="part-intro">This part fixes the �too abstract too early� problem. Readers see the whole pipeline first, then learn how to reason about tasks, metrics, and tools.</p>
+<p class="part-intro">This part fixes the "too abstract too early" problem. Readers see the whole pipeline first, then learn how to reason about tasks, metrics, and tools. The red thread is explicit from the beginning: synthetic data is created or repurposed in order to train, fine-tune, evaluate, and iteratively improve vision, audio, video, and multimodal models.</p>
 <article class="chapter">
 <div class="chapter-no">01</div>
 <div>
 <h3><span id="what-this-book-will-let-you-build">What This Book Will Let You Build</span></h3>
-<p class="chapter-desc">Introduces the central promise, the shift from model-centric thinking to data-and-system-centric thinking, and the recurring case studies.</p>
+<p class="chapter-desc">Introduces the central promise, the shift from model-centric thinking to data-and-system-centric thinking, and the recurring case studies, with synthetic data positioned as fuel for both model development and model evaluation.</p>
 <div class="meta">
 <span class="tag">Core</span>
 <span class="tag">Undergraduate</span>
@@ -58,7 +58,7 @@
 <ol>
 <li>Why synthetic data is becoming a systems layer rather than a one-off trick.</li>
 <li>Generated, augmented, repurposed, and hybrid data as separate engineering choices.</li>
-<li>What readers will build by the end of the book.</li>
+<li>What readers will build by the end of the book, including training-ready datasets, fine-tuned models, evaluation suites, and deployment-oriented prototypes.</li>
 <li>How the three case studies map to the rest of the chapters.</li>
 </ol>
 <div class="pedagogy">
@@ -124,7 +124,7 @@
 <div class="chapter-no">02</div>
 <div>
 <h3><span id="a-complete-synthetic-data-pipeline-in-miniature">A Complete Synthetic-Data Pipeline in Miniature</span></h3>
-<p class="chapter-desc">Walks through one small but complete system before the theory-heavy chapters begin.</p>
+<p class="chapter-desc">Walks through one small but complete system before the theory-heavy chapters begin, showing how synthetic data flows directly into training, evaluation, and iteration.</p>
 <div class="meta">
 <span class="tag">Core</span>
 <span class="tag">Undergraduate</span>
@@ -137,7 +137,7 @@
 <ol>
 <li>Define a task and failure slice.</li>
 <li>Generate or repurpose a small labeled dataset.</li>
-<li>Train a baseline model.</li>
+<li>Train or fine-tune a baseline representation, task-specific, or foundation-model-based system.</li>
 <li>Evaluate on real, synthetic, and hidden-slice data.</li>
 <li>Inspect errors and iterate once.</li>
 </ol>
@@ -198,7 +198,7 @@
 <div class="chapter-no">03</div>
 <div>
 <h3><span id="task-taxonomy-and-success-criteria">Task Taxonomy and Success Criteria</span></h3>
-<p class="chapter-desc">Turns fuzzy product ideas into tasks, labels, metrics, deployment constraints, and evaluation plans.</p>
+<p class="chapter-desc">Turns fuzzy product ideas into tasks, labels, metrics, deployment constraints, and evaluation plans, including decisions about which model families will later be trained, fine-tuned, or benchmarked with synthetic data.</p>
 <div class="meta">
 <span class="tag">Core</span>
 <span class="tag">Undergraduate</span>
@@ -209,10 +209,10 @@
 <span class="tag">Companion Repo</span></div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Vision tasks: classification, detection, segmentation, grounding, captioning, retrieval, VQA.</li>
-<li>Audio tasks: ASR, diarization, event detection, keyword spotting, language ID, speaker tasks.</li>
-<li>Video tasks: tracking, temporal localization, event recognition, captioning, and QA.</li>
-<li>Multimodal tasks: retrieval, report generation, operator copilots, incident understanding.</li>
+<li>Vision tasks: classification, detection, segmentation, grounding, captioning, retrieval, VQA, and which are trained from scratch, fine-tuned from encoders, or adapted from foundation models.</li>
+<li>Audio tasks: ASR, diarization, event detection, keyword spotting, language ID, speaker tasks, and which benefit most from synthetic augmentation versus synthetic corpora.</li>
+<li>Video tasks: tracking, temporal localization, event recognition, captioning, and QA, with attention to temporal labels and fine-tuning requirements.</li>
+<li>Multimodal tasks: retrieval, report generation, operator copilots, incident understanding, and system-level evaluation with synthetic stress sets.</li>
 <li>Choosing evaluation metrics before collecting data.</li>
 </ol>
 <div class="label">Deep Dive</div>
@@ -272,7 +272,7 @@
 <div class="chapter-no">04</div>
 <div>
 <h3><span id="the-modern-toolbox-without-the-noise">The Modern Toolbox Without the Noise</span></h3>
-<p class="chapter-desc">Introduces the current tool ecosystem while separating durable workflow ideas from fast-changing package details.</p>
+<p class="chapter-desc">Introduces the current tool ecosystem while separating durable workflow ideas from fast-changing package details, with explicit attention to tools for generating synthetic data, training and fine-tuning models, and evaluating them rigorously.</p>
 <div class="meta">
 <span class="tag">Core</span>
 <span class="tag">Undergraduate</span>
@@ -285,7 +285,7 @@
 <ol>
 <li>Core stack: PyTorch, <code>torchvision</code>, <code>torchaudio</code>.</li>
 <li>Hugging Face stack: <code>transformers</code>, <code>diffusers</code>, <code>datasets</code>, <code>evaluate</code>, <code>peft</code>, <code>trl</code>, <code>accelerate</code>.</li>
-<li>Modality tools: <code>timm</code>, <code>kornia</code>, <code>open_clip</code>, OpenCV, <code>decord</code>, <code>PyAV</code>, <code>librosa</code>, <code>pyannote.audio</code>.</li>
+<li>Modality tools: <code>timm</code>, <code>kornia</code>, <code>open_clip</code>, OpenCV, <code>decord</code>, <code>PyAV</code>, <code>librosa</code>, <code>pyannote.audio</code>, plus modality-specific generators, encoders, and task-model tooling for image, video, and audio.</li>
 <li>QA and labeling tools: FiftyOne, Label Studio, CVAT, Argilla, Distilabel, supervision, and SAHI-style slicing workflows.</li>
 <li>Experiment ops: DVC, MLflow, artifact stores, benchmark harnesses, contamination checks, memorization audits, W&amp;B-style tracking, and calibration tooling.</li>
 <li>Deployment and export stack: ONNX Runtime, TensorRT, OpenVINO, Core ML paths, vector database or retrieval-store options, and observability or tracing hooks.</li>
@@ -309,7 +309,7 @@
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul>
-<li>Recognize which tools belong to training, labeling, QA, and deployment workflows.</li>
+<li>Recognize which tools belong to synthetic-data generation, training and fine-tuning, labeling, QA, evaluation, and deployment workflows.</li>
 <li>Separate durable workflow patterns from transient package choices.</li>
 <li>Choose a practical stack for the rest of the book.</li>
 </ul>
