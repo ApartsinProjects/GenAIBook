@@ -56,6 +56,14 @@
         <li><strong>Cross-links:</strong><br/>Every section page links back here for fast navigation.</li>
       </ul>
     </section>
+    <section class="panel">
+      <h2>Recurring Case Studies</h2>
+      <ul class="summary">
+        <li><strong>Industrial Inspection:</strong><br/>rare defects, synthetic vision data, line-side deployment, and failure slicing.</li>
+        <li><strong>Multilingual Speech Analytics:</strong><br/>ASR, diarization, synthetic speech augmentation, streaming inference, and governance.</li>
+        <li><strong>Multimodal Incident Review:</strong><br/>video, audio, retrieval, grounding, structured outputs, and human-in-the-loop triage.</li>
+      </ul>
+    </section>
   </aside>
   <main>
     <section class="part">
@@ -72,6 +80,11 @@
     <li><strong>FM</strong> Front Matter Package</li>
 <li><strong>FM2</strong> How to Read, Study, Teach, and Think With This Book</li>
   </ol>
+  <div class="label">Practical Assets</div>
+  <ul class="chapter-list">
+    <li>Study-path guide and course reuse notes</li>
+    <li>Project spine and recurring case-study framing</li>
+  </ul>
   <a class="jump" href="front-matter/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part1">
@@ -85,6 +98,14 @@
 <li><strong>03</strong> Task Taxonomy and Success Criteria</li>
 <li><strong>04</strong> The Modern Toolbox Without the Noise</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>01_problem-framing-studio.ipynb</code></li>
+    <li><code>02_end-to-end-mini-pipeline.ipynb</code></li>
+    <li><code>04_toolchain-smoke-test.ipynb</code></li>
+  </ul>
+  <div class="label">Case Study Thread</div>
+  <p>Introduces the industrial inspection, multilingual speech, and multimodal incident-review projects that recur across the rest of the book.</p>
   <a class="jump" href="part-1-orientation-and-fast-start/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part2">
@@ -98,6 +119,14 @@
 <li><strong>07</strong> Annotation Systems, Weak Supervision, and Auto-Labeling</li>
 <li><strong>08</strong> Baselines, Ablations, and Credible Claims</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>06_schema-designer.ipynb</code></li>
+    <li><code>07_auto-label-and-review-loop.ipynb</code></li>
+    <li><code>08_ablation-planner.ipynb</code></li>
+  </ul>
+  <div class="label">Boundary Notes</div>
+  <p>Chapter 7 is for label creation and repair; later synthetic-asset acceptance lives in Chapter 19; live-system telemetry and drift live in Chapter 25.</p>
   <a class="jump" href="part-2-data-and-experimental-foundations/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part3">
@@ -112,6 +141,14 @@
 <li><strong>12</strong> Foundation Models, Document AI, and Omni Systems in Practice</li>
 <li><strong>13</strong> Pre-Deployment Debugging for Modern Multimodal Models</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>09_embedding-space-lab.ipynb</code></li>
+    <li><code>10_attention-and-fusion-lab.ipynb</code></li>
+    <li><code>12_foundation-model-shortlisting.ipynb</code></li>
+  </ul>
+  <div class="label">Deep-Dive Promise</div>
+  <p>Every technical chapter in this part now calls out inner workings, algorithm sketch, intuition, tradeoffs, common failure modes, figures, and a worked example.</p>
   <a class="jump" href="part-3-representations-architectures-and-model-selection/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part4">
@@ -128,6 +165,14 @@
 <li><strong>19</strong> Synthetic Data Operations: QA, Filtering, Reward Models, and Judge Loops</li>
 <li><strong>20</strong> Synthetic Data for Training, Evaluation, Stress Testing, and Challenge Sets</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>15_diffusion-data-recipes.ipynb</code></li>
+    <li><code>17_audio-synthetic-data-lab.ipynb</code></li>
+    <li><code>19_generate-and-judge-ops.ipynb</code></li>
+  </ul>
+  <div class="label">Case Study Thread</div>
+  <p>The same three recurring case studies are revisited here through image generation, video labeling, speech augmentation, and simulation-heavy data engines.</p>
   <a class="jump" href="part-4-synthetic-data-design-and-operations/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part5">
@@ -142,6 +187,14 @@
 <li><strong>24</strong> Inference Engineering, Deployment, and Cost Control</li>
 <li><strong>25</strong> Monitoring, Drift, and Failure Analysis in the Wild</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>21_vision-video-finetuning-lab.ipynb</code></li>
+    <li><code>23_multimodal-system-builder.ipynb</code></li>
+    <li><code>24_inference-benchmark-lab.ipynb</code></li>
+  </ul>
+  <div class="label">Boundary Notes</div>
+  <p>Chapter 19 decides whether synthetic assets enter the dataset; Chapter 25 starts only once a system is live and producing production traces, drift, and incidents.</p>
   <a class="jump" href="part-5-training-multimodal-systems-and-operations/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="part6">
@@ -158,6 +211,14 @@
 <li><strong>31</strong> Capstones, Replication Studies, and Paper-Style Contributions</li>
 <li><strong>32</strong> Teaching Studios, Assessment Design, and Course Reuse</li>
   </ol>
+  <div class="label">Labs And Notebooks</div>
+  <ul class="chapter-list">
+    <li><code>28_multimodal-evidence-demo</code></li>
+    <li><code>31_capstone-starter-pack.ipynb</code></li>
+    <li><code>32_course-reuse-kit.ipynb</code></li>
+  </ul>
+  <div class="label">Case Study Thread</div>
+  <p>Closes the loop by turning the recurring case studies into domain blueprints, research questions, capstones, and teaching modules.</p>
   <a class="jump" href="part-6-applications-frontiers-and-capstones/index.html">Open Detailed Section TOC</a>
 </section>
 <section class="section-card" id="appendix">
@@ -172,6 +233,10 @@
 <li><strong>D</strong> Provisioning Cloud Models and Hosted Infrastructure</li>
 <li><strong>E</strong> Audio Companion and Modular Learning Guide</li>
   </ol>
+  <div class="label">Practical Assets</div>
+  <ul class="chapter-list">
+    <li>Math refresher, PyTorch primer, setup guide, and cloud provisioning notes</li>
+  </ul>
   <a class="jump" href="appendices/index.html">Open Detailed Section TOC</a>
 </section>
       </div>

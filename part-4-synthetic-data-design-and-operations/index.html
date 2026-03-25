@@ -61,13 +61,17 @@
 <li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
 <li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Anchor the chapter in one of the recurring book-long case studies so the framework stays connected to a concrete build and evaluation path.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Design synthetic-data workflows as iterative systems rather than isolated prompts.</li><li>Choose between generation, editing, repurposing, and simulation.</li><li>Estimate the cost and value of synthetic-data campaigns.</li></ul>
@@ -102,16 +106,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
-<li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
+<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
+<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
+<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
+<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Use diffusion pipelines for controllable synthetic image creation and editing.</li><li>Apply inpainting, image editing, ControlNet, and textual inversion to build labeled data.</li><li>Choose between raw prompting, editing, and personalization methods.</li></ul>
@@ -145,16 +156,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
-<li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
+<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
+<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
+<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
+<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Design synthetic video datasets with explicit temporal structure.</li><li>Understand the difference between frame realism and temporal consistency.</li><li>Prepare video data for tracking, localization, and multimodal tasks.</li></ul>
@@ -188,16 +206,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
-<li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
+<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
+<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
+<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
+<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics instead of perceptual realism alone.</li></ul>
@@ -225,16 +250,23 @@
 </ol>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
-<li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
+<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
+<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
+<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
+<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Understand when simulation is a better tool than generative prompting.</li><li>Design procedural data with controllable labels and metadata.</li><li>Connect simulation outputs to downstream training and QA.</li></ul>
@@ -271,13 +303,17 @@
 <li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
 <li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Anchor the chapter in one of the recurring book-long case studies so the framework stays connected to a concrete build and evaluation path.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Build QA loops that scale beyond manual spot-checking.</li><li>Use judge models and human review coherently.</li><li>Feed QA outcomes back into the data engine.</li></ul>
@@ -307,13 +343,17 @@
 <li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
 <li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Anchor the chapter in one of the recurring book-long case studies so the framework stays connected to a concrete build and evaluation path.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Separate training, evaluation, and stress-test data design goals.</li><li>Use synthetic data to probe robustness and safety, not only improve training coverage.</li><li>Avoid conflating visual or acoustic realism with downstream usefulness.</li></ul>
@@ -337,6 +377,8 @@
 </div>
 </body>
 </html>
+
+
 
 
 

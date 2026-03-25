@@ -63,16 +63,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
-<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
+<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
+<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
+<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
+<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Track one shared lifecycle across the recurring industrial, speech, and incident-review systems so readers can compare adaptation, serving, and monitoring decisions side by side.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>
@@ -106,16 +113,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
-<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
+<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
+<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
+<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
+<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Track one shared lifecycle across the recurring industrial, speech, and incident-review systems so readers can compare adaptation, serving, and monitoring decisions side by side.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>
@@ -149,16 +163,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Mechanism-level treatment of how foundation models are wired for perception, grounding, retrieval, and generation, including what remains modular versus unified.</li>
-<li>System-level discussion of why retrieval, tool use, schema validation, and grounding often outperform naive end-to-end prompting.</li>
+<li><strong>Inner workings:</strong> how foundation models combine perception, grounding, retrieval, and generation, and what remains modular versus unified.</li>
+<li><strong>Algorithm sketch:</strong> retrieval-grounding-generation loops, schema validation paths, and modular tool-calling sequences.</li>
+<li><strong>Intuition:</strong> why a decomposed system often beats a monolithic prompt when evidence quality and traceability matter.</li>
+<li><strong>Tradeoffs:</strong> omni-model simplicity versus modular debuggability, retrieval quality versus latency, and flexibility versus governance control.</li>
+<li><strong>Common failure modes:</strong> retrieval miss, OCR corruption, grounding mismatch, invalid structured output, and brittle tool orchestration.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>System architecture diagrams, document or multimodal retrieval pipelines, grounding loops, and modular-vs-omni design comparisons.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Assemble a retrieval-grounding-generation workflow with explicit intermediate artifacts, then compare it with a direct omni-model baseline.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Compare how the recurring case studies use generalist foundation models differently: retrieval-heavy incident review, OCR-like visual evidence, and audio-plus-text operational analytics.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>
@@ -192,16 +213,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
-<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
+<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
+<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
+<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
+<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Track one shared lifecycle across the recurring industrial, speech, and incident-review systems so readers can compare adaptation, serving, and monitoring decisions side by side.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>
@@ -235,16 +263,23 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
-<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
+<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
+<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
+<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
+<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
 <li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
 <li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+<li>Track one shared lifecycle across the recurring industrial, speech, and incident-review systems so readers can compare adaptation, serving, and monitoring decisions side by side.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>
@@ -268,6 +303,8 @@
 </div>
 </body>
 </html>
+
+
 
 
 

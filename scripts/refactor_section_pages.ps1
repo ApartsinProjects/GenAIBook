@@ -9,16 +9,19 @@ $files = @(
   'E:\Projects\GenAIBook\appendices\index.html'
 )
 
-function Get-Extras([string]$title) {
+function Get-CoreBlocks([string]$title) {
   switch -Regex ($title) {
     'Embeddings|Self-Supervision|Representation' {
 @'
 <div class="label">Deep Dive</div>
 <ul>
-  <li>Inner workings of embedding construction, pooling, contrastive objectives, and why representation geometry matters for retrieval and filtering.</li>
-  <li>Algorithmic discussion of positive and negative pairs, masked prediction, collapse risks, and how representation failures show up downstream.</li>
+  <li><strong>Inner workings:</strong> embedding construction, pooling, contrastive objectives, and representation geometry for retrieval, filtering, and zero-shot transfer.</li>
+  <li><strong>Algorithm sketch:</strong> positive/negative pair formation, masked prediction, projection heads, and nearest-neighbor retrieval loops.</li>
+  <li><strong>Intuition:</strong> why semantically useful geometry can act like a reusable substrate before task-specific fine-tuning.</li>
+  <li><strong>Tradeoffs:</strong> generic transfer versus task fit, open-world flexibility versus calibration, and retrieval quality versus compute footprint.</li>
+  <li><strong>Common failure modes:</strong> collapsed clusters, shortcut features, biased neighborhoods, and brittle zero-shot behavior.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>Embedding-space diagrams, positive-vs-negative pair graphics, clustering views, and nearest-neighbor retrieval schematics.</li>
 </ul>
@@ -26,16 +29,23 @@ function Get-Extras([string]$title) {
 <ul>
   <li>Build an embedding index for one multimodal slice, inspect neighbors, and show how representation errors influence relabeling or QA.</li>
 </ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Use the industrial inspection, multilingual speech analytics, and multimodal incident-review case studies to show how one representation layer supports three very different downstream workflows.</li>
+</ul>
 '@
     }
     'Attention|Transformers|Fusion' {
 @'
 <div class="label">Deep Dive</div>
 <ul>
-  <li>Mechanics of attention scores, token mixing, positional information, connector modules, and the cost-quality tradeoffs between dual encoders and cross-attention systems.</li>
-  <li>Why multimodal fusion choices change memory use, latency, grounding quality, and long-context behavior.</li>
+  <li><strong>Inner workings:</strong> attention scores, token mixing, positional encoding, connector modules, and multimodal fusion pathways.</li>
+  <li><strong>Algorithm sketch:</strong> query-key-value computation, residual block flow, connector insertion, and cross-attention versus dual-encoder inference paths.</li>
+  <li><strong>Intuition:</strong> attention as learned routing that decides what each token should look at and what context it should ignore.</li>
+  <li><strong>Tradeoffs:</strong> dual encoders versus cross-attention, context quality versus memory cost, and modular fusion versus tightly coupled stacks.</li>
+  <li><strong>Common failure modes:</strong> context dilution, connector bottlenecks, hallucinated grounding, and long-context degradation.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>Token-flow diagrams, attention heatmaps, connector schematics, and side-by-side fusion architecture comparisons.</li>
 </ul>
@@ -43,16 +53,23 @@ function Get-Extras([string]$title) {
 <ul>
   <li>Trace one image-text and one audio-text query through dual-encoder and cross-attention pipelines and compare output behavior and compute cost.</li>
 </ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Show how the same fusion choices change an inspection assistant, a streaming speech copilot, and a multimodal incident-review system.</li>
+</ul>
 '@
     }
     'Generative Model Families|Image Data|Video Data|Audio Data|Simulation' {
 @'
 <div class="label">Deep Dive</div>
 <ul>
-  <li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
-  <li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+  <li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
+  <li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
+  <li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
+  <li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
+  <li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
 </ul>
@@ -60,16 +77,23 @@ function Get-Extras([string]$title) {
 <ul>
   <li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
 </ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
+</ul>
 '@
     }
     'Foundation Models|Document AI|Omni Systems|Retrieval|RAG|Agent Systems' {
 @'
 <div class="label">Deep Dive</div>
 <ul>
-  <li>Mechanism-level treatment of how foundation models are wired for perception, grounding, retrieval, and generation, including what remains modular versus unified.</li>
-  <li>System-level discussion of why retrieval, tool use, schema validation, and grounding often outperform naive end-to-end prompting.</li>
+  <li><strong>Inner workings:</strong> how foundation models combine perception, grounding, retrieval, and generation, and what remains modular versus unified.</li>
+  <li><strong>Algorithm sketch:</strong> retrieval-grounding-generation loops, schema validation paths, and modular tool-calling sequences.</li>
+  <li><strong>Intuition:</strong> why a decomposed system often beats a monolithic prompt when evidence quality and traceability matter.</li>
+  <li><strong>Tradeoffs:</strong> omni-model simplicity versus modular debuggability, retrieval quality versus latency, and flexibility versus governance control.</li>
+  <li><strong>Common failure modes:</strong> retrieval miss, OCR corruption, grounding mismatch, invalid structured output, and brittle tool orchestration.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>System architecture diagrams, document or multimodal retrieval pipelines, grounding loops, and modular-vs-omni design comparisons.</li>
 </ul>
@@ -77,22 +101,33 @@ function Get-Extras([string]$title) {
 <ul>
   <li>Assemble a retrieval-grounding-generation workflow with explicit intermediate artifacts, then compare it with a direct omni-model baseline.</li>
 </ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Compare how the recurring case studies use generalist foundation models differently: retrieval-heavy incident review, OCR-like visual evidence, and audio-plus-text operational analytics.</li>
+</ul>
 '@
     }
     'Fine-Tuning|Inference Engineering|Deployment|Monitoring|Debugging' {
 @'
 <div class="label">Deep Dive</div>
 <ul>
-  <li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
-  <li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+  <li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
+  <li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
+  <li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
+  <li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
+  <li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
   <li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Track one shared lifecycle across the recurring industrial, speech, and incident-review systems so readers can compare adaptation, serving, and monitoring decisions side by side.</li>
 </ul>
 '@
     }
@@ -103,13 +138,17 @@ function Get-Extras([string]$title) {
   <li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
   <li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
 </ul>
-<div class="label">Illustrations</div>
+<div class="label">Illustrations and Figures</div>
 <ul>
   <li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
   <li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Case Study Thread</div>
+<ul>
+  <li>Anchor the chapter in one of the recurring book-long case studies so the framework stays connected to a concrete build and evaluation path.</li>
 </ul>
 '@
     }
@@ -190,13 +229,18 @@ function Add-ExtrasAndBoundaries([string]$content) {
 
       $title = $titleMatch.Groups[1].Value
 
-      if ($article -notmatch '<div class="label">Deep Dive</div>') {
-        $extras = Get-Extras $title
-        if ($article -match '<div class="label">Learning Outcomes</div>') {
-          $article = $article -replace '<div class="label">Learning Outcomes</div>', ($extras + "`r`n<div class=""label"">Learning Outcomes</div>")
-        } else {
-          $article += "`r`n" + $extras
-        }
+      $coreBlock = Get-CoreBlocks $title
+      if ([regex]::IsMatch($article, '<div class="label">Deep Dive</div>.*?(?=<div class="label">Learning Outcomes</div>)', 'Singleline')) {
+        $article = [regex]::Replace(
+          $article,
+          '<div class="label">Deep Dive</div>.*?(?=<div class="label">Learning Outcomes</div>)',
+          $coreBlock + "`r`n",
+          'Singleline'
+        )
+      } elseif ($article -match '<div class="label">Learning Outcomes</div>') {
+        $article = $article -replace '<div class="label">Learning Outcomes</div>', ($coreBlock + "`r`n<div class=""label"">Learning Outcomes</div>")
+      } else {
+        $article += "`r`n" + $coreBlock
       }
 
       if ($title -eq 'Annotation Systems, Weak Supervision, and Auto-Labeling') {
