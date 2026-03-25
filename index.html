@@ -57,6 +57,18 @@
       </ul>
     </section>
     <section class="panel">
+      <h2>Presentation Plan</h2>
+      <ul class="summary">
+        <li><strong>1. Orient:</strong><br/>show the full workflow and define the problem space.</li>
+        <li><strong>2. Discipline:</strong><br/>establish data, annotation, and evaluation rigor.</li>
+        <li><strong>3. Explain Models:</strong><br/>teach representations, architectures, and model internals.</li>
+        <li><strong>4. Build Data:</strong><br/>design, generate, repurpose, and validate synthetic data.</li>
+        <li><strong>5. Train Systems:</strong><br/>fine-tune models and assemble retrieval or multimodal systems.</li>
+        <li><strong>6. Specialize:</strong><br/>map the toolkit into application blueprints and capstones.</li>
+        <li><strong>7. Extend:</strong><br/>use appendices for onboarding, self-study support, and research scaffolding.</li>
+      </ul>
+    </section>
+    <section class="panel">
       <h2>Reader Paths</h2>
       <ul class="summary">
         <li><strong>Self-Study:</strong><br/>Follow Parts I-V, use the appendices on demand, and pick one recurring case study.</li>
@@ -98,7 +110,9 @@
         <section class="section-card" id="front">
   <div class="part-label">Front Matter</div>
   <h2>How This Book Works</h2>
-  <p>The front matter is part of the product, not just packaging. It now carries the book promise, audience guidance, reading paths, recurring case studies, course-adoption support, and companion-asset logic needed to make the rest of the book teachable and marketable.</p>
+  <p>The front matter is part of the product, not just packaging. It now carries the book promise, audience guidance, reading paths, recurring case studies, course-adoption support, companion-asset logic, and the explicit presentation plan used by the rest of the book.</p>
+  <div class="label">Presentation Role</div>
+  <p>Defines the reading logic before the technical material starts.</p>
   <div class="label">Chapter Map</div>
   <ol class="chapter-list">
     <li><strong>FM0</strong> Preface: Why This Book, Why Now</li>
@@ -121,6 +135,8 @@
   <div class="part-label">Part I</div>
   <h2>Orientation and Fast Start</h2>
   <p>This part fixes the "too abstract too early" problem. Readers see the whole pipeline first, then learn how to reason about tasks, metrics, tools, and the central workflow in which synthetic data is created or repurposed to train, fine-tune, and evaluate models.</p>
+  <div class="label">Presentation Role</div>
+  <p>Orient the reader by showing the whole workflow before introducing complexity.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>01</strong> What This Book Will Let You Build <span class="tag">Core</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -142,6 +158,8 @@
   <div class="part-label">Part II</div>
   <h2>Data and Experimental Foundations</h2>
   <p>This part makes data design, documentation, and methodology first-class. It fixes one of the biggest gaps in most AI books: readers need to know how to design credible studies around how synthetic data changes training and evaluation, not just run models.</p>
+  <div class="label">Presentation Role</div>
+  <p>Discipline the workflow so later experiments, training runs, and claims are credible.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>05</strong> Data Rights, Provenance, and Responsible Acquisition <span class="tag">Core</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -163,6 +181,8 @@
   <div class="part-label">Part III</div>
   <h2>Representations, Architectures, and Model Selection</h2>
   <p>This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging. The detailed TOC makes the promise explicit that every named model family is explained through internals, algorithm sketch, intuition, tradeoffs, and failure modes, with clear links to how those models are trained, fine-tuned, and evaluated later.</p>
+  <div class="label">Presentation Role</div>
+  <p>Explain the internal mechanics of the model families used later for generation, training, and system building.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>09</strong> Embeddings, Self-Supervision, and Shared Representation Spaces <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -185,6 +205,8 @@
   <div class="part-label">Part IV</div>
   <h2>Synthetic Data Design and Operations</h2>
   <p>This part is explicitly organized around the synthetic-data engine: choose a strategy, create or repurpose data, validate it operationally, and prepare clean inputs for later training and evaluation. Generators, editors, trackers, diarizers, simulators, and judge models are treated as mechanisms to understand, not just tools to call, because their outputs directly shape downstream model quality.</p>
+  <div class="label">Presentation Role</div>
+  <p>Build the synthetic-data engine that will feed later training, evaluation, and iteration.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>14</strong> Designing the Synthetic Data Engine <span class="tag">Core</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -209,6 +231,8 @@
   <div class="part-label">Part V</div>
   <h2>Training, Multimodal Systems, and Operations</h2>
   <p>Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh. The chapter plans now spell out what changes inside each model family during training, tuning, retrieval, serving, and monitoring, completing the synthetic-data-to-model-performance loop.</p>
+  <div class="label">Presentation Role</div>
+  <p>Train, fine-tune, assemble, deploy, and monitor the systems enabled by the earlier parts.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>21</strong> Fine-Tuning Vision and Video Models <span class="tag">Advanced</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -231,6 +255,8 @@
   <div class="part-label">Part VI</div>
   <h2>Applications, Frontiers, and Capstones</h2>
   <p>The closing part broadens adoption value by mapping the toolkit to domain-specific systems, then closes with frontier questions, anti-patterns, and final projects.</p>
+  <div class="label">Presentation Role</div>
+  <p>Specialize the workflow into domains, then turn it into capstones, teaching assets, and research directions.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
     <li><strong>26</strong> Application Blueprint: Industrial Inspection and Manufacturing <span class="tag">Core</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
@@ -255,6 +281,8 @@
   <div class="part-label">Appendices</div>
   <h2>Reference, Setup, and Onboarding</h2>
   <p>The appendices keep the main text focused while still supporting readers who need review material, environment guidance, or cloud provisioning help. Together they make the book self-contained for readers with basic engineering knowledge by covering Python, data handling, deep learning foundations, PyTorch, media formats, setup, and research workflow support.</p>
+  <div class="label">Presentation Role</div>
+  <p>Extend the main arc with onboarding, reference material, and optional support for independent learners.</p>
 <div class="label">Chapter Map</div>
   <ol class="chapter-list">
     <li><strong>A</strong> Python, Data Handling, and Scientific Computing Primer <span class="tag">Core</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span></li>
