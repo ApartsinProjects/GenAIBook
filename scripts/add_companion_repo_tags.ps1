@@ -5,7 +5,7 @@ $detailPages = @(
   "front-matter\index.html",
   "part-1-orientation-and-fast-start\index.html",
   "part-2-data-and-experimental-foundations\index.html",
-  "part-3-representations-architectures-and-model-selection\index.html",
+  "part-3-vision-audio-and-generative-model-internals\index.html",
   "part-4-synthetic-data-design-and-operations\index.html",
   "part-5-training-multimodal-systems-and-operations\index.html",
   "part-6-applications-frontiers-and-capstones\index.html",

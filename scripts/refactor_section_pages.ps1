@@ -2,7 +2,7 @@ $files = @(
   'E:\Projects\GenAIBook\front-matter\index.html',
   'E:\Projects\GenAIBook\part-1-orientation-and-fast-start\index.html',
   'E:\Projects\GenAIBook\part-2-data-and-experimental-foundations\index.html',
-  'E:\Projects\GenAIBook\part-3-representations-architectures-and-model-selection\index.html',
+  'E:\Projects\GenAIBook\part-3-vision-audio-and-generative-model-internals\index.html',
   'E:\Projects\GenAIBook\part-4-synthetic-data-design-and-operations\index.html',
   'E:\Projects\GenAIBook\part-5-training-multimodal-systems-and-operations\index.html',
   'E:\Projects\GenAIBook\part-6-applications-frontiers-and-capstones\index.html',
