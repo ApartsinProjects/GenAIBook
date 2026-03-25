@@ -625,29 +625,30 @@
         <article class="chapter">
           <div class="chapter-no">12</div>
           <div>
-            <h3>Foundation Models in Practice</h3>
-            <p class="chapter-desc">Covers vision-language, audio-language, video-language, segmentation, grounding, and omni-style model families with a focus on where each one belongs in a system.</p>
+            <h3>Foundation Models, Document AI, and Omni Systems in Practice</h3>
+            <p class="chapter-desc">Covers vision-language, audio-language, video-language, document-centric, segmentation, grounding, and omni-style model families with a focus on where each one belongs in a real system.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, and document-VLM families.</li>
+              <li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, SmolDocling-, and document-VLM families.</li>
               <li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, audio-chat models, and omni interfaces.</li>
               <li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>
               <li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, and grounded-segmentation stacks.</li>
+              <li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>
               <li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
               <li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>
               <li>When a generalist open model is enough and when a specialized stack is stronger.</li>
-              <li>How to shortlist models for later chapters.</li>
+              <li>How to shortlist models for later chapters using task, cost, latency, controllability, and governance criteria.</li>
             </ul>
             <div class="label">Learning Outcomes</div>
             <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, and task-specialized models.</li><li>Create a shortlist for the project pipeline.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, any-to-any and omni models.</li></ul>
+            <ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>DocVQA, ChartQA, TextVQA, VQAv2, video-language benchmarks, and audio-language evaluation sets.</li></ul>
+            <ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
             <ul><li><code>12_foundation-model-shortlisting.ipynb</code>, <code>12_vlm-audio-model-role-demo</code></li></ul>
           </div>
@@ -718,11 +719,11 @@
             <p class="chapter-desc">Covers prompt-driven generation, editing workflows, auto-labeling, and label-aware repurposing for image tasks.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Text-to-image and latent diffusion pipelines for labeled sample generation using Stable Diffusion-class models, Flux-style pipelines, and Diffusers workflows.</li>
+              <li>Text-to-image and latent diffusion pipelines for labeled sample generation using Stable Diffusion-class models, Flux-style pipelines, modular Diffusers workflows, and reusable generation graphs.</li>
               <li>Image editing workflows: inpainting, outpainting, image-to-image translation, relighting, style transfer, compositing, object insertion/removal, and DiffEdit-style editing with mask-aware pipelines.</li>
               <li>Control mechanisms: ControlNet, T2I-Adapter, masks, depth, canny, pose, segmentation maps, normal maps, layout conditioning, region-based prompts, IP-Adapter-style image control, and MultiAdapter composition.</li>
               <li>Personalization and concept control: textual inversion, DreamBooth-style tuning, LoRA adapters, adapter composition, and prompt token engineering.</li>
-              <li>Negative prompts, prompt matrices, attribute coverage tables, seeded batch recipe design, style-diversity controls, and LCM-style fast-generation recipes for large-scale data synthesis.</li>
+              <li>Negative prompts, prompt matrices, attribute coverage tables, seeded batch recipe design, style-diversity controls, image-reward filtering, and LCM-style fast-generation recipes for large-scale data synthesis.</li>
               <li>Repurposing real datasets through relabeling, weak supervision, editing, synthetic augmentation, and domain transfer.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -735,7 +736,7 @@
             <ul><li>Use diffusion pipelines for controllable synthetic image creation and editing.</li><li>Apply inpainting, image editing, ControlNet, and textual inversion to build labeled data.</li><li>Choose between raw prompting, editing, and personalization methods.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a reusable image recipe library with prompts, controls, and edit masks.</li><li>Run one comparison between prompt-only and ControlNet or edit-based generation.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure how editing methods affect label fidelity and diversity.</li><li>Compare textual inversion or LoRA personalization against generic prompting.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers, Stable Diffusion-class pipelines, Flux-style pipelines, ControlNet, T2I-Adapter, MultiAdapter, inpainting models, IP-Adapter-style control modules, DiffEdit-style editing, textual inversion, DreamBooth-style tuning, LoRA adapters, LCM-LoRA-style acceleration, image reward models, kornia and OpenCV for mask prep.</li></ul>
+            <ul><li>Diffusers, Stable Diffusion-class pipelines, Flux-style pipelines, modular diffusion pipelines, ControlNet, T2I-Adapter, MultiAdapter, inpainting models, IP-Adapter-style control modules, DiffEdit-style editing, textual inversion, DreamBooth-style tuning, LoRA adapters, LCM-LoRA-style acceleration, image reward models, kornia and OpenCV for mask prep.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>COCO, LVIS, synthetic prompt suites, internal attribute-coverage tables, and prompt-based challenge sets.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -775,15 +776,15 @@
         <article class="chapter">
           <div class="chapter-no">17</div>
           <div>
-            <h3>Audio Data: Speech, Events, TTS, and Voice Transformation</h3>
-            <p class="chapter-desc">Expands the audio story to include synthetic speech, augmentation, weak labeling, TTS, and voice-related risks.</p>
+            <h3>Audio Data: Speech, Events, TTS, Diarization, and Voice Transformation</h3>
+            <p class="chapter-desc">Expands the audio story to include synthetic speech, augmentation, weak labeling, TTS, diarization, watermarking, and voice-related risks.</p>
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Speech, acoustic events, environmental audio, and mixed-source scenarios.</li>
               <li>Noise, reverberation, channel shift, overlap, and speaker variation simulation.</li>
-              <li>Weak labeling with ASR, diarization, event detectors, VAD, segmentation tools, and multi-channel transcription interfaces.</li>
-              <li>TTS, voice conversion, synthetic speech corpora, speaker balancing, multilingual augmentation, and optional music or structured-audio generation as an advanced branch.</li>
-              <li>Voice safety, consent, identity risk, disclosure requirements, and streaming inference tradeoffs.</li>
+              <li>Weak labeling with ASR, diarization, speaker identification, event detectors, VAD, segmentation tools, and multi-channel transcription interfaces.</li>
+              <li>TTS, voice conversion, synthetic speech corpora, speaker balancing, multilingual augmentation, dubbing workflows, and optional music or structured-audio generation as an advanced branch.</li>
+              <li>Voice safety, consent, identity risk, disclosure requirements, watermarking or provenance signals, and streaming inference tradeoffs.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
@@ -795,9 +796,9 @@
             <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Simulate channel, noise, and overlap conditions for one audio task.</li><li>Build a synthetic speech or event-augmentation workflow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the gap between transcription quality and downstream utility.</li><li>Compare augmentation-heavy and generation-heavy audio pipelines.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks.</li></ul>
+            <ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>LibriSpeech, FLEURS, VoxCeleb, AudioSet, ESC-50, AudioCaps, and optional MusicCaps examples.</li></ul>
+            <ul><li>LibriSpeech, FLEURS, VoxCeleb, AudioSet, ESC-50, AudioCaps, AMI-style diarization sets, and optional MusicCaps examples.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
             <ul><li><code>17_audio-synthetic-data-lab.ipynb</code>, <code>17_tts-augmentation-and-diarization-demo</code></li></ul>
           </div>
@@ -805,20 +806,21 @@
         <article class="chapter">
           <div class="chapter-no">18</div>
           <div>
-            <h3>Simulation and Procedural Data Pipelines</h3>
-            <p class="chapter-desc">Adds 3D, simulation, and procedural synthetic data for robotics, inspection, and controlled scene generation.</p>
+            <h3>Simulation, Procedural Data, and Real-to-Sim-to-Real Pipelines</h3>
+            <p class="chapter-desc">Adds 3D, simulation, procedural generation, and real-to-sim-to-real workflows for robotics, inspection, and controlled scene generation.</p>
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Procedural generation and rendering pipelines with asset libraries, scene graphs, and camera-control scripts.</li>
               <li>Camera control, lighting, pose variation, materials, domain randomization, and synthetic sensor effects.</li>
               <li>Simulator-generated labels, depth maps, masks, tracks, pose metadata, and multimodal environment logs.</li>
-              <li>When simulators beat prompting for robotics, inspection, and rare-event video tasks.</li>
+              <li>Real-to-sim-to-real adaptation loops, simulator fine-tuning data, and perception or policy data for embodied or VLA-style systems.</li>
+              <li>When simulators beat prompting for robotics, inspection, autonomous perception, and rare-event video tasks.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul><li>Understand when simulation is a better tool than generative prompting.</li><li>Design procedural data with controllable labels and metadata.</li><li>Connect simulation outputs to downstream training and QA.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Specify one procedural or simulation pipeline for a case-study slice.</li><li>Define which labels come “for free” from the simulator.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare simulation-heavy and diffusion-heavy data strategies.</li><li>Study domain randomization as an experimental variable.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>BlenderProc-style pipelines, Isaac Sim / Replicator-style simulator stacks, domain-randomization tools, scene-graph exporters.</li></ul>
+            <ul><li>BlenderProc-style pipelines, Isaac Sim / Replicator-style simulator stacks, domain-randomization tools, scene-graph exporters, synthetic sensor stacks, and embodied-data generation workflows.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>BOP-style pose tasks, simulator-native robotics scenes, industrial synthetic scenes, and synthetic segmentation exports.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -828,14 +830,14 @@
         <article class="chapter">
           <div class="chapter-no">19</div>
           <div>
-            <h3>Synthetic Data Operations: QA, Filtering, and Judge Loops</h3>
+            <h3>Synthetic Data Operations: QA, Filtering, Reward Models, and Judge Loops</h3>
             <p class="chapter-desc">Focuses on operational QA after generation or repurposing so it does not blur together with the earlier chapter on annotation systems and auto-labeling.</p>
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Duplicate detection, corruption checks, low-information filtering, semantic near-duplicate detection, and distribution audits.</li>
-              <li>Judge models, confidence scoring, teacher-model review, rubric-based scoring, active error discovery, and preference-style ranking workflows.</li>
+              <li>Judge models, confidence scoring, teacher-model review, rubric-based scoring, active error discovery, image-reward or preference-style ranking workflows, and acceptance-threshold tuning.</li>
               <li>Human review queues, adjudication, label repair, and escalation workflows.</li>
-              <li>Bias checks, memorization checks, provenance validation, leakage checks, near-duplicate filtering with embedding or image-dedup tools, and calibration-aware filtering policies.</li>
+              <li>Bias checks, memorization checks, provenance validation, watermark verification where applicable, leakage checks, near-duplicate filtering with embedding or image-dedup tools, and calibration-aware filtering policies.</li>
               <li>Stopping criteria, iteration policies, and sample acceptance/rejection logging for generation campaigns.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -858,20 +860,20 @@
         <article class="chapter">
           <div class="chapter-no">20</div>
           <div>
-            <h3>Synthetic Data for Training, Evaluation, and Stress Testing</h3>
+            <h3>Synthetic Data for Training, Evaluation, Stress Testing, and Challenge Sets</h3>
             <p class="chapter-desc">Separates three uses of synthetic data that are often conflated and need different design principles.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Training data for coverage, balancing, and sample-mixture scheduling.</li>
-              <li>Evaluation data for hidden slices, rare cases, and challenge-set construction.</li>
-              <li>Stress tests for robustness, safety, failure analysis, and distribution-shift probing.</li>
-              <li>Why realism, calibration, and usefulness are not the same objective.</li>
+              <li>Training data for coverage, balancing, sample-mixture scheduling, and teacher-student distillation workflows.</li>
+              <li>Evaluation data for hidden slices, rare cases, contamination checks, memorization checks, and challenge-set construction.</li>
+              <li>Stress tests for robustness, safety, failure analysis, distribution-shift probing, and abstention-policy testing.</li>
+              <li>Why realism, calibration, uncertainty, and usefulness are not the same objective.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul><li>Separate training, evaluation, and stress-test data design goals.</li><li>Use synthetic data to probe robustness and safety, not only improve training coverage.</li><li>Avoid conflating visual or acoustic realism with downstream usefulness.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create one synthetic training set and one synthetic stress-test set.</li><li>Compare how each affects conclusions about model quality.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design an experiment that isolates usefulness from realism.</li><li>Build a hidden-slice benchmark with synthetic support data.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Benchmark harnesses, hidden-test generators, challenge-set templates, stress-test templates, realism, calibration, and utility metrics.</li></ul>
+            <ul><li>Benchmark harnesses, hidden-test generators, challenge-set templates, stress-test templates, realism, calibration, uncertainty, abstention, and utility metrics.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>ImageNet-C style corruptions, AudioSet shift subsets, custom rare-event suites, and synthetic challenge-set packs.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -917,12 +919,12 @@
         <article class="chapter">
           <div class="chapter-no">22</div>
           <div>
-            <h3>Fine-Tuning Audio Models</h3>
-            <p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, and synthetic-speech adaptation.</p>
+            <h3>Fine-Tuning Audio Models and Streaming Speech Systems</h3>
+            <p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, synthetic-speech adaptation, and streaming speech systems.</p>
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, and spoken-intent or meeting analytics.</li>
-              <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, and audio-language model training patterns.</li>
+              <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, and audio-language model training patterns.</li>
               <li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>
               <li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>
               <li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>
@@ -937,7 +939,7 @@
             <ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Train one audio model under channel/noise stress conditions.</li><li>Compare at least two evaluation slice families.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure where synthetic audio helps and where it overfits to artifacts.</li><li>Test whether speech and event tasks respond differently to synthetic data.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, Evaluate metrics.</li></ul>
+            <ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, VAD and diarization tooling, Evaluate metrics.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>LibriSpeech, FLEURS, VoxPopuli, VoxCeleb, AudioSet, ESC-50, AMI-style diarization data.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -947,15 +949,15 @@
         <article class="chapter">
           <div class="chapter-no">23</div>
           <div>
-            <h3>Building Multimodal Systems</h3>
-            <p class="chapter-desc">Assembles retrieval, generation, grounding, and temporal reasoning into end-to-end multimodal products.</p>
+            <h3>Building Multimodal Retrieval, RAG, and Agent Systems</h3>
+            <p class="chapter-desc">Assembles retrieval, generation, grounding, structured outputs, and temporal reasoning into end-to-end multimodal products.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Retrieval systems with shared embeddings, multimodal indexes, vector stores, and reranking stages.</li>
-              <li>Grounded generation with retrieval, perception, tool use, structured outputs, and explanation components.</li>
-              <li>Chat-with-image, chat-with-audio, chat-with-video, document-question-answering, and mixed-modality workflow interfaces.</li>
+              <li>Retrieval systems with shared embeddings, multimodal indexes, vector stores, reranking stages, and document-centric retrieval for PDFs, charts, and slides.</li>
+              <li>Grounded generation with retrieval, perception, tool use, structured outputs, schema validation, and explanation components.</li>
+              <li>Chat-with-image, chat-with-audio, chat-with-video, document-question-answering, multimodal RAG, and mixed-modality workflow interfaces.</li>
               <li>Temporal reasoning, diarized evidence, and event understanding across audio and video.</li>
-              <li>System decomposition: modular pipelines, orchestrated tool use, multimodal RAG, agentic workflows, versus generalist omni interfaces.</li>
+              <li>System decomposition: modular pipelines, orchestrated tool use, agentic workflows, versus generalist omni interfaces.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
@@ -967,9 +969,9 @@
             <ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a multimodal retrieval-plus-generation prototype.</li><li>Implement one audio-video or image-text interaction flow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular and omni-style architectures on one case-study slice.</li><li>Measure where grounding improves reliability.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows.</li></ul>
+            <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Flickr30k retrieval, DocVQA, ChartQA, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>
+            <ul><li>Flickr30k retrieval, DocVQA, ChartQA, MMDocIR-style long-document retrieval, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
             <ul><li><code>23_multimodal-system-builder.ipynb</code>, <code>23_retrieval-plus-generation-demo</code></li></ul>
           </div>
@@ -984,7 +986,7 @@
               <li>Quantization, QLoRA, quantization-aware training, adapter merging, KV-cache implications, and memory-aware inference.</li>
               <li>Serving stacks: vLLM, TGI, TEI, SGLang, FastAPI, Gradio, task-specific microservices, and structured-output or tool-calling serving paths.</li>
               <li>Batch pipelines versus interactive applications, streaming speech pipelines, and asynchronous job queues.</li>
-              <li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, and cost forecasting.</li>
+              <li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, runtime-selection heuristics, and cost forecasting.</li>
               <li>Regression testing, compatibility testing, eval-on-deploy checks, structured-output validation, and release checklists.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
@@ -997,7 +999,7 @@
             <ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Serve one model path and benchmark throughput, latency, and cost.</li><li>Run a regression check after an optimization change.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how inference choices change measured model behavior.</li><li>Compare a deployable stack to a research-only stack.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers.</li></ul>
+            <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Internal latency benchmark suites, throughput test prompts, streaming speech eval sets, and schema-validation test fixtures.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -1011,11 +1013,11 @@
             <p class="chapter-desc">Adds the missing post-deployment chapter on feedback loops, drift detection, rollback logic, and failure triage.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Operational metrics, latency regressions, and quality drift.</li>
-              <li>Embedding drift, data drift, prompt drift, and model-output drift.</li>
+              <li>Operational metrics, latency regressions, quality drift, and abstention-rate drift.</li>
+              <li>Embedding drift, data drift, prompt drift, model-output drift, and retrieval-index drift.</li>
               <li>Human escalation, rollback, safe fallback patterns, and abuse-response playbooks.</li>
-              <li>User feedback loops and post-deployment synthetic-data refresh cycles.</li>
-              <li>Incident review, root-cause analysis templates, and multimodal prompt-injection or misuse checks.</li>
+              <li>User feedback loops, production trace capture, and post-deployment synthetic-data refresh cycles.</li>
+              <li>Incident review, root-cause analysis templates, multimodal prompt-injection or misuse checks, and provenance or watermark verification for generated media where relevant.</li>
             </ol>
             <div class="label">What This Chapter Covers</div>
             <ul>
@@ -1027,7 +1029,7 @@
             <ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a monitoring and triage template for the selected case study.</li><li>Define one post-launch refresh loop using synthetic data.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame production drift as a research question about generalization.</li><li>Compare two refresh-loop strategies after a simulated deployment failure.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates.</li></ul>
+            <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Post-deployment logs, drift slices, failure replays, and curated incident-review examples.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -1095,18 +1097,18 @@
             <p class="chapter-desc">Maps multimodal search, embodied perception, assistive systems, and video-plus-audio evidence workflows to the book’s methods.</p>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Robotics and embodied perception with simulation-heavy data generation.</li>
+              <li>Robotics, embodied perception, and VLA-style systems with simulation-heavy data generation.</li>
               <li>Accessibility systems: captioning, audio description, and assistive interfaces.</li>
               <li>Video-plus-audio incident review and evidence retrieval.</li>
               <li>Grounded multimodal copilots for operators and reviewers.</li>
-              <li>Document intelligence and visual document retrieval for charts, tables, slides, and PDFs.</li>
+              <li>Document intelligence and visual document retrieval for charts, tables, slides, and PDFs using OCR-aware VLM and retrieval stacks.</li>
               <li>How task framing differs across these domains.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul><li>Adapt the book’s toolkit to robotics, accessibility, and incident-understanding systems.</li><li>Recognize where simulation, grounding, and multimodal retrieval become essential.</li><li>Frame product goals differently across high-stakes domains.</li></ul>
             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Choose one blueprint and sketch its end-to-end data and model flow.</li><li>Define the highest-risk failure slices for that domain.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn one blueprint into a scoped lab or capstone project.</li><li>Compare how multimodal evidence changes evaluation design.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Simulation stacks, VLMs, retrieval systems, captioning models, temporal reasoning pipelines, document QA and visual retrieval stacks such as LayoutLMv2- and ColPali-style systems.</li></ul>
+            <ul><li>Simulation stacks, VLMs, retrieval systems, captioning models, temporal reasoning pipelines, document QA and visual retrieval stacks such as LayoutLMv2-, ColPali-, and OCR-plus-reranker-style systems.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
             <ul><li>Ego4D, robotics simulation scenes, accessibility caption corpora, document QA sets, and incident-review clip collections.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
@@ -1121,11 +1123,11 @@
             <div class="label">Detailed Sections</div>
             <ol>
               <li>Synthetic-data scaling laws and diminishing returns.</li>
-              <li>Artifact overfitting, hidden leakage, and synthetic-to-real generalization.</li>
+              <li>Artifact overfitting, hidden leakage, contamination, memorization, and synthetic-to-real generalization.</li>
               <li>Temporal reasoning, causality, and consistency in video and multimodal streams.</li>
               <li>Omni models, any-to-any generation, unified embeddings, and modular alternatives.</li>
-              <li>Preference optimization and multimodal post-training for VLMs and omni systems.</li>
-              <li>World models, simulation, and embodied multimodal learning.</li>
+              <li>Preference optimization and multimodal post-training for VLMs and omni systems using DPO, GRPO, and related alignment methods.</li>
+              <li>World models, simulation, embodied multimodal learning, and real-to-sim-to-real adaptation.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
             <ul><li>Recognize the main open research questions behind current system limitations.</li><li>Connect frontier topics to concrete project directions.</li><li>Read new multimodal papers with a stronger organizing framework.</li></ul>
