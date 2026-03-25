@@ -1,1371 +1,183 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Book TOC - Building Vision and Audio AI with Deep Generative Models</title>
+<title>High-Level TOC - Building Vision and Audio AI with Deep Generative Models</title>
 <style>
-  :root { --bg:#f5efe5; --paper:#fffdfa; --ink:#1d1f1b; --muted:#5d655b; --line:#d9d0c4; --accent:#0f5a48; --accent-2:#8e5622; --soft:#edf5f0; --soft-2:#f6efe4; --shadow:0 18px 54px rgba(29,31,27,.08); --max:1240px; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:Georgia,"Times New Roman",serif; color:var(--ink); line-height:1.62; background:radial-gradient(circle at top right, rgba(15,90,72,.12), transparent 28%), linear-gradient(180deg, #f8f3eb 0%, #f2ecdf 100%); }
-  .page { max-width:var(--max); margin:0 auto; padding:28px 20px 64px; }
-  .hero { background:linear-gradient(135deg,#153a32 0%,#1d6955 100%); color:#f8f7f2; border-radius:30px; padding:40px 36px; box-shadow:var(--shadow); margin-bottom:22px; }
-  .eyebrow { margin:0 0 10px; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; opacity:.86; }
-  h1 { margin:0 0 12px; font-size:clamp(2.2rem,4vw,4.1rem); line-height:1.04; max-width:12ch; }
-  .hero p { margin:0; max-width:80ch; color:rgba(248,247,242,.93); font-size:1.03rem; }
-  .hero-note { margin-top:16px; display:inline-block; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); font-size:.92rem; }
-  .grid { display:grid; grid-template-columns:320px minmax(0,1fr); gap:22px; align-items:start; }
-  .sidebar { position:sticky; top:16px; display:grid; gap:16px; }
-  .panel, .part, .closing { background:var(--paper); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }
-  .panel { padding:18px; }
-  .panel h2, .closing h2 { margin:0 0 10px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; font-size:.96rem; }
-  .summary { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
-  .summary li { background:var(--soft-2); border-radius:14px; padding:10px 12px; font-size:.94rem; }
-  .part-link { padding:12px 0; border-top:1px solid #e7ddd0; }
-  .part-link:first-child { border-top:0; padding-top:0; }
-  .part-link a { text-decoration:none; color:var(--accent); font-weight:700; }
-  .part-link p { margin:6px 0 0; color:var(--muted); font-size:.92rem; }
-  .part { padding:26px 24px; margin-bottom:22px; }
-  .part-label { margin-bottom:8px; color:var(--accent-2); text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; }
-  .part h2 { margin:0 0 8px; font-size:2rem; line-height:1.1; }
-  .part-intro { margin:0 0 18px; color:var(--muted); }
-  .chapter { display:grid; grid-template-columns:76px minmax(0,1fr); gap:18px; padding:18px 0; border-top:1px solid #e7ddd0; }
-  .chapter:first-of-type { border-top:0; padding-top:0; }
-  .chapter-no { width:58px; height:58px; border-radius:18px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.02rem; font-weight:700; }
-  .chapter h3 { margin:0 0 6px; font-size:1.38rem; line-height:1.2; }
-  .chapter-desc { margin:0 0 10px; color:var(--muted); }
-  .meta { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
-  .tag { background:var(--soft); color:var(--accent); border-radius:999px; padding:5px 10px; font-size:.84rem; }
-  .label { margin:14px 0 6px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; }
-  ol, ul { margin:0 0 0 20px; padding:0; }
-  li { margin-bottom:6px; }
-  .pedagogy { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }
-  .pedagogy div { background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; border-radius:16px; padding:10px 12px; font-size:.9rem; }
-  .track-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
-  .track-box { background:linear-gradient(180deg,#f7fbf8 0%,#eef5f0 100%); border:1px solid #dce9e0; border-radius:16px; padding:12px 14px; }
-  .track-box h4 { margin:0 0 8px; color:var(--accent); font-size:1rem; }
-  .closing { padding:24px; }
-  @media (max-width:980px) { .grid { grid-template-columns:1fr; } .sidebar { position:static; } .pedagogy { grid-template-columns:1fr 1fr; } .track-grid { grid-template-columns:1fr; } }
+   :root { --bg:#f5efe5; --paper:#fffdfa; --ink:#1d1f1b; --muted:#5d655b; --line:#d9d0c4; --accent:#0f5a48; --accent-2:#8e5622; --soft:#edf5f0; --soft-2:#f6efe4; --shadow:0 18px 54px rgba(29,31,27,.08); --max:1240px; }   * { box-sizing:border-box; }   body { margin:0; font-family:Georgia,"Times New Roman",serif; color:var(--ink); line-height:1.62; background:radial-gradient(circle at top right, rgba(15,90,72,.12), transparent 28%), linear-gradient(180deg, #f8f3eb 0%, #f2ecdf 100%); }   .page { max-width:var(--max); margin:0 auto; padding:28px 20px 64px; }   .hero { background:linear-gradient(135deg,#153a32 0%,#1d6955 100%); color:#f8f7f2; border-radius:30px; padding:40px 36px; box-shadow:var(--shadow); margin-bottom:22px; }   .eyebrow { margin:0 0 10px; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; opacity:.86; }   h1 { margin:0 0 12px; font-size:clamp(2.2rem,4vw,4.1rem); line-height:1.04; max-width:12ch; }   .hero p { margin:0; max-width:80ch; color:rgba(248,247,242,.93); font-size:1.03rem; }   .hero-note { margin-top:16px; display:inline-block; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); font-size:.92rem; }   .grid { display:grid; grid-template-columns:320px minmax(0,1fr); gap:22px; align-items:start; }   .sidebar { position:sticky; top:16px; display:grid; gap:16px; }   .panel, .part, .closing { background:var(--paper); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }   .panel { padding:18px; }   .panel h2, .closing h2 { margin:0 0 10px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; font-size:.96rem; }   .summary { list-style:none; margin:0; padding:0; display:grid; gap:10px; }   .summary li { background:var(--soft-2); border-radius:14px; padding:10px 12px; font-size:.94rem; }   .part-link { padding:12px 0; border-top:1px solid #e7ddd0; }   .part-link:first-child { border-top:0; padding-top:0; }   .part-link a { text-decoration:none; color:var(--accent); font-weight:700; }   .part-link p { margin:6px 0 0; color:var(--muted); font-size:.92rem; }   .part { padding:26px 24px; margin-bottom:22px; }   .part-label { margin-bottom:8px; color:var(--accent-2); text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; }   .part h2 { margin:0 0 8px; font-size:2rem; line-height:1.1; }   .part-intro { margin:0 0 18px; color:var(--muted); }   .chapter { display:grid; grid-template-columns:76px minmax(0,1fr); gap:18px; padding:18px 0; border-top:1px solid #e7ddd0; }   .chapter:first-of-type { border-top:0; padding-top:0; }   .chapter-no { width:58px; height:58px; border-radius:18px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.02rem; font-weight:700; }   .chapter h3 { margin:0 0 6px; font-size:1.38rem; line-height:1.2; }   .chapter-desc { margin:0 0 10px; color:var(--muted); }   .meta { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }   .tag { background:var(--soft); color:var(--accent); border-radius:999px; padding:5px 10px; font-size:.84rem; }   .label { margin:14px 0 6px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; }   ol, ul { margin:0 0 0 20px; padding:0; }   li { margin-bottom:6px; }   .pedagogy { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }   .pedagogy div { background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; border-radius:16px; padding:10px 12px; font-size:.9rem; }   .track-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }   .track-box { background:linear-gradient(180deg,#f7fbf8 0%,#eef5f0 100%); border:1px solid #dce9e0; border-radius:16px; padding:12px 14px; }   .track-box h4 { margin:0 0 8px; color:var(--accent); font-size:1rem; }   .closing { padding:24px; }   @media (max-width:980px) { .grid { grid-template-columns:1fr; } .sidebar { position:static; } .pedagogy { grid-template-columns:1fr 1fr; } .track-grid { grid-template-columns:1fr; } } 
+  .topbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px; }
+  .crumbs { display:flex; flex-wrap:wrap; gap:10px; }
+  .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
+  .mini-nav { display:grid; gap:8px; }
+  .mini-nav a { text-decoration:none; color:var(--accent); }
+  .section-list { display:grid; gap:16px; }
+  .section-card { background:var(--paper); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); padding:24px; }
+  .section-card h2 { margin:0 0 8px; font-size:1.8rem; }
+  .section-card p { margin:0 0 12px; color:var(--muted); }
+  .chapter-list { margin:0; padding-left:20px; }
+  .chapter-list li { margin-bottom:6px; }
+  .jump { display:inline-block; margin-top:10px; text-decoration:none; color:var(--accent); font-weight:700; }
 </style>
 </head>
 <body>
 <div class="page">
-  <header class="hero">
-    <p class="eyebrow">Second-Pass Revised Table of Contents</p>
-    <h1>Building Vision and Audio AI with Deep Generative Models</h1>
-    <p>This book teaches readers how to design synthetic-data-first AI systems for image, audio, video, and multimodal applications, then turn those systems into reproducible experiments, deployable products, and credible research contributions. This edition is explicitly redesigned across five lenses: practitioner, student, researcher, philosopher, and teacher.</p>
-    <div class="hero-note">Core promise: build, evaluate, teach, and intellectually understand a synthetic-data-driven multimodal system from idea to capstone or paper.</div>
-  </header>
-  <div class="grid">
-    <aside class="sidebar">
-      <section class="panel">
-        <h2>Five Lenses</h2>
-        <ul class="summary">
-          <li><strong>Practitioner:</strong><br/>tools, workflows, debugging, deployment, and modern stacks.</li>
-          <li><strong>Student:</strong><br/>scaffolded sequencing, manageable units, and checkpoints.</li>
-          <li><strong>Researcher:</strong><br/>methodology, benchmarks, ablations, and open problems.</li>
-          <li><strong>Philosopher:</strong><br/>mental models, assumptions, tradeoffs, and “why”.</li>
-          <li><strong>Teacher:</strong><br/>lectures, labs, assessments, and semester-long project flow.</li>
-        </ul>
-      </section>
-      <section class="panel">
-        <h2>Audience</h2>
-        <ul class="summary">
-          <li><strong>Primary:</strong><br/>Graduate students and advanced practitioners in ML, computer vision, speech, robotics, and applied AI.</li>
-          <li><strong>Secondary:</strong><br/>Advanced undergraduates and engineers transitioning from model usage to system design.</li>
-          <li><strong>Not for:</strong><br/>Complete beginners without willingness to use the appendices.</li>
-        </ul>
-      </section>
-      <section class="panel">
-        <h2>Teaching Spine</h2>
-        <ul class="summary">
-          <li><strong>Recurring case studies:</strong><br/>Industrial inspection, multilingual speech/audio analytics, and multimodal incident understanding.</li>
-          <li><strong>Every chapter includes:</strong><br/>Learning outcomes, system milestone, common pitfalls, and suggested exercises.</li>
-          <li><strong>Tracks:</strong><br/>Hands-On systems work and Research extension prompts run in parallel.</li>
-        </ul>
-      </section>
-      <section class="panel">
-        <h2>Book Logic</h2>
-        <ul class="summary">
-          <li><strong>Part I:</strong><br/>See the whole system early so later theory has a concrete anchor.</li>
-          <li><strong>Part II:</strong><br/>Design data, labels, and experiments before committing to models.</li>
-          <li><strong>Part III:</strong><br/>Learn representations, architectures, and model roles before generation workflows.</li>
-          <li><strong>Part IV:</strong><br/>Build the synthetic-data engine and operational QA loops.</li>
-          <li><strong>Part V–VI:</strong><br/>Train, deploy, specialize by domain, then end with frontiers, anti-patterns, and capstones.</li>
-        </ul>
-      </section>
-      <section class="panel">
-        <h2>Parts</h2>
-        <div class="part-link"><a href="#front">Front Matter</a><p>Positioning, reading paths, case studies, pedagogy, and companion assets.</p></div>
-        <div class="part-link"><a href="#part1">Part I. Orientation and Fast Start</a><p>Book promise, end-to-end miniature system, task framing, and reader setup.</p></div>
-        <div class="part-link"><a href="#part2">Part II. Data and Experimental Foundations</a><p>Rights, schemas, annotation operations, baselines, and credible study design.</p></div>
-        <div class="part-link"><a href="#part3">Part III. Representations, Architectures, and Model Selection</a><p>Embeddings, fusion, generative families, foundation models, and pre-deployment debugging.</p></div>
-        <div class="part-link"><a href="#part4">Part IV. Synthetic Data Design and Operations</a><p>Data-engine strategy, image or video or audio generation, simulation, QA, and stress testing.</p></div>
-        <div class="part-link"><a href="#part5">Part V. Training, Multimodal Systems, and Operations</a><p>Fine-tuning, multimodal assembly, deployment, drift, and operational refresh loops.</p></div>
-        <div class="part-link"><a href="#part6">Part VI. Applications, Frontiers, and Capstones</a><p>Domain blueprints, open questions, anti-patterns, and final deliverables.</p></div>
-        <div class="part-link"><a href="#appendix">Appendices</a><p>Math refresher, PyTorch primer, environment setup, cloud provisioning, and audio companion guidance.</p></div>
-      </section>
-    </aside>
-    <main>
-      <section class="part" id="front">
-        <div class="part-label">Front Matter</div>
-        <h2>How This Book Works</h2>
-        <p class="part-intro">The front matter is part of the product, not just packaging. It tells instructors how to adopt the book, tells learners how to move through it, makes the five-lens design visible before Chapter 1, and defines the project spine that runs across the whole book.</p>
-        <article class="chapter">
-          <div class="chapter-no">FM</div>
-          <div>
-            <h3>Front Matter Package</h3>
-            <p class="chapter-desc">A publisher-facing and reader-facing opening package that clarifies audience, pedagogy, assets, and chapter conventions.</p>
-            <div class="meta">
-              <span class="tag">Preface</span>
-              <span class="tag">How to Use</span>
-              <span class="tag">Instructor Guide</span>
-              <span class="tag">Companion Assets</span>
-            </div>
-            <div class="label">Included Components</div>
-            <ol>
-              <li>Preface and market positioning: why synthetic-data-first multimodal AI deserves a dedicated book.</li>
-              <li>How to use this book: course path, practitioner path, research path, philosopher path, teacher path, and accelerated path.</li>
-              <li>Case-study guide: the three recurring systems and how they reappear across chapters.</li>
-              <li>Visual pedagogy plan: architecture diagrams, data schemas, labeling examples, evaluation dashboards, and deployment flowcharts.</li>
-              <li>Companion package: notebooks, starter repos, datasets, slides, rubrics, project templates, and audio companion material.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Understand how the book is structured for courses, self-study, and research use.</li>
-              <li>Know which case studies and assets to follow through the book.</li>
-              <li>Choose an appropriate reading path before starting the main chapters.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Set up the repository, assets, and chapter workflow.</li>
-                  <li>Choose a case study and create a working project folder.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Map the book’s themes to a candidate seminar or project topic.</li>
-                  <li>Define which kinds of claims the later chapters will support.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>Companion notebooks, project templates, slide decks, rubric templates.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">FM2</div>
-          <div>
-            <h3>How to Read, Study, Teach, and Think With This Book</h3>
-            <p class="chapter-desc">Defines the internal chapter template and shows how the same material should serve builders, learners, researchers, deep thinkers, and instructors.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>The standard chapter pattern: motivation, intuition, formal core, practical tools, evaluation, recap, exercises, and project milestone.</li>
-              <li>How a self-learner should move through microlearning blocks and checkpoints.</li>
-              <li>How an instructor should map chapters to lectures, labs, and assessments.</li>
-              <li>How a researcher should distinguish established knowledge, best practice, emerging direction, and unresolved question.</li>
-              <li>How a philosopher-reader should look for assumptions, tradeoffs, and conceptual tensions.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Use the book intentionally rather than passively reading it front to back.</li>
-              <li>Understand how the same chapter supports different reader goals.</li>
-              <li>Recognize the editorial logic behind the five-lens design.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Choose a workflow for code, notes, experiments, and project milestones.</li>
-                  <li>Set up a study or lab rhythm for the rest of the book.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Choose how to log claims, evidence, and open questions chapter by chapter.</li>
-                  <li>Define an evaluation notebook or paper notebook that grows with the book.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>Reading guides, project journals, experiment trackers, slide decks, and assessment templates.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="part1">
-        <div class="part-label">Part I</div>
-        <h2>Orientation and Fast Start</h2>
-        <p class="part-intro">This part fixes the “too abstract too early” problem. Readers see the whole pipeline first, then learn how to reason about tasks, metrics, and tools.</p>
-        <article class="chapter">
-          <div class="chapter-no">01</div>
-          <div>
-            <h3>What This Book Will Let You Build</h3>
-            <p class="chapter-desc">Introduces the central promise, the shift from model-centric thinking to data-and-system-centric thinking, and the recurring case studies.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Why synthetic data is becoming a systems layer rather than a one-off trick.</li>
-              <li>Generated, augmented, repurposed, and hybrid data as separate engineering choices.</li>
-              <li>What readers will build by the end of the book.</li>
-              <li>How the three case studies map to the rest of the chapters.</li>
-            </ol>
-            <div class="pedagogy">
-              <div><strong>Milestone:</strong><br/>Problem brief</div>
-              <div><strong>Pitfall:</strong><br/>Over-scoping</div>
-              <div><strong>Exercise:</strong><br/>Task framing</div>
-              <div><strong>Output:</strong><br/>Project memo</div>
-            </div>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Explain the book’s core promise and system-building philosophy.</li>
-              <li>Differentiate generated, augmented, repurposed, and hybrid synthetic data strategies.</li>
-              <li>Select an initial problem scope that can evolve through the book.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Draft a one-page problem brief and define success metrics.</li>
-                  <li>Pick a case study and list the first data and model candidates.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Write an initial hypothesis about where synthetic data should help.</li>
-                  <li>Identify the most likely confounders and novelty traps.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>FiftyOne, Label Studio, CVAT, Hugging Face model hubs, project templates.</li>
-            </ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul>
-              <li>Book case-study starter packs, seeded toy datasets, and course-specific hidden slices.</li>
-            </ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul>
-              <li><code>01_problem-framing-studio.ipynb</code>, <code>01_case-study-selector-demo</code></li>
-            </ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">02</div>
-          <div>
-            <h3>A Complete Synthetic-Data Pipeline in Miniature</h3>
-            <p class="chapter-desc">Walks through one small but complete system before the theory-heavy chapters begin.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Define a task and failure slice.</li>
-              <li>Generate or repurpose a small labeled dataset.</li>
-              <li>Train a baseline model.</li>
-              <li>Evaluate on real, synthetic, and hidden-slice data.</li>
-              <li>Inspect errors and iterate once.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Understand the full end-to-end workflow before diving into details.</li>
-              <li>See how synthetic data affects training, evaluation, and iteration.</li>
-              <li>Use the miniature system as a reference pattern for later chapters.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Build a toy pipeline from data generation to evaluation.</li>
-                  <li>Document one improvement after inspecting model errors.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Turn the toy pipeline into a baseline experiment template.</li>
-                  <li>Note where a stronger evaluation design would change the result.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>PyTorch, Transformers, Diffusers, Evaluate, PEFT, FiftyOne.</li>
-            </ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul>
-              <li>Imagenette or CIFAR-10 for miniature vision pipelines, Speech Commands for miniature audio pipelines, plus a tiny hidden-slice holdout.</li>
-            </ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul>
-              <li><code>02_end-to-end-mini-pipeline.ipynb</code>, <code>02_generate-train-evaluate-demo</code></li>
-            </ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">03</div>
-          <div>
-            <h3>Task Taxonomy and Success Criteria</h3>
-            <p class="chapter-desc">Turns fuzzy product ideas into tasks, labels, metrics, deployment constraints, and evaluation plans.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Vision tasks: classification, detection, segmentation, grounding, captioning, retrieval, VQA.</li>
-              <li>Audio tasks: ASR, diarization, event detection, keyword spotting, language ID, speaker tasks.</li>
-              <li>Video tasks: tracking, temporal localization, event recognition, captioning, and QA.</li>
-              <li>Multimodal tasks: retrieval, report generation, operator copilots, incident understanding.</li>
-              <li>Choosing evaluation metrics before collecting data.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Translate vague ideas into tasks, labels, and evaluation targets.</li>
-              <li>Choose metrics that match deployment needs instead of benchmark habit.</li>
-              <li>Identify when the same problem can be framed multiple valid ways.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Define labels, slices, and outputs for the selected case study.</li>
-                  <li>Create a first-pass task and metric specification.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Compare two alternative task framings for the same problem.</li>
-                  <li>List the baseline choices implied by each framing.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>Task schemas, annotation templates, benchmark specs, evaluation planning docs.</li>
-            </ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul>
-              <li>COCO, LVIS, ImageNet, MSR-VTT, AudioSet, LibriSpeech, VoxCeleb, and Ego4D as task-framing references.</li>
-            </ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul>
-              <li><code>03_task-taxonomy-workbench.ipynb</code>, <code>03_metric-selection-demo</code></li>
-            </ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">04</div>
-          <div>
-            <h3>The Modern Toolbox Without the Noise</h3>
-            <p class="chapter-desc">Introduces the current tool ecosystem while separating durable workflow ideas from fast-changing package details.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Core stack: PyTorch, <code>torchvision</code>, <code>torchaudio</code>.</li>
-              <li>Hugging Face stack: <code>transformers</code>, <code>diffusers</code>, <code>datasets</code>, <code>evaluate</code>, <code>peft</code>, <code>trl</code>, <code>accelerate</code>.</li>
-              <li>Modality tools: <code>timm</code>, <code>kornia</code>, <code>open_clip</code>, OpenCV, <code>decord</code>, <code>PyAV</code>, <code>librosa</code>, <code>pyannote.audio</code>.</li>
-              <li>QA and labeling tools: FiftyOne, Label Studio, CVAT, Argilla, Distilabel, supervision, and SAHI-style slicing workflows.</li>
-              <li>Experiment ops: DVC, MLflow, artifact stores, benchmark harnesses, contamination checks, and calibration tooling.</li>
-              <li>Deployment and export stack: ONNX Runtime, TensorRT, OpenVINO, Core ML paths, and vector database or retrieval-store options.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Recognize which tools belong to training, labeling, QA, and deployment workflows.</li>
-              <li>Separate durable workflow patterns from transient package choices.</li>
-              <li>Choose a practical stack for the rest of the book.</li>
-            </ul>
-            <div class="track-grid">
-              <div class="track-box">
-                <h4>Hands-On Track</h4>
-                <ul>
-                  <li>Choose a stack, artifact layout, and repo structure.</li>
-                  <li>Decide which labeling and experiment tools to standardize on.</li>
-                </ul>
-              </div>
-              <div class="track-box">
-                <h4>Research Track</h4>
-                <ul>
-                  <li>Select tools that support reproducibility and fair comparison.</li>
-                  <li>Document which stack choices could affect research validity.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul>
-              <li>PyTorch, Transformers, Diffusers, Datasets, Evaluate, PEFT, TRL, timm, open_clip, FiftyOne, CVAT, supervision, SAHI, DVC, MLflow, ONNX Runtime, TensorRT, OpenVINO.</li>
-            </ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul>
-              <li>COCO-format datasets, Hugging Face Datasets examples, WebDataset shards, CVAT and Label Studio export samples.</li>
-            </ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul>
-              <li><code>04_toolchain-smoke-test.ipynb</code>, <code>04_data-and-model-stack-tour</code></li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="part2">
-        <div class="part-label">Part II</div>
-        <h2>Data and Experimental Foundations</h2>
-        <p class="part-intro">This part makes data design, documentation, and methodology first-class. It fixes one of the biggest gaps in most AI books: readers need to know how to design credible studies, not just run models.</p>
-        <article class="chapter">
-          <div class="chapter-no">05</div>
-          <div>
-            <h3>Data Rights, Provenance, and Responsible Acquisition</h3>
-            <p class="chapter-desc">Covers licensing, consent, identity, traceability, and commercial-use constraints across image, audio, and video data.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Public, licensed, internal, and partner datasets.</li>
-              <li>Voice, face, copyright, likeness, and domain-specific sensitivity.</li>
-              <li>What synthetic data mitigates and what new risks it creates.</li>
-              <li>Documentation expectations: model cards, data cards, provenance logs.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Understand legal and governance constraints before acquiring or generating data.</li>
-              <li>Distinguish provenance requirements across image, audio, and video applications.</li>
-              <li>Know when synthetic data reduces exposure and when it does not.</li>
-            </ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a data-rights and provenance checklist for a project.</li><li>Audit a candidate dataset source before using it.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Define governance assumptions that affect claims and reproducibility.</li><li>Identify where legal constraints shape dataset design.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Dataset cards, model cards, provenance logs, risk registers.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Hugging Face dataset cards, Data Statements, model cards, internal governance templates.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>05_data-rights-audit-template.ipynb</code>, <code>05_provenance-review-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">06</div>
-          <div>
-            <h3>Dataset Design, Schemas, and Versioning</h3>
-            <p class="chapter-desc">Teaches readers how to represent datasets so they can be trained, audited, compared, and published.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Schemas for images, waveforms, clips, segments, tracks, and multimodal prompts.</li>
-              <li>Metadata for seeds, prompts, generators, edits, judges, and reviewers.</li>
-              <li>Versioning prompts, labels, datasets, adapters, and evaluation reports together.</li>
-              <li>Dataset cards, benchmark packs, and reproducibility bundles.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Design schemas that support training, auditing, and future reuse.</li>
-              <li>Version data, prompts, and evaluations in a coherent way.</li>
-              <li>Build reproducibility into the dataset rather than bolting it on later.</li>
-            </ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a schema for the chosen modality and task.</li><li>Version an initial dataset release with metadata and splits.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design metadata needed for later ablations and slice analysis.</li><li>Define what a publishable dataset bundle would require.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>DVC, MLflow artifacts, dataset cards, JSONL/Parquet schemas, benchmark manifests.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>COCO JSON, AudioSet metadata, Parquet multimodal manifests, WebDataset shards, and clip-level schema examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>06_schema-designer.ipynb</code>, <code>06_dataset-versioning-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">07</div>
-          <div>
-            <h3>Annotation Systems, Weak Supervision, and Auto-Labeling</h3>
-            <p class="chapter-desc">Treats labeling as a system, not a manual afterthought.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Human annotation workflows, adjudication, and quality control.</li>
-              <li>Auto-label pipelines with captioning, grounding, segmentation, diarization, transcription models, detector-assisted labeling, and tracker-assisted video annotation.</li>
-              <li>Teacher models, judge models, and pseudo-labeling loops.</li>
-              <li>Label disagreement, noisy labels, correction queues, interpolation workflows, and annotation-ops productivity metrics.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Build annotation pipelines that mix humans and models productively.</li>
-              <li>Understand where weak supervision helps and where it introduces risk.</li>
-              <li>Turn labeling into an iterative system instead of a static stage.</li>
-            </ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Stand up an auto-label plus review workflow for one data slice.</li><li>Create correction queues and quality checks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the effect of auto-label noise on downstream results.</li><li>Compare two weak-supervision strategies under the same evaluation slices.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Label Studio, CVAT, CVAT AI tools, FiftyOne, Argilla, supervision, SAHI, SAM-style models, grounding models, Whisper-class models, pyannote.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>COCO, LVIS, DocVQA-style samples, AudioSet clips, LibriSpeech segments, and CVAT video tasks.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>07_auto-label-and-review-loop.ipynb</code>, <code>07_annotation-ops-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">08</div>
-          <div>
-            <h3>Baselines, Ablations, and Credible Claims</h3>
-            <p class="chapter-desc">Builds the methodological spine needed for course projects, benchmark reports, and research papers.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Real-only, synthetic-only, hybrid, and repurposed-data comparisons.</li>
-              <li>Baseline design, hidden test sets, contamination checks, leakage checks, and slice construction.</li>
-              <li>What counts as a defensible synthetic-data claim, including calibration, uncertainty, and abstention reporting.</li>
-              <li>Replication discipline, confidence intervals, challenge sets, benchmark skepticism, and memorization audits.</li>
-            </ol>
-            <div class="pedagogy">
-              <div><strong>Milestone:</strong><br/>Experiment plan</div>
-              <div><strong>Pitfall:</strong><br/>Leakage</div>
-              <div><strong>Exercise:</strong><br/>Ablation design</div>
-              <div><strong>Output:</strong><br/>Study template</div>
-            </div>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Design defensible synthetic-data experiments with proper baselines and ablations.</li>
-              <li>Recognize leakage, novelty inflation, and weak evaluation design.</li>
-              <li>Prepare the methodological scaffold for later chapters.</li>
-            </ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Write an experiment template with baselines, slices, and outputs.</li><li>Define hidden-test and failure-slice policies.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a project idea into a claim, baseline, and ablation table.</li><li>Specify what evidence would falsify the claim.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Evaluate, custom benchmark harnesses, calibration metrics, uncertainty plots, contamination audits, confidence interval tooling, memorization checks, experiment tracking systems.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>ImageNet, COCO, AudioSet, LibriSpeech, FLEURS, custom challenge sets, and hidden holdout splits.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>08_ablation-planner.ipynb</code>, <code>08_hidden-test-and-calibration-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-      <section class="part" id="part3">
-        <div class="part-label">Part III</div>
-        <h2>Representations, Architectures, and Model Selection</h2>
-        <p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging.</p>
-        <article class="chapter">
-          <div class="chapter-no">09</div>
-          <div>
-            <h3>Embeddings, Self-Supervision, and Shared Representation Spaces</h3>
-            <p class="chapter-desc">Explains the representation layer that powers retrieval, filtering, zero-shot transfer, and multimodal alignment.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>From features to embeddings: ViT patch tokens, AST spectrogram tokens, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>
-              <li>Contrastive learning, masked modeling, DINO-style pretraining, CLIP-style alignment, and wav2vec2 / HuBERT-style self-supervision.</li>
-              <li>Retrieval, nearest neighbors, clustering, ANN indexes, and representation-driven QA with FAISS-like workflows.</li>
-              <li>Shared embedding spaces across text, image, audio, and video using CLIP, OpenCLIP, SigLIP, and audio-text alignment models.</li>
-              <li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>Why embeddings are often the first useful baseline before full fine-tuning.</li>
-              <li>How representation learning supports filtering, labeling, and synthetic-data validation.</li>
-              <li>Which retrieval workflows matter for later multimodal chapters.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Use embeddings for retrieval, filtering, and first-pass baselines.</li><li>Interpret where self-supervised representations help low-label regimes.</li><li>Diagnose basic representation-space failures.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a nearest-neighbor and clustering inspection notebook.</li><li>Use embeddings to filter or relabel a data subset.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare two representation models for the same downstream task.</li><li>Analyze zero-shot versus task-specific representation quality.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>CLIP, OpenCLIP, SigLIP, timm, torchvision feature extractors, FAISS-style indexes, FiftyOne embeddings panels.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>ImageNet, Flickr30k, LAION subsets, AudioSet, FLEURS, and MSR-VTT for representation and retrieval examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>09_embedding-space-lab.ipynb</code>, <code>09_retrieval-and-clustering-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">10</div>
-          <div>
-            <h3>Attention, Transformers, and Multimodal Fusion</h3>
-            <p class="chapter-desc">Builds from token interactions to dual-encoder, cross-attention, connector, and omni-style systems.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Attention as contextual similarity weighting and learned routing.</li>
-              <li>Transformer blocks, RoPE and learned positional information, scaling behavior, KV-cache costs, and FlashAttention-era efficiency patterns.</li>
-              <li>Dual encoders, late fusion, cross-attention, Q-Former-style connectors, Perceiver-style resamplers, and adapter bridges.</li>
-              <li>Temporal aggregation for audio and video sequences using pooling, attention pooling, TimeSformer-style blocks, and conformer-style context mixing.</li>
-              <li>Long-context multimodal reasoning, memory compression, chunking, and current bottlenecks in video and audio-plus-text systems.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>The architecture vocabulary needed to read modern multimodal papers and repos.</li>
-              <li>How fusion choices affect retrieval, grounding, and downstream fine-tuning.</li>
-              <li>Where later system chapters inherit their design tradeoffs.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Read and compare multimodal architecture diagrams with confidence.</li><li>Understand the tradeoffs between dual-encoder and cross-attention systems.</li><li>Connect fusion design to latency, memory, and model quality.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Trace token flow through one dual-encoder and one cross-attention system.</li><li>Prototype a simple fusion baseline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame connector choice as an ablation variable.</li><li>Analyze where long-context multimodal reasoning still breaks.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Transformers, flash-attn, xformers, Q-Former-style connectors, Perceiver resamplers, attention visualization tools, torchtune.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>MSCOCO captions, Flickr30k, VQAv2, AudioCaps, MSR-VTT, and Ego4D clips for fusion examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>10_attention-and-fusion-lab.ipynb</code>, <code>10_dual-encoder-vs-cross-attention-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">11</div>
-          <div>
-            <h3>Generative Model Families for Image, Audio, and Video</h3>
-            <p class="chapter-desc">Compares autoregressive, latent-variable, diffusion, flow-matching, and codec-token approaches from a utility perspective.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Autoregressive models, tokenization choices, next-token objectives, and sequential generation for image tokens, audio tokens, and multimodal streams.</li>
-              <li>Latent-variable models, VAEs, representation compression, latent bottlenecks, and reconstruction tradeoffs.</li>
-              <li>Diffusion models: forward and reverse processes, DDPM/DDIM families, schedulers, samplers, classifier-free guidance, and latent diffusion U-Nets and DiTs.</li>
-              <li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, and faster-generation trends for image and video systems.</li>
-              <li>Codec-token and audio generation models for speech and sound, including neural codecs, residual vector quantization, and token-LM generation.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to choose a generative family based on controllability, label fidelity, and cost.</li>
-              <li>Why diffusion is dominant for editing and controllable image/video generation.</li>
-              <li>Which model families are best suited for synthetic-data creation rather than pure media generation.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Compare generative model families using engineering and data-utility criteria.</li><li>Understand why diffusion pipelines dominate editing workflows.</li><li>Map model families to the downstream tasks they best support.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Select one generator family for each case-study modality.</li><li>Benchmark quality, controllability, and speed at a small scale.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Formulate when flow-matching-style methods may change the trade space.</li><li>Compare usefulness and realism as distinct objectives.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers, latent diffusion and DiT-style models, AutoencoderKL-style VAEs, LCM-LoRA-style acceleration, MusicGen / AudioCraft-style stacks, EnCodec-style codecs, autoregressive token generators.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Prompt evaluation suites, image-generation challenge prompts, AudioCaps, MusicCaps, and internal labeled generation challenge sets.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>11_generator-family-comparison.ipynb</code>, <code>11_diffusion-vs-autoregressive-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">12</div>
-          <div>
-            <h3>Foundation Models, Document AI, and Omni Systems in Practice</h3>
-            <p class="chapter-desc">Covers vision-language, audio-language, video-language, document-centric, segmentation, grounding, and omni-style model families with a focus on where each one belongs in a real system.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, SmolDocling-, and document-VLM families.</li>
-              <li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, audio-chat models, and omni interfaces.</li>
-              <li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>
-              <li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, and grounded-segmentation stacks.</li>
-              <li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>
-              <li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>
-              <li>When a generalist open model is enough and when a specialized stack is stronger.</li>
-              <li>How to shortlist models for later chapters using task, cost, latency, controllability, and governance criteria.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, and task-specialized models.</li><li>Create a shortlist for the project pipeline.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>12_foundation-model-shortlisting.ipynb</code>, <code>12_vlm-audio-model-role-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">13</div>
-          <div>
-            <h3>Pre-Deployment Debugging for Modern Multimodal Models</h3>
-            <p class="chapter-desc">Separates model and dataset debugging before deployment from the later chapter on post-deployment monitoring, drift, and incident response.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Separating data, prompt, representation, architecture, and serving-path failures.</li>
-              <li>Embedding inspection, error clustering, nearest-neighbor diagnostics, and slice dashboards in FiftyOne-style QA flows.</li>
-              <li>Prompt sensitivity, hallucination, grounding failures, and brittle OCR or retrieval behavior in VLM systems.</li>
-              <li>Temporal failure analysis for video, tracking drift, and overlap/noise analysis for audio and speech systems.</li>
-              <li>Debugging workflows from notebook experiments to production incidents using logs, traces, and dataset-level audits.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to tell whether poor performance is caused by the model or the dataset.</li>
-              <li>How to create actionable failure buckets that feed the synthetic-data engine.</li>
-              <li>Why debugging is a core skill for both research and deployment.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Trace failures to data, prompt, representation, or architecture causes.</li><li>Build diagnostic views that support iteration.</li><li>Connect debugging to later regeneration and fine-tuning decisions.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create failure buckets and one debugging dashboard for the case study.</li><li>Run an embedding-based error analysis pass.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Use debugging artifacts to motivate new ablations.</li><li>Separate measurement artifacts from real method weaknesses.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>FiftyOne, confusion analysis notebooks, embedding indexes, prompt traces, evaluation dashboards, incident review templates.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Failure-slice subsets derived from COCO, AudioSet, LibriSpeech, Ego4D, and project-specific hidden examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>13_failure-bucket-debugger.ipynb</code>, <code>13_prompt-and-data-debug-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="part4">
-        <div class="part-label">Part IV</div>
-        <h2>Synthetic Data Design and Operations</h2>
-        <p class="part-intro">This part is explicitly organized around the synthetic-data engine: choose a strategy, create or repurpose data, validate it operationally, and prepare clean inputs for later training and evaluation.</p>
-        <article class="chapter">
-          <div class="chapter-no">14</div>
-          <div>
-            <h3>Designing the Synthetic Data Engine</h3>
-            <p class="chapter-desc">Frames synthetic data as an iterative workflow rather than a generation event.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Generated, augmented, repurposed, and hybrid strategies with explicit decision criteria for vision, audio, video, and multimodal tasks.</li>
-              <li>Failure-slice discovery, coverage planning, taxonomy design, and curriculum-style data scheduling.</li>
-              <li>When to use simulation, diffusion editing, weak-label repurposing, distillation-friendly pseudo-labeling, or full generation from scratch.</li>
-              <li>Data economics: generation cost, reviewer cost, GPU-hours, storage, iteration-cycle time, and synthetic-to-real mixing policy.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Design synthetic-data workflows as iterative systems rather than isolated prompts.</li><li>Choose between generation, editing, repurposing, and simulation.</li><li>Estimate the cost and value of synthetic-data campaigns.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a synthetic-data strategy memo for the case study.</li><li>Define failure slices and coverage targets.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn the data strategy into a comparison study design.</li><li>Specify which strategy choices are experimental variables.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers, simulation stacks, spreadsheet-style coverage planners, prompt matrices, DVC/MLflow runs, QA dashboards, data-mixture planning tables.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Case-study slice tables, long-tail taxonomies, synthetic-vs-real benchmark manifests, and hidden failure-slice catalogs.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>14_synthetic-data-engine-planner.ipynb</code>, <code>14_failure-slice-to-data-plan-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">15</div>
-          <div>
-            <h3>Image Data: Generation, Editing, and Repurposing</h3>
-            <p class="chapter-desc">Covers prompt-driven generation, editing workflows, auto-labeling, and label-aware repurposing for image tasks.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Text-to-image and latent diffusion pipelines for labeled sample generation using Stable Diffusion-class models, Flux-style pipelines, modular Diffusers workflows, and reusable generation graphs.</li>
-              <li>Image editing workflows: inpainting, outpainting, image-to-image translation, relighting, style transfer, compositing, object insertion/removal, and DiffEdit-style editing with mask-aware pipelines.</li>
-              <li>Control mechanisms: ControlNet, T2I-Adapter, masks, depth, canny, pose, segmentation maps, normal maps, layout conditioning, region-based prompts, IP-Adapter-style image control, and MultiAdapter composition.</li>
-              <li>Personalization and concept control: textual inversion, DreamBooth-style tuning, LoRA adapters, adapter composition, and prompt token engineering.</li>
-              <li>Negative prompts, prompt matrices, attribute coverage tables, seeded batch recipe design, style-diversity controls, image-reward filtering, and LCM-style fast-generation recipes for large-scale data synthesis.</li>
-              <li>Repurposing real datasets through relabeling, weak supervision, editing, synthetic augmentation, and domain transfer.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>Modern diffusion-based data generation and editing pipelines, not just basic prompting.</li>
-              <li>How to create controllable labeled examples with editing instead of always generating from scratch.</li>
-              <li>When textual inversion, LoRA, or ControlNet produce better synthetic training data than raw prompt engineering alone.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Use diffusion pipelines for controllable synthetic image creation and editing.</li><li>Apply inpainting, image editing, ControlNet, and textual inversion to build labeled data.</li><li>Choose between raw prompting, editing, and personalization methods.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a reusable image recipe library with prompts, controls, and edit masks.</li><li>Run one comparison between prompt-only and ControlNet or edit-based generation.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure how editing methods affect label fidelity and diversity.</li><li>Compare textual inversion or LoRA personalization against generic prompting.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers, Stable Diffusion-class pipelines, Flux-style pipelines, modular diffusion pipelines, ControlNet, T2I-Adapter, MultiAdapter, inpainting models, IP-Adapter-style control modules, DiffEdit-style editing, textual inversion, DreamBooth-style tuning, LoRA adapters, LCM-LoRA-style acceleration, image reward models, kornia and OpenCV for mask prep.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>COCO, LVIS, synthetic prompt suites, internal attribute-coverage tables, and prompt-based challenge sets.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>15_diffusion-data-recipes.ipynb</code>, <code>15_controlnet-inpainting-textual-inversion-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">16</div>
-          <div>
-            <h3>Video Data: Temporal Labels, Tracks, and Synthetic Clips</h3>
-            <p class="chapter-desc">Makes temporal annotation, tracking, segmentation, and consistency explicit rather than hiding them inside generic video coverage.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Clip schemas, event timelines, track IDs, keyframe structures, and annotation interpolation policies.</li>
-              <li>Image-to-video, text-to-video, video editing, interpolation, keyframe-conditioned generation, and temporally conditioned pipelines.</li>
-              <li>Tracking, temporal grounding, segmentation propagation, interpolation-based annotation, SAM 2-style video tracking, event localization, and reviewer correction loops for clip labeling.</li>
-              <li>Temporal consistency, motion realism, and video-specific failure buckets.</li>
-              <li>Repurposing video via captioning, slicing, relabeling, and track correction.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>Why video needs data structures and QA patterns beyond image datasets.</li>
-              <li>How synthetic video differs from image generation because time itself must be modeled.</li>
-              <li>How to prepare clips for tracking, localization, and multimodal event understanding.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Design synthetic video datasets with explicit temporal structure.</li><li>Understand the difference between frame realism and temporal consistency.</li><li>Prepare video data for tracking, localization, and multimodal tasks.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a clip schema with tracks, segments, and keyframes.</li><li>Build a small synthetic or repurposed video set and run temporal QA.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how temporal consistency affects downstream model utility.</li><li>Compare two labeling or generation strategies for clip data.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers video pipelines, decord, PyAV, supervision/CVAT-style video tooling, SAM 2-based tracking workflows, temporal grounding models, video-language models, Label Studio video interfaces, OpenCV-based tracker assists.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>MSR-VTT, ActivityNet, Ego4D, Something-Something, and custom event clips for temporal labeling examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>16_temporal-labeling-lab.ipynb</code>, <code>16_video-tracking-and-grounding-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">17</div>
-          <div>
-            <h3>Audio Data: Speech, Events, TTS, Diarization, and Voice Transformation</h3>
-            <p class="chapter-desc">Expands the audio story to include synthetic speech, augmentation, weak labeling, TTS, diarization, watermarking, and voice-related risks.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Speech, acoustic events, environmental audio, and mixed-source scenarios.</li>
-              <li>Noise, reverberation, channel shift, overlap, and speaker variation simulation.</li>
-              <li>Weak labeling with ASR, diarization, speaker identification, event detectors, VAD, segmentation tools, and multi-channel transcription interfaces.</li>
-              <li>TTS, voice conversion, synthetic speech corpora, speaker balancing, multilingual augmentation, dubbing workflows, and optional music or structured-audio generation as an advanced branch.</li>
-              <li>Voice safety, consent, identity risk, disclosure requirements, watermarking or provenance signals, and streaming inference tradeoffs.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to build audio datasets with realistic acoustic variation.</li>
-              <li>When synthetic speech helps downstream tasks and when it introduces artifacts.</li>
-              <li>How voice-related generation changes the governance story.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Simulate channel, noise, and overlap conditions for one audio task.</li><li>Build a synthetic speech or event-augmentation workflow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the gap between transcription quality and downstream utility.</li><li>Compare augmentation-heavy and generation-heavy audio pipelines.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>LibriSpeech, FLEURS, VoxCeleb, AudioSet, ESC-50, AudioCaps, AMI-style diarization sets, and optional MusicCaps examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>17_audio-synthetic-data-lab.ipynb</code>, <code>17_tts-augmentation-and-diarization-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">18</div>
-          <div>
-            <h3>Simulation, Procedural Data, and Real-to-Sim-to-Real Pipelines</h3>
-            <p class="chapter-desc">Adds 3D, simulation, procedural generation, and real-to-sim-to-real workflows for robotics, inspection, and controlled scene generation.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Procedural generation and rendering pipelines with asset libraries, scene graphs, and camera-control scripts.</li>
-              <li>Camera control, lighting, pose variation, materials, domain randomization, and synthetic sensor effects.</li>
-              <li>Simulator-generated labels, depth maps, masks, tracks, pose metadata, and multimodal environment logs.</li>
-              <li>Real-to-sim-to-real adaptation loops, simulator fine-tuning data, and perception or policy data for embodied or VLA-style systems.</li>
-              <li>When simulators beat prompting for robotics, inspection, autonomous perception, and rare-event video tasks.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Understand when simulation is a better tool than generative prompting.</li><li>Design procedural data with controllable labels and metadata.</li><li>Connect simulation outputs to downstream training and QA.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Specify one procedural or simulation pipeline for a case-study slice.</li><li>Define which labels come “for free” from the simulator.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare simulation-heavy and diffusion-heavy data strategies.</li><li>Study domain randomization as an experimental variable.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>BlenderProc-style pipelines, Isaac Sim / Replicator-style simulator stacks, domain-randomization tools, scene-graph exporters, synthetic sensor stacks, and embodied-data generation workflows.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>BOP-style pose tasks, simulator-native robotics scenes, industrial synthetic scenes, and synthetic segmentation exports.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>18_procedural-simulation-pipeline.ipynb</code>, <code>18_domain-randomization-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">19</div>
-          <div>
-            <h3>Synthetic Data Operations: QA, Filtering, Reward Models, and Judge Loops</h3>
-            <p class="chapter-desc">Focuses on operational QA after generation or repurposing so it does not blur together with the earlier chapter on annotation systems and auto-labeling.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Duplicate detection, corruption checks, low-information filtering, semantic near-duplicate detection, and distribution audits.</li>
-              <li>Judge models, confidence scoring, teacher-model review, rubric-based scoring, active error discovery, image-reward or preference-style ranking workflows, and acceptance-threshold tuning.</li>
-              <li>Human review queues, adjudication, label repair, and escalation workflows.</li>
-              <li>Bias checks, memorization checks, provenance validation, watermark verification where applicable, leakage checks, near-duplicate filtering with embedding or image-dedup tools, and calibration-aware filtering policies.</li>
-              <li>Stopping criteria, iteration policies, and sample acceptance/rejection logging for generation campaigns.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to prevent synthetic-data pipelines from becoming silent failure factories.</li>
-              <li>How to combine automatic judges and humans efficiently.</li>
-              <li>How QA results feed back into new data-generation rounds.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Build QA loops that scale beyond manual spot-checking.</li><li>Use judge models and human review coherently.</li><li>Feed QA outcomes back into the data engine.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create filtering and review queues for one synthetic dataset.</li><li>Define a stopping rule for a generation campaign.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure how judge thresholds affect downstream quality.</li><li>Analyze which failure buckets are most predictive of training failure.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>FiftyOne, FiftyOne dedup/similarity plugins, Argilla, Distilabel image and preference tasks, Label Studio/CVAT review queues, duplicate detection, embedding diagnostics, judge-model score logs, calibration reports.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Review queues built from synthetic COCO-like sets, AudioSet subsets, clip subsets, and preference-ranked generations.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>19_generate-and-judge-ops.ipynb</code>, <code>19_duplicate-detection-and-review-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">20</div>
-          <div>
-            <h3>Synthetic Data for Training, Evaluation, Stress Testing, and Challenge Sets</h3>
-            <p class="chapter-desc">Separates three uses of synthetic data that are often conflated and need different design principles.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Training data for coverage, balancing, sample-mixture scheduling, and teacher-student distillation workflows.</li>
-              <li>Evaluation data for hidden slices, rare cases, contamination checks, memorization checks, and challenge-set construction.</li>
-              <li>Stress tests for robustness, safety, failure analysis, distribution-shift probing, and abstention-policy testing.</li>
-              <li>Why realism, calibration, uncertainty, and usefulness are not the same objective.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Separate training, evaluation, and stress-test data design goals.</li><li>Use synthetic data to probe robustness and safety, not only improve training coverage.</li><li>Avoid conflating visual or acoustic realism with downstream usefulness.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create one synthetic training set and one synthetic stress-test set.</li><li>Compare how each affects conclusions about model quality.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design an experiment that isolates usefulness from realism.</li><li>Build a hidden-slice benchmark with synthetic support data.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Benchmark harnesses, hidden-test generators, challenge-set templates, stress-test templates, realism, calibration, uncertainty, abstention, and utility metrics.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>ImageNet-C style corruptions, AudioSet shift subsets, custom rare-event suites, and synthetic challenge-set packs.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>20_training-vs-eval-vs-stress-test.ipynb</code>, <code>20_challenge-set-construction-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="part5">
-        <div class="part-label">Part V</div>
-        <h2>Training, Multimodal Systems, and Operations</h2>
-        <p class="part-intro">Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh.</p>
-        <article class="chapter">
-          <div class="chapter-no">21</div>
-          <div>
-            <h3>Fine-Tuning Vision and Video Models</h3>
-            <p class="chapter-desc">Covers task-model training, adapter-based tuning, slice-based evaluation, and interpretation of gains from synthetic mixtures.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, ViT, DETR-style, and segmentation backbones.</li>
-              <li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>
-              <li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>
-              <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules and sample weighting policies.</li>
-              <li>Slice-based evaluation across viewpoint, lighting, motion, occlusion, domain shift, and rare cases.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to measure whether synthetic data actually improves model utility.</li>
-              <li>How to structure fine-tuning so later deployment remains feasible.</li>
-              <li>How video fine-tuning differs from image-only adaptation.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Run a real-only vs hybrid fine-tuning comparison.</li><li>Evaluate across rare slices and motion-heavy slices.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design a synthetic-data ablation for one vision or video task.</li><li>Compare representation-first and end-to-end tuning.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, detection and segmentation heads, video backbones, FiftyOne evaluation views.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>ImageNet, COCO, LVIS, YouTube-VIS, MSR-VTT, Ego4D slices, and custom hybrid train/eval splits.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>21_vision-video-finetuning-lab.ipynb</code>, <code>21_real-vs-hybrid-training-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">22</div>
-          <div>
-            <h3>Fine-Tuning Audio Models and Streaming Speech Systems</h3>
-            <p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, synthetic-speech adaptation, and streaming speech systems.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, and spoken-intent or meeting analytics.</li>
-              <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, and audio-language model training patterns.</li>
-              <li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>
-              <li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>
-              <li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to adapt audio models under realistic acoustic stress.</li>
-              <li>Why synthetic audio should be evaluated by task utility, not audio realism alone.</li>
-              <li>How to compare speech and audio pipelines fairly.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Train one audio model under channel/noise stress conditions.</li><li>Compare at least two evaluation slice families.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure where synthetic audio helps and where it overfits to artifacts.</li><li>Test whether speech and event tasks respond differently to synthetic data.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, VAD and diarization tooling, Evaluate metrics.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>LibriSpeech, FLEURS, VoxPopuli, VoxCeleb, AudioSet, ESC-50, AMI-style diarization data.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>22_audio-finetuning-lab.ipynb</code>, <code>22_noise-overlap-slice-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">23</div>
-          <div>
-            <h3>Building Multimodal Retrieval, RAG, and Agent Systems</h3>
-            <p class="chapter-desc">Assembles retrieval, generation, grounding, structured outputs, and temporal reasoning into end-to-end multimodal products.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Retrieval systems with shared embeddings, multimodal indexes, vector stores, reranking stages, and document-centric retrieval for PDFs, charts, and slides.</li>
-              <li>Grounded generation with retrieval, perception, tool use, structured outputs, schema validation, and explanation components.</li>
-              <li>Chat-with-image, chat-with-audio, chat-with-video, document-question-answering, multimodal RAG, and mixed-modality workflow interfaces.</li>
-              <li>Temporal reasoning, diarized evidence, and event understanding across audio and video.</li>
-              <li>System decomposition: modular pipelines, orchestrated tool use, agentic workflows, versus generalist omni interfaces.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to move from model demos to complete multimodal systems.</li>
-              <li>How retrieval and generation complement each other.</li>
-              <li>How to architect systems that remain debuggable and extensible.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a multimodal retrieval-plus-generation prototype.</li><li>Implement one audio-video or image-text interaction flow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular and omni-style architectures on one case-study slice.</li><li>Measure where grounding improves reliability.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Flickr30k retrieval, DocVQA, ChartQA, MMDocIR-style long-document retrieval, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>23_multimodal-system-builder.ipynb</code>, <code>23_retrieval-plus-generation-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">24</div>
-          <div>
-            <h3>Inference Engineering, Deployment, and Cost Control</h3>
-            <p class="chapter-desc">Covers quantization, adapters, serving stacks, throughput, latency, cost budgets, and regression checks.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Quantization, QLoRA, quantization-aware training, adapter merging, KV-cache implications, and memory-aware inference.</li>
-              <li>Serving stacks: vLLM, TGI, TEI, SGLang, FastAPI, Gradio, task-specific microservices, and structured-output or tool-calling serving paths.</li>
-              <li>Batch pipelines versus interactive applications, streaming speech pipelines, and asynchronous job queues.</li>
-              <li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, runtime-selection heuristics, and cost forecasting.</li>
-              <li>Regression testing, compatibility testing, eval-on-deploy checks, structured-output validation, and release checklists.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How to choose a serving path that matches model type and product constraints.</li>
-              <li>How training choices affect deployment feasibility later.</li>
-              <li>How to keep costs visible instead of discovering them too late.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Serve one model path and benchmark throughput, latency, and cost.</li><li>Run a regression check after an optimization change.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how inference choices change measured model behavior.</li><li>Compare a deployable stack to a research-only stack.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Internal latency benchmark suites, throughput test prompts, streaming speech eval sets, and schema-validation test fixtures.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>24_inference-benchmark-lab.ipynb</code>, <code>24_quantization-and-serving-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">25</div>
-          <div>
-            <h3>Monitoring, Drift, and Failure Analysis in the Wild</h3>
-            <p class="chapter-desc">Adds the missing post-deployment chapter on feedback loops, drift detection, rollback logic, and failure triage.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Operational metrics, latency regressions, quality drift, and abstention-rate drift.</li>
-              <li>Embedding drift, data drift, prompt drift, model-output drift, and retrieval-index drift.</li>
-              <li>Human escalation, rollback, safe fallback patterns, and abuse-response playbooks.</li>
-              <li>User feedback loops, production trace capture, and post-deployment synthetic-data refresh cycles.</li>
-              <li>Incident review, root-cause analysis templates, multimodal prompt-injection or misuse checks, and provenance or watermark verification for generated media where relevant.</li>
-            </ol>
-            <div class="label">What This Chapter Covers</div>
-            <ul>
-              <li>How deployed multimodal systems fail after launch.</li>
-              <li>How to turn production failures into new slices for data generation and tuning.</li>
-              <li>How to operationalize the book’s iterative workflow end to end.</li>
-            </ul>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a monitoring and triage template for the selected case study.</li><li>Define one post-launch refresh loop using synthetic data.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame production drift as a research question about generalization.</li><li>Compare two refresh-loop strategies after a simulated deployment failure.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Post-deployment logs, drift slices, failure replays, and curated incident-review examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>25_monitoring-and-refresh-loop.ipynb</code>, <code>25_drift-and-rollback-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="part6">
-        <div class="part-label">Part VI</div>
-        <h2>Applications, Frontiers, and Capstones</h2>
-        <p class="part-intro">The closing part broadens adoption value by mapping the toolkit to domain-specific systems, then closes with frontier questions, anti-patterns, and final projects.</p>
-        <article class="chapter">
-          <div class="chapter-no">26</div>
-          <div>
-            <h3>Application Blueprint: Industrial Inspection and Manufacturing</h3>
-            <p class="chapter-desc">Shows how synthetic image and video data support rare-defect coverage, inspection reliability, and deployment on production lines.</p>
-            <div class="label">Blueprint Template</div>
-            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Problem profile: defect taxonomies, edge cases, station layout, review latency, and cost of false negatives versus false positives.</li>
-              <li>Data strategy: procedural rendering, simulator-driven scenes, controlled editing, and hybrid real-plus-synthetic sampling for scarce defect classes.</li>
-              <li>Model and system stack: segmentation, detection, anomaly scoring, retrieval-assisted review, and operator-facing inspection interfaces.</li>
-              <li>Evaluation and deployment: slice design across lighting, angle, material, speed, and rarity, plus line-side deployment and human-review station patterns.</li>
-              <li>Governance and research angle: traceability of synthetic defects, acceptance thresholds, and research questions around rare-event generalization.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Map synthetic-data methods to inspection workflows with clear cost and safety constraints.</li><li>Choose between procedural, edited, and generated data for industrial vision.</li><li>Design evaluation and deployment plans around rare, high-cost failures.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a defect-data strategy and model stack for one inspection task.</li><li>Design a deployment-oriented slice and review plan.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a rare-defect problem into a synthetic-data study with clear baselines.</li><li>Compare simulation-heavy and diffusion-heavy defect pipelines.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Diffusers, simulation/procedural rendering stacks, segmentation and detection models, retrieval tools.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>MVTEC AD, VisA, DAGM-style defect sets, and synthetic defect challenge packs.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>26_industrial-inspection-blueprint.ipynb</code>, <code>26_defect-slice-and-synthetic-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">27</div>
-          <div>
-            <h3>Application Blueprint: Speech, Audio Analytics, and Voice Systems</h3>
-            <p class="chapter-desc">Covers multilingual ASR, diarization, event detection, voice interfaces, and synthetic speech systems using the same blueprint template as the other domain chapters.</p>
-            <div class="label">Blueprint Template</div>
-            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Problem profile: speech analytics, meeting intelligence, contact-center audio, voice interfaces, and their latency, accuracy, and privacy constraints.</li>
-              <li>Data strategy: weak labeling, multilingual balancing, overlap and channel simulation, synthetic speech augmentation, and repurposed conversational audio.</li>
-              <li>Model and system stack: multilingual ASR, language ID, diarization, event detection, TTS or voice-assistant components, and streaming speech pipelines.</li>
-              <li>Evaluation and deployment: WER plus task-utility metrics, speaker and language slices, streaming latency, and escalation-to-human workflows.</li>
-              <li>Governance and research angle: identity, consent, disclosure, provenance, and open questions around synthetic speech transfer across languages and speakers.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Understand how audio and voice systems differ by task, runtime, and risk profile.</li><li>Use synthetic and weakly labeled data to strengthen speech and event pipelines.</li><li>Incorporate identity, disclosure, and provenance constraints into system design.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Outline a multilingual speech or event-detection system with a concrete data strategy.</li><li>Define where TTS, diarization, or synthetic speech is useful in the pipeline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare data strategies across ASR, diarization, and event tasks.</li><li>Study how synthetic speech shifts multilingual performance and failure modes.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Whisper-class systems, wav2vec2-family models, pyannote, TTS stacks, audio analytics dashboards.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>LibriSpeech, FLEURS, VoxPopuli, AMI-style meeting audio, VoxCeleb, AudioSet.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>27_speech-and-voice-blueprint.ipynb</code>, <code>27_multilingual-asr-and-diarization-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">28</div>
-          <div>
-            <h3>Application Blueprint: Robotics, Accessibility, and Multimodal Incident Systems</h3>
-            <p class="chapter-desc">Maps embodied perception, assistive systems, and video-plus-audio evidence workflows to the same blueprint template while avoiding overlap with the earlier document-AI and retrieval chapters.</p>
-            <div class="label">Blueprint Template</div>
-            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Problem profile: embodied robotics tasks, accessibility assistance goals, and incident-review workflows with high-stakes multimodal evidence.</li>
-              <li>Data strategy: simulation-heavy robotics data, assistive captioning or audio-description corpora, incident clips, and targeted synthetic refresh for rare temporal situations.</li>
-              <li>Model and system stack: VLA-style perception modules, assistive captioning and grounding models, temporal retrieval, and operator-facing multimodal copilots.</li>
-              <li>Evaluation and deployment: safety and intervention metrics for robotics, usefulness metrics for accessibility, and evidence-quality plus time-to-resolution metrics for incident systems.</li>
-              <li>Governance and research angle: high-stakes human oversight, embodied failure recovery, accessibility quality review, and open questions in temporal grounding and multimodal evidence fusion.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Adapt the book’s toolkit to robotics, accessibility, and multimodal incident systems.</li><li>Recognize where simulation, grounding, and temporal multimodal evidence become essential.</li><li>Frame product goals differently across high-stakes domains without collapsing them into one generic architecture.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Choose one blueprint and sketch its end-to-end data, model, and human-review flow.</li><li>Define the highest-risk failure slices and deployment constraints for that domain.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn one blueprint into a scoped lab or capstone project with clear evaluation criteria.</li><li>Compare how simulation, assistance, or multimodal evidence changes evaluation design.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Simulation stacks, VLMs, temporal retrieval systems, captioning models, grounding models, temporal reasoning pipelines, and multimodal copilot interfaces.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Ego4D, robotics simulation scenes, accessibility caption corpora, and incident-review clip collections.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>28_robotics-accessibility-incident-blueprint.ipynb</code>, <code>28_multimodal-evidence-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">29</div>
-          <div>
-            <h3>Research Frontiers and Open Questions</h3>
-            <p class="chapter-desc">Organizes current frontier work around scaling laws, artifact overfitting, temporal reasoning, omni models, and world-model-style learning.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Synthetic-data scaling laws and diminishing returns.</li>
-              <li>Artifact overfitting, hidden leakage, contamination, memorization, and synthetic-to-real generalization.</li>
-              <li>Temporal reasoning, causality, and consistency in video and multimodal streams.</li>
-              <li>Omni models, any-to-any generation, unified embeddings, and modular alternatives.</li>
-              <li>Preference optimization and multimodal post-training for VLMs and omni systems using DPO, GRPO, and related alignment methods.</li>
-              <li>World models, simulation, embodied multimodal learning, and real-to-sim-to-real adaptation.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Recognize the main open research questions behind current system limitations.</li><li>Connect frontier topics to concrete project directions.</li><li>Read new multimodal papers with a stronger organizing framework.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>List frontier limits that affect the chosen case study today.</li><li>Translate one open problem into a practical workaround.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Convert one frontier topic into a testable semester project.</li><li>Define what would count as meaningful evidence on that topic.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Recent multimodal foundation models, simulator stacks, ViDoRe-style retrieval benchmarks, TRL multimodal alignment methods, frontier surveys.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Frontier benchmark suites, retrieval leaderboards, synthetic-to-real challenge studies, and recent workshop tracks.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>29_frontier-reading-map.ipynb</code>, <code>29_open-problem-selection-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">30</div>
-          <div>
-            <h3>Anti-Patterns, Failed Designs, and When Not to Use Synthetic Data</h3>
-            <p class="chapter-desc">Adds an explicit “what not to build” chapter to keep the book honest and practically useful.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>When synthetic realism hides label problems.</li>
-              <li>When benchmarks are misleading.</li>
-              <li>When data generation is more expensive than targeted collection.</li>
-              <li>When product constraints make a simpler baseline the right choice.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Recognize when synthetic data is the wrong tool or the wrong first move.</li><li>Spot common overclaiming and benchmarking mistakes.</li><li>Choose simpler systems when they are more defensible or useful.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Red-team the current project plan for unnecessary complexity.</li><li>Identify one simpler alternative baseline worth testing.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Write a failure analysis of a synthetic-data idea that should not be pursued.</li><li>Define which negative results would still be valuable to report.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Benchmark diagnostics, cost sheets, baseline templates, review checklists.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Negative case studies, failed benchmark setups, overfit synthetic corpora, and cost blow-up examples.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>30_antipattern-red-team.ipynb</code>, <code>30_when-not-to-use-synthetic-data-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">31</div>
-          <div>
-            <h3>Capstones, Replication Studies, and Paper-Style Contributions</h3>
-            <p class="chapter-desc">Closes the book with concrete output formats for students, practitioners, and researchers.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Capstones with milestone outputs across the book.</li>
-              <li>Replication studies and benchmark re-evaluation projects.</li>
-              <li>Short-paper, system report, and reproducibility package templates.</li>
-              <li>How to scope something ambitious enough to matter and small enough to finish.</li>
-            </ol>
-            <div class="pedagogy">
-              <div><strong>Milestone:</strong><br/>Final system</div>
-              <div><strong>Pitfall:</strong><br/>Novelty inflation</div>
-              <div><strong>Exercise:</strong><br/>Paper outline</div>
-              <div><strong>Output:</strong><br/>Capstone package</div>
-            </div>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Scope and deliver a credible capstone, replication study, or short-paper contribution.</li><li>Package code, data, prompts, and evaluations coherently.</li><li>Distinguish a buildable project from a publishable one.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Package a final system, demo, and benchmark report.</li><li>Create a clean artifact bundle with configs and assets.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Write a paper outline with claim, baselines, ablations, and discussion.</li><li>Prepare a reproducibility package suitable for course or workshop review.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Artifact templates, benchmark reports, system cards, paper templates, demo frameworks.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Capstone datasets selected from earlier chapter blueprints plus instructor-provided hidden test suites.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>31_capstone-starter-pack.ipynb</code>, <code>31_reproducibility-and-demo-package-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">32</div>
-          <div>
-            <h3>Teaching Studios, Assessment Design, and Course Reuse</h3>
-            <p class="chapter-desc">Makes the teacher perspective explicit by turning the book into a reusable teaching system for semester courses, workshops, bootcamps, and guided self-study cohorts.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Mapping chapters to lectures, recitations, labs, and project checkpoints.</li>
-              <li>Assessment architecture: quizzes, coding labs, reading responses, project reviews, and final presentations.</li>
-              <li>Project scaffolding by difficulty level and by domain.</li>
-              <li>How instructors can shorten, deepen, or reorder the book without breaking coherence.</li>
-              <li>How to teach the same material differently to practitioners, students, and research audiences.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Turn the book into a complete teaching sequence rather than a reading list.</li>
-              <li>Design assessments that reflect the book’s system-building goals.</li>
-              <li>Reuse the material flexibly across different teaching formats.</li>
-            </ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a course plan, lab calendar, and grading structure.</li><li>Choose which project milestones become graded deliverables.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Adapt the book for a seminar, reading group, or research studio.</li><li>Convert selected chapters into replication or critique assignments.</li></ul></div></div>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Slide decks, rubrics, lab notebooks, autograding hooks, project milestone templates, peer-review forms.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Instructor mini-datasets, grading rubrics, hidden unit-test fixtures, and project milestone checklists.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>32_course-reuse-kit.ipynb</code>, <code>32_lab-and-assessment-planner-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="part" id="appendix">
-        <div class="part-label">Appendices</div>
-        <h2>Reference, Setup, and Onboarding</h2>
-        <p class="part-intro">The appendices keep the main text focused while still supporting readers who need review material, environment guidance, or cloud provisioning help.</p>
-        <article class="chapter">
-          <div class="chapter-no">A</div>
-          <div>
-            <h3>Basic Mathematics Refresher</h3>
-            <p class="chapter-desc">Linear algebra, probability, optimization, signal processing, and embedding geometry as a targeted support resource.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Vectors, matrices, tensors, and projections.</li>
-              <li>Probability, entropy, cross-entropy, and KL divergence.</li>
-              <li>Gradients, optimization, and regularization.</li>
-              <li>Spectrograms, patches, clips, and representation math.</li>
-              <li>Similarity metrics and embedding geometry.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Refresh the minimum mathematics needed for the main chapters.</li><li>Interpret common objectives and representations with confidence.</li><li>Use the appendix selectively when stuck.</li></ul>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Worked examples, notation sheets, tensor-shape references.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Toy tensors, miniature spectrograms, tiny embedding examples, and shape-tracing exercises.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>A_math-refresher-workbook.ipynb</code>, <code>A_tensor-shape-walkthrough-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">B</div>
-          <div>
-            <h3>PyTorch Tutorial and Workflow Primer</h3>
-            <p class="chapter-desc">A practical bridge from Python and ML basics to modern PyTorch training and debugging patterns.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Tensors, modules, dataloaders, losses, and optimizers.</li>
-              <li>Training loops, evaluation loops, checkpointing, and mixed precision.</li>
-              <li>Minimal image, audio, and sequence examples.</li>
-              <li>Debugging shapes, devices, and numerical issues.</li>
-              <li>Project structure for later book chapters.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Get productive in modern PyTorch quickly.</li><li>Understand the training skeleton used across the book.</li><li>Debug common device and tensor-shape issues.</li></ul>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>PyTorch, torchvision, torchaudio, accelerate-ready training skeletons.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>MNIST or Fashion-MNIST, tiny image folders, Speech Commands, and toy sequence datasets.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>B_pytorch-primer-lab.ipynb</code>, <code>B_training-loop-and-debug-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">C</div>
-          <div>
-            <h3>Installation Instructions and Local Environment Setup</h3>
-            <p class="chapter-desc">Platform setup, dependencies, troubleshooting, and hardware tiers for readers and instructors.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Python, CUDA, drivers, and platform-specific setup.</li>
-              <li>Installing core libraries and modality-specific extras.</li>
-              <li>Environment pinning and reproducibility basics.</li>
-              <li>GPU verification, codec checks, and common setup failures.</li>
-              <li>Recommended hardware tiers for self-study and teaching labs.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Set up a reproducible environment for the book’s projects.</li><li>Troubleshoot common installation and GPU issues.</li><li>Choose sensible local hardware assumptions.</li></ul>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Python environments, CUDA toolchains, package managers, codec toolchains.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Environment smoke-test scripts, codec test files, GPU verification prompts, and sample media assets.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>C_environment-smoke-tests.ipynb</code>, <code>C_gpu-and-codec-setup-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">D</div>
-          <div>
-            <h3>Provisioning Cloud Models and Hosted Infrastructure</h3>
-            <p class="chapter-desc">Managed notebooks, rented GPUs, hosted APIs, cost controls, secrets, and migration between local and cloud environments.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Hosted APIs, rented GPUs, managed notebooks, and inference endpoints.</li>
-              <li>Storage, secrets, budget alerts, and access control.</li>
-              <li>Running training, labeling, and judging workloads in the cloud.</li>
-              <li>Migration between local prototypes and cloud-scale execution.</li>
-              <li>Data-governance concerns in hosted environments.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul><li>Choose between local, cloud, and hosted-model execution paths.</li><li>Provision compute with cost and governance constraints in mind.</li><li>Move between local prototypes and cloud workflows safely.</li></ul>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Managed notebooks, GPU instances, hosted APIs, secret managers, storage and budget controls.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Cloud cost worksheets, hosted-model test prompts, artifact-storage templates, and deployment checklists.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>D_cloud-provisioning-workbook.ipynb</code>, <code>D_local-to-cloud-migration-demo</code></li></ul>
-          </div>
-        </article>
-        <article class="chapter">
-          <div class="chapter-no">E</div>
-          <div>
-            <h3>Audio Companion and Modular Learning Guide</h3>
-            <p class="chapter-desc">Explains how the book also supports audio-first learning through concept capsules, recap episodes, guided thought experiments, and project-focused companion narration.</p>
-            <div class="label">Detailed Sections</div>
-            <ol>
-              <li>Which chapter material works well in spoken form and which requires visual or notebook support.</li>
-              <li>How to narrate code, equations, and architecture without losing clarity.</li>
-              <li>Recommended audio segmentation: intro episode, concept capsules, recap, and project episode.</li>
-              <li>How instructors and self-learners can use audio recap layers between readings and labs.</li>
-              <li>How to convert diagrams and workflows into strong spoken explanations.</li>
-            </ol>
-            <div class="label">Learning Outcomes</div>
-            <ul>
-              <li>Use the book in audio-supported and mixed-modality learning settings.</li>
-              <li>Understand which content belongs in speech, text, code, or diagrams.</li>
-              <li>Adapt chapter material into shorter review and recap formats.</li>
-            </ul>
-            <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Audio scripts, recap outlines, spoken-code summaries, chapter capsule templates.</li></ul>
-            <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Audio companion scripts, recap outlines, concept capsules, and spoken-workflow storyboards.</li></ul>
-            <div class="label">Suggested Notebooks and Demos</div>
-            <ul><li><code>E_audio-companion-planner.ipynb</code>, <code>E_concept-capsule-demo</code></li></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="closing">
-        <h2>What This Revision Fixes</h2>
-        <ul>
-          <li>Sharper book promise and clearer audience fit.</li>
-          <li>Explicit five-lens redesign: practitioner, student, researcher, philosopher, and teacher.</li>
-          <li>Earlier end-to-end payoff via a miniature full pipeline chapter.</li>
-          <li>More visible pedagogy, milestones, and deliverables.</li>
-          <li>Stronger application coverage and anti-pattern guidance.</li>
-          <li>A cleaner separation between main narrative and appendix material.</li>
-          <li>More explicit treatment of synthetic data for training, evaluation, and stress testing.</li>
-        </ul>
-      </section>
-    </main>
+<header class="hero">
+     <p class="eyebrow">Second-Pass Revised Table of Contents</p>     <h1>Building Vision and Audio AI with Deep Generative Models</h1>     <p>This book teaches readers how to design synthetic-data-first AI systems for image, audio, video, and multimodal applications, then turn those systems into reproducible experiments, deployable products, and credible research contributions. This edition is explicitly redesigned across five lenses: practitioner, student, researcher, philosopher, and teacher.</p>     <div class="hero-note">Core promise: build, evaluate, teach, and intellectually understand a synthetic-data-driven multimodal system from idea to capstone or paper.</div>   
+</header>
+<div class="topbar">
+  <div class="crumbs">
+    <span class="tag">High-Level TOC</span>
+    <span class="tag">Section Folders</span>
+    <span class="tag">Cross-linked Navigation</span>
   </div>
+  <div class="mini-nav">
+    <a class="inline-link" href="/book-toc.html">Alternate High-Level TOC URL</a>
+  </div>
+</div>
+<div class="grid">
+  <aside class="sidebar">
+    <section class="panel">
+      <h2>Sections</h2>
+      <div class="part-link"><a href="/front-matter/">Front Matter</a><p>How This Book Works</p></div>
+<div class="part-link"><a href="/part-1-orientation-and-fast-start/">Part I</a><p>Orientation and Fast Start</p></div>
+<div class="part-link"><a href="/part-2-data-and-experimental-foundations/">Part II</a><p>Data and Experimental Foundations</p></div>
+<div class="part-link"><a href="/part-3-representations-architectures-and-model-selection/">Part III</a><p>Representations, Architectures, and Model Selection</p></div>
+<div class="part-link"><a href="/part-4-synthetic-data-design-and-operations/">Part IV</a><p>Synthetic Data Design and Operations</p></div>
+<div class="part-link"><a href="/part-5-training-multimodal-systems-and-operations/">Part V</a><p>Training, Multimodal Systems, and Operations</p></div>
+<div class="part-link"><a href="/part-6-applications-frontiers-and-capstones/">Part VI</a><p>Applications, Frontiers, and Capstones</p></div>
+<div class="part-link"><a href="/appendices/">Appendices</a><p>Reference, Setup, and Onboarding</p></div>
+    </section>
+    <section class="panel">
+      <h2>How To Use</h2>
+      <ul class="summary">
+        <li><strong>High-Level TOC:</strong><br/>Use this page to understand the whole book structure.</li>
+        <li><strong>Section TOCs:</strong><br/>Open each section page for chapter-by-chapter detail.</li>
+        <li><strong>Cross-links:</strong><br/>Every section page links back here for fast navigation.</li>
+      </ul>
+    </section>
+  </aside>
+  <main>
+    <section class="part">
+      <div class="part-label">Book Map</div>
+      <h2>High-Level Table of Contents</h2>
+      <p class="part-intro">This version is the overview map of the book. Each major section now lives in its own folder with a dedicated detailed TOC page.</p>
+      <div class="section-list">
+        <section class="section-card" id="front">
+  <div class="part-label">Front Matter</div>
+  <h2>How This Book Works</h2>
+  <p>The front matter is part of the product, not just packaging. It tells instructors how to adopt the book, tells learners how to move through it, makes the five-lens design visible before Chapter 1, and defines the project spine that runs across the whole book.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>FM</strong> Front Matter Package</li>
+<li><strong>FM2</strong> How to Read, Study, Teach, and Think With This Book</li>
+  </ol>
+  <a class="jump" href="/front-matter/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part1">
+  <div class="part-label">Part I</div>
+  <h2>Orientation and Fast Start</h2>
+  <p>This part fixes the “too abstract too early” problem. Readers see the whole pipeline first, then learn how to reason about tasks, metrics, and tools.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>01</strong> What This Book Will Let You Build</li>
+<li><strong>02</strong> A Complete Synthetic-Data Pipeline in Miniature</li>
+<li><strong>03</strong> Task Taxonomy and Success Criteria</li>
+<li><strong>04</strong> The Modern Toolbox Without the Noise</li>
+  </ol>
+  <a class="jump" href="/part-1-orientation-and-fast-start/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part2">
+  <div class="part-label">Part II</div>
+  <h2>Data and Experimental Foundations</h2>
+  <p>This part makes data design, documentation, and methodology first-class. It fixes one of the biggest gaps in most AI books: readers need to know how to design credible studies, not just run models.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>05</strong> Data Rights, Provenance, and Responsible Acquisition</li>
+<li><strong>06</strong> Dataset Design, Schemas, and Versioning</li>
+<li><strong>07</strong> Annotation Systems, Weak Supervision, and Auto-Labeling</li>
+<li><strong>08</strong> Baselines, Ablations, and Credible Claims</li>
+  </ol>
+  <a class="jump" href="/part-2-data-and-experimental-foundations/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part3">
+  <div class="part-label">Part III</div>
+  <h2>Representations, Architectures, and Model Selection</h2>
+  <p>This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>09</strong> Embeddings, Self-Supervision, and Shared Representation Spaces</li>
+<li><strong>10</strong> Attention, Transformers, and Multimodal Fusion</li>
+<li><strong>11</strong> Generative Model Families for Image, Audio, and Video</li>
+<li><strong>12</strong> Foundation Models, Document AI, and Omni Systems in Practice</li>
+<li><strong>13</strong> Pre-Deployment Debugging for Modern Multimodal Models</li>
+  </ol>
+  <a class="jump" href="/part-3-representations-architectures-and-model-selection/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part4">
+  <div class="part-label">Part IV</div>
+  <h2>Synthetic Data Design and Operations</h2>
+  <p>This part is explicitly organized around the synthetic-data engine: choose a strategy, create or repurpose data, validate it operationally, and prepare clean inputs for later training and evaluation.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>14</strong> Designing the Synthetic Data Engine</li>
+<li><strong>15</strong> Image Data: Generation, Editing, and Repurposing</li>
+<li><strong>16</strong> Video Data: Temporal Labels, Tracks, and Synthetic Clips</li>
+<li><strong>17</strong> Audio Data: Speech, Events, TTS, Diarization, and Voice Transformation</li>
+<li><strong>18</strong> Simulation, Procedural Data, and Real-to-Sim-to-Real Pipelines</li>
+<li><strong>19</strong> Synthetic Data Operations: QA, Filtering, Reward Models, and Judge Loops</li>
+<li><strong>20</strong> Synthetic Data for Training, Evaluation, Stress Testing, and Challenge Sets</li>
+  </ol>
+  <a class="jump" href="/part-4-synthetic-data-design-and-operations/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part5">
+  <div class="part-label">Part V</div>
+  <h2>Training, Multimodal Systems, and Operations</h2>
+  <p>Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>21</strong> Fine-Tuning Vision and Video Models</li>
+<li><strong>22</strong> Fine-Tuning Audio Models and Streaming Speech Systems</li>
+<li><strong>23</strong> Building Multimodal Retrieval, RAG, and Agent Systems</li>
+<li><strong>24</strong> Inference Engineering, Deployment, and Cost Control</li>
+<li><strong>25</strong> Monitoring, Drift, and Failure Analysis in the Wild</li>
+  </ol>
+  <a class="jump" href="/part-5-training-multimodal-systems-and-operations/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="part6">
+  <div class="part-label">Part VI</div>
+  <h2>Applications, Frontiers, and Capstones</h2>
+  <p>The closing part broadens adoption value by mapping the toolkit to domain-specific systems, then closes with frontier questions, anti-patterns, and final projects.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>26</strong> Application Blueprint: Industrial Inspection and Manufacturing</li>
+<li><strong>27</strong> Application Blueprint: Speech, Audio Analytics, and Voice Systems</li>
+<li><strong>28</strong> Application Blueprint: Robotics, Accessibility, and Multimodal Incident Systems</li>
+<li><strong>29</strong> Research Frontiers and Open Questions</li>
+<li><strong>30</strong> Anti-Patterns, Failed Designs, and When Not to Use Synthetic Data</li>
+<li><strong>31</strong> Capstones, Replication Studies, and Paper-Style Contributions</li>
+<li><strong>32</strong> Teaching Studios, Assessment Design, and Course Reuse</li>
+  </ol>
+  <a class="jump" href="/part-6-applications-frontiers-and-capstones/">Open Detailed Section TOC</a>
+</section>
+<section class="section-card" id="appendix">
+  <div class="part-label">Appendices</div>
+  <h2>Reference, Setup, and Onboarding</h2>
+  <p>The appendices keep the main text focused while still supporting readers who need review material, environment guidance, or cloud provisioning help.</p>
+  <div class="label">Chapter Map</div>
+  <ol class="chapter-list">
+    <li><strong>A</strong> Basic Mathematics Refresher</li>
+<li><strong>B</strong> PyTorch Tutorial and Workflow Primer</li>
+<li><strong>C</strong> Installation Instructions and Local Environment Setup</li>
+<li><strong>D</strong> Provisioning Cloud Models and Hosted Infrastructure</li>
+<li><strong>E</strong> Audio Companion and Modular Learning Guide</li>
+  </ol>
+  <a class="jump" href="/appendices/">Open Detailed Section TOC</a>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
 </div>
 </body>
 </html>
