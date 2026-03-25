@@ -29,6 +29,14 @@
   .arrow { color:var(--accent-2); font-weight:700; padding-left:8px; }
   .two-col { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
   .subtle { color:var(--muted); }
+  .proposal-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+  .proposal-chip { padding:14px 16px; border-radius:18px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); }
+  .proposal-chip strong { display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; }
+  .proposal-chip span { color:rgba(248,247,242,.93); font-size:.95rem; }
+  .section-intro { margin:0 0 14px; color:var(--muted); }
+  .editor-frame { margin-bottom:18px; padding:16px 18px; border-radius:18px; background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; }
+  .editor-frame strong { display:block; margin-bottom:6px; color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; }
+  @media (max-width:980px) { .proposal-strip { grid-template-columns:1fr; } }
   @media (max-width:980px) { .grid, .two-col { grid-template-columns:1fr; } .panel { position:static; } }
 </style>
 </head>
@@ -37,6 +45,11 @@
   <header class="hero">
     <h1>Dependency Graph</h1>
     <p>This page makes the book's prerequisite structure explicit for self-study, course design, and project planning. It distinguishes the universal core from the advanced branches so readers can sequence the material without guessing and can map each recurring case study onto a clean reading path.</p>
+    <div class="proposal-strip">
+      <div class="proposal-chip"><strong>Reading Logic</strong><span>Shows the official book arc from orientation through capstone-ready specialization.</span></div>
+      <div class="proposal-chip"><strong>Adoption Value</strong><span>Supports self-study, semester planning, and instructor reuse without re-sequencing the manuscript from scratch.</span></div>
+      <div class="proposal-chip"><strong>Editorial Payoff</strong><span>Makes the book feel intentionally structured rather than simply comprehensive.</span></div>
+    </div>
   </header>
   <div class="topbar">
     <div class="crumbs">
@@ -67,6 +80,11 @@
       <section class="section">
         <h2>Presentation Spine</h2>
         <h3>Book-wide sequence: orient - discipline - explain - build - train - specialize - extend</h3>
+        <p class="section-intro">This is the canonical presentation order of the book. It should read like a proposal-ready teaching arc, not just a dependency list.</p>
+        <div class="editor-frame">
+          <strong>Why This Page Exists</strong>
+          The dependency graph is the structural proof that the manuscript has a clear pedagogical spine. It gives instructors, self-learners, and editors one place to verify that the sequencing is intentional and reusable.
+        </div>
         <div class="flow">
           <div class="node"><a href="front-matter/index.html">FM0-FM5</a>: book promise, audience fit, course pathways, recurring case studies, and companion assets.</div>
           <div class="arrow">-></div>

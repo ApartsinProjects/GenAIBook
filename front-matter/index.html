@@ -14,6 +14,13 @@
   .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
   .chapter-anchor-list li { margin:0; }
   .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
+  .proposal-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 0; }
+  .proposal-card { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:14px 16px; }
+  .proposal-card strong { display:block; margin-bottom:6px; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
+  .proposal-card span { color:rgba(248,247,242,.92); font-size:.95rem; }
+  .editor-note { margin:0 0 18px; padding:16px 18px; background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; border-radius:18px; }
+  .editor-note strong { color:var(--accent); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; }
+  @media (max-width:980px) { .proposal-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -23,6 +30,11 @@
 <h1>Book Positioning, Reading Paths, and Project Spine</h1>
 <p><strong>Subtitle:</strong> Synthetic Data, Multimodal Systems, and Real-World Fine-Tuning. The front matter frames the book as a buildable, teachable, and research-capable guide to vision, audio, video, and multimodal AI, with synthetic data treated as a red thread from data creation through model training, fine-tuning, evaluation, and system iteration.</p>
 <div class="hero-note">Opening promise: move from idea to synthetic-data engine, then use generated, augmented, and repurposed data to train, fine-tune, evaluate, and improve multimodal systems.</div>
+<div class="proposal-grid">
+<div class="proposal-card"><strong>Positioning</strong><span>Advanced but self-contained textbook and field guide for multimodal GenAI builders.</span></div>
+<div class="proposal-card"><strong>Audience</strong><span>Upper-level undergraduates, graduate students, instructors, and working ML engineers.</span></div>
+<div class="proposal-card"><strong>Outputs</strong><span>Deployable systems, reproducible evaluations, capstones, and paper-ready semester projects.</span></div>
+</div>
 </header>
 <div class="topbar">
 <div class="crumbs">
@@ -50,6 +62,10 @@
 <div class="part-label">Front Matter</div>
 <h2>Publisher-Ready Opening Package</h2>
 <p class="part-intro">This front matter is intentionally structured as the book's editorial launchpad: first the promise, then the audience, then the reading logic, then the course pathways, then the recurring case-study spine, and finally the companion assets and instructor kit. Throughout, the book is positioned around one continuous workflow: synthetic data is designed, generated, filtered, and then used to train, fine-tune, benchmark, stress-test, and refresh models.</p>
+<div class="editor-note">
+<strong>Editorial Intent</strong>
+This section should read like the opening of a serious education and engineering title: it establishes the market promise, the teachability of the manuscript, the case-study spine, and the adoption logic before the reader commits to the main technical arc.
+</div>
 <article class="chapter">
 <div class="chapter-no">FM0</div>
 <div>
