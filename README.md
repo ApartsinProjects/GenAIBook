@@ -1,6 +1,6 @@
 # GenAIBook
 
-High-level TOC: `index.html` and `book-toc.html`
+High-level TOC: `index.html`
 
 Detailed section TOCs:
 - `front-matter/`

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Training and Fine-Tuning Toolkit Matrix - GenAIBook</title>
+<style>
+  :root { --bg:#f5efe5; --paper:#fffdfa; --ink:#1d1f1b; --muted:#5d655b; --line:#d9d0c4; --accent:#0f5a48; --accent-2:#8e5622; --soft:#edf5f0; --soft-2:#f6efe4; --shadow:0 18px 54px rgba(29,31,27,.08); --max:1320px; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Georgia,"Times New Roman",serif; color:var(--ink); line-height:1.62; background:radial-gradient(circle at top right, rgba(15,90,72,.12), transparent 28%), linear-gradient(180deg, #f8f3eb 0%, #f2ecdf 100%); }
+  .page { max-width:var(--max); margin:0 auto; padding:28px 20px 64px; }
+  .hero, .panel, .section { background:var(--paper); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }
+  .hero { background:linear-gradient(135deg,#153a32 0%,#1d6955 100%); color:#f8f7f2; padding:40px 36px; margin-bottom:22px; }
+  .hero h1 { margin:0 0 10px; font-size:clamp(2.1rem,4vw,3.8rem); line-height:1.05; }
+  .hero p { margin:0; max-width:88ch; }
+  .hero-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+  .hero-card { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:14px 16px; }
+  .hero-card strong { display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; }
+  .hero-card span { color:rgba(248,247,242,.93); font-size:.95rem; }
+  .topbar { display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; margin-bottom:18px; }
+  .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
+  .tag { background:var(--soft); color:var(--accent); border-radius:999px; padding:5px 10px; font-size:.84rem; }
+  .section { padding:24px; margin-bottom:18px; }
+  .section h2 { margin:0 0 10px; font-size:1.8rem; }
+  .section p { margin:0 0 14px; color:var(--muted); }
+  .matrix { width:100%; border-collapse:collapse; font-size:.94rem; }
+  .matrix th, .matrix td { border-top:1px solid #e7ddd0; padding:10px 10px; vertical-align:top; text-align:left; }
+  .matrix th { color:var(--accent); text-transform:uppercase; letter-spacing:.05em; font-size:.8rem; }
+  .label { margin:14px 0 6px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; }
+  ul { margin:0 0 0 20px; padding:0; }
+  li { margin-bottom:6px; }
+  @media (max-width:980px) { .hero-grid { grid-template-columns:1fr; } .matrix { display:block; overflow:auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <h1>Training and Fine-Tuning Toolkit Matrix</h1>
+    <p>This matrix turns the book into a practical selection guide. It maps the generator families that create synthetic data, the encoders and foundation models that support downstream tasks, the task models that are trained or fine-tuned, the adaptation methods that connect data to models, the evaluation methods that keep claims honest, and the libraries that support the workflow.</p>
+    <div class="hero-grid">
+      <div class="hero-card"><strong>Use It To Choose</strong><span>Pick the right generator, encoder, task model, and fine-tuning method for a real project.</span></div>
+      <div class="hero-card"><strong>Use It To Teach</strong><span>Show students how model families, evaluation logic, and libraries fit into one end-to-end stack.</span></div>
+      <div class="hero-card"><strong>Use It To Plan</strong><span>Map the book’s concepts to concrete implementation choices without losing the synthetic-data thesis.</span></div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div>
+      <a class="inline-link" href="index.html">Back to Main TOC</a>
+    </div>
+    <div>
+      <span class="tag">Selection Guide</span>
+      <span class="tag">Training and Evaluation</span>
+      <span class="tag">Companion Page</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>Matrix</h2>
+    <p>Read this table left to right: first choose how synthetic data will be produced, then which representations or foundation models support the task, then which downstream models are trained or adapted, then how the training is done, how it is evaluated, and which libraries make the workflow practical.</p>
+    <table class="matrix">
+      <tr>
+        <th>Category</th>
+        <th>Main Families</th>
+        <th>What They Are For</th>
+        <th>Typical Downstream Use</th>
+        <th>Key Libraries</th>
+      </tr>
+      <tr>
+        <td><strong>Generative model families</strong></td>
+        <td>Latent diffusion, DiT, autoregressive token generators, flow matching, neural codecs, TTS pipelines, simulation/procedural engines</td>
+        <td>Create synthetic images, video clips, speech, sound, layouts, masks, trajectories, and controlled rare cases</td>
+        <td>Training-set expansion, hidden evaluation sets, stress tests, domain adaptation, data balancing</td>
+        <td>Diffusers, AudioCraft, Coqui, BlenderProc, Isaac Sim / Replicator, OpenCV</td>
+      </tr>
+      <tr>
+        <td><strong>Encoders and foundation models</strong></td>
+        <td>ResNet/EfficientNet, ViT/Swin/DINOv2, CLIP/OpenCLIP/SigLIP, SAM 2, Grounding DINO, VideoMAE, TimeSformer, wav2vec2, HuBERT, WavLM, AST, BEATs, Whisper, Qwen2.5-VL-class VLMs</td>
+        <td>Provide reusable representations, zero-shot capability, grounding, segmentation, speech understanding, and multimodal reasoning</td>
+        <td>Baseline features, retrieval, promptable perception, adaptation starting points, multimodal system building</td>
+        <td>Transformers, timm, open_clip, torchaudio, pyannote.audio, torchvision</td>
+      </tr>
+      <tr>
+        <td><strong>Task models</strong></td>
+        <td>Classifiers, detectors, segmenters, trackers, temporal localizers, ASR models, diarization systems, speaker models, retrieval stacks, VQA/document QA systems</td>
+        <td>Solve the concrete downstream task whose performance matters</td>
+        <td>Train from scratch on smaller tasks, fine-tune from encoders/foundation models, or assemble as modular systems</td>
+        <td>PyTorch, Transformers, timm, supervision, SAHI, pyannote, OpenCV, task-specific repos</td>
+      </tr>
+      <tr>
+        <td><strong>Fine-tuning methods</strong></td>
+        <td>Frozen backbone plus head, partial unfreezing, full fine-tuning, LoRA/PEFT, DreamBooth-style personalization, distillation, curriculum schedules, sample weighting</td>
+        <td>Adapt representations or foundation models to the target task and domain</td>
+        <td>Hybrid real-plus-synthetic training, adapter-based deployment, low-budget tuning, personalization, transfer learning</td>
+        <td>PEFT, TRL, Accelerate, torchtune, torchao</td>
+      </tr>
+      <tr>
+        <td><strong>Evaluation methods</strong></td>
+        <td>Task metrics, slice-based evaluation, calibration, challenge sets, contamination checks, memorization checks, judge loops, fidelity/diversity/usefulness checks</td>
+        <td>Measure whether synthetic data genuinely helps and where it harms</td>
+        <td>Real-only vs hybrid comparisons, stress testing, hidden-slice validation, debugging, release gating</td>
+        <td>Evaluate, FiftyOne, Argilla, Distilabel, custom benchmark harnesses, MLflow</td>
+      </tr>
+      <tr>
+        <td><strong>Operational libraries</strong></td>
+        <td>Data/versioning, labeling, serving, export, monitoring, retrieval</td>
+        <td>Make the workflow reproducible, inspectable, and deployable</td>
+        <td>Dataset versioning, annotation review, structured-output serving, ONNX/TensorRT export, vector retrieval, drift tracking</td>
+        <td>DVC, MLflow, Label Studio, CVAT, FiftyOne, vLLM, TGI, TEI, SGLang, ONNX Runtime, TensorRT, OpenVINO</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>How To Read The Matrix</h2>
+    <div class="label">Typical Selection Logic</div>
+    <ul>
+      <li>Start with the downstream task and data bottleneck, not the model brand.</li>
+      <li>Choose the synthetic-data strategy next: augmentation, synthetic dataset construction, simulation, or domain adaptation.</li>
+      <li>Pick a generator family that matches controllability and label needs.</li>
+      <li>Pick an encoder or foundation model that matches the downstream task and deployment budget.</li>
+      <li>Choose the lightest fine-tuning method that can realistically solve the task.</li>
+      <li>Define the evaluation plan before scaling generation.</li>
+    </ul>
+    <div class="label">Where This Lives In The Book</div>
+    <ul>
+      <li>Generators: Chapters 11, 15, 16, 17, 18</li>
+      <li>Encoders and model internals: Chapters 09, 10, 12</li>
+      <li>Task-model adaptation: Chapters 21 and 22</li>
+      <li>Multimodal system assembly: Chapter 23</li>
+      <li>Evaluation and QA: Chapters 08, 19, 20, 25</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

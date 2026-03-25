@@ -32,6 +32,13 @@
   .week-table th, .week-table td { border-top:1px solid #e7ddd0; padding:10px 8px; vertical-align:top; text-align:left; }
   .week-table th { color:var(--accent); font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; }
   .closing { padding:24px; }
+  .hero-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+  .hero-card { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:14px 16px; }
+  .hero-card strong { display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; }
+  .hero-card span { color:rgba(248,247,242,.93); font-size:.95rem; }
+  .editor-note { margin:0 0 16px; padding:16px 18px; border-radius:18px; background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; }
+  .editor-note strong { display:block; margin-bottom:6px; color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; }
+  @media (max-width:980px) { .hero-grid { grid-template-columns:1fr; } }
   @media (max-width:980px) { .grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 </style>
 </head>
@@ -40,7 +47,12 @@
   <header class="hero">
     <div class="tag">Instructor Edition</div>
     <h1>Four 12-Week Course Pathways</h1>
-    <p>This page maps the book into four teachable 12-week courses: undergraduate engineering, undergraduate research, graduate engineering, and graduate research. It also identifies the structural changes the book needs in order to serve all four well without forcing every instructor into the same pacing model.</p>
+    <p>This page maps the book into four teachable 12-week courses: undergraduate engineering, undergraduate research, graduate engineering, and graduate research. It treats adoption as a design problem, not an afterthought, and shows how the same manuscript can serve different teaching goals without losing coherence.</p>
+    <div class="hero-grid">
+      <div class="hero-card"><strong>Use</strong><span>Choose a course shape without reverse-engineering the manuscript.</span></div>
+      <div class="hero-card"><strong>Audience Fit</strong><span>See how depth, labs, and theory change across undergrad and graduate routes.</span></div>
+      <div class="hero-card"><strong>Editorial Payoff</strong><span>Make the book look course-ready to instructors and publishers.</span></div>
+    </div>
   </header>
 
   <div class="topbar">
@@ -74,12 +86,13 @@
         </ul>
       </section>
       <section class="panel">
-        <h2>Top Gaps</h2>
+        <h2>Adoption Notes</h2>
         <ul class="summary">
-          <li>A dependency map is still missing.</li>
-          <li>The book needs clearer `core` versus `advanced` tags.</li>
-          <li>Research-methods scaffolding is too distributed.</li>
-          <li>Undergraduate math and coding bridges need clearer routing.</li>
+          <li>The dependency map now exists; use it to trim or deepen routes without breaking the book arc.</li>
+          <li>The main remaining challenge is not coverage but pacing and assignment density.</li>
+          <li>Undergraduate routes should point students to the onboarding appendices early.</li>
+          <li>Research routes should bring the research-methods appendix and Chapter 08 forward.</li>
+          <li><a class="inline-link" href="training-finetuning-toolkit-matrix.html">Use the toolkit matrix</a> when choosing model families and labs for each route.</li>
         </ul>
       </section>
     </aside>
@@ -87,6 +100,7 @@
     <main>
       <section class="path" id="ug-eng">
         <h2>Undergraduate Engineering</h2>
+        <div class="editor-note"><strong>Design Goal</strong>Keep the course build-heavy, concrete, and paced around manageable system milestones rather than heavy paper volume.</div>
         <p>This version optimizes for system building, manageable cognitive load, and repeatable labs. It should minimize frontier overload and keep research-method complexity secondary to reproducible engineering workflows.</p>
         <div class="label">Who It Serves</div>
         <ul>
@@ -119,6 +133,7 @@
 
       <section class="path" id="ug-res">
         <h2>Undergraduate Research</h2>
+        <div class="editor-note"><strong>Design Goal</strong>Use the book as a bridge from strong undergraduate implementation skills to careful experimental thinking and paper-style reporting.</div>
         <p>This version is for research seminars, honors projects, or thesis-prep courses. It needs stronger scaffolding around reading papers, forming claims, ablations, and writing defensible reports.</p>
         <div class="label">Who It Serves</div>
         <ul>
@@ -151,6 +166,7 @@
 
       <section class="path" id="grad-eng">
         <h2>Graduate Engineering</h2>
+        <div class="editor-note"><strong>Design Goal</strong>Emphasize architecture choice, synthetic-data system design, deployment, and runtime tradeoffs without losing technical rigor.</div>
         <p>This version is for professional MS programs or advanced engineering electives. It should emphasize systems, deployment, cost, and cross-modal architecture decisions, while still being theory-aware.</p>
         <div class="label">Who It Serves</div>
         <ul>
@@ -183,6 +199,7 @@
 
       <section class="path" id="grad-res">
         <h2>Graduate Research</h2>
+        <div class="editor-note"><strong>Design Goal</strong>Turn the manuscript into a seminar-quality research spine with explicit space for ablations, frontier questions, and reproducibility artifacts.</div>
         <p>This is the most demanding pathway. It should function as a multimodal synthetic-data research seminar plus semester project, with stronger emphasis on theory, evaluation, and open questions.</p>
         <div class="label">Who It Serves</div>
         <ul>
