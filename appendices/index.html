@@ -31,20 +31,51 @@
 <section class="panel">
 <h2>Chapter Jump List</h2>
 <ul class="chapter-anchor-list">
-<li><a href="#basic-mathematics-refresher">A - Basic Mathematics Refresher</a></li>
-<li><a href="#pytorch-tutorial-and-workflow-primer">B - PyTorch Tutorial and Workflow Primer</a></li>
-<li><a href="#installation-instructions-and-local-environment-setup">C - Installation Instructions and Local Environment Setup</a></li>
-<li><a href="#provisioning-cloud-models-and-hosted-infrastructure">D - Provisioning Cloud Models and Hosted Infrastructure</a></li>
-<li><a href="#audio-companion-and-modular-learning-guide">E - Audio Companion and Modular Learning Guide</a></li>
-<li><a href="#research-methods-companion-appendix">F - Research Methods Companion Appendix</a></li>
+<li><a href="#python-data-handling-and-scientific-computing-primer">A - Python, Data Handling, and Scientific Computing Primer</a></li>
+<li><a href="#basic-mathematics-refresher">B - Basic Mathematics Refresher</a></li>
+<li><a href="#deep-learning-foundations-and-training-patterns">C - Deep Learning Foundations and Training Patterns</a></li>
+<li><a href="#pytorch-tutorial-and-workflow-primer">D - PyTorch Tutorial and Workflow Primer</a></li>
+<li><a href="#media-dataset-formats-and-annotation-file-primer">E - Media, Dataset Formats, and Annotation File Primer</a></li>
+<li><a href="#installation-instructions-and-local-environment-setup">F - Installation Instructions and Local Environment Setup</a></li>
+<li><a href="#provisioning-cloud-models-and-hosted-infrastructure">G - Provisioning Cloud Models and Hosted Infrastructure</a></li>
+<li><a href="#audio-companion-and-modular-learning-guide">H - Audio Companion and Modular Learning Guide</a></li>
+<li><a href="#research-methods-companion-appendix">I - Research Methods Companion Appendix</a></li>
 </ul>
 </section>
 <section class="part" id="appendix">
 <div class="part-label">Appendices</div>
 <h2>Reference, Setup, and Onboarding</h2>
-<p class="part-intro">The appendices keep the main text focused while still supporting readers who need review material, environment guidance, cloud provisioning help, or a stronger research-methods scaffold for semester projects and paper-style work.</p>
+<p class="part-intro">The appendices keep the main text focused while still supporting readers who need review material, environment guidance, cloud provisioning help, or a stronger research-methods scaffold for semester projects and paper-style work. Together they make the book self-contained for readers with basic engineering knowledge by covering Python, data handling, deep learning foundations, PyTorch, media formats, setup, and research workflow support.</p>
 <article class="chapter">
 <div class="chapter-no">A</div>
+<div>
+<h3><span id="python-data-handling-and-scientific-computing-primer">Python, Data Handling, and Scientific Computing Primer</span></h3>
+<p class="chapter-desc">A fast but practical bridge from basic programming to the scientific Python workflow used everywhere else in the book.</p>
+<div class="meta">
+<span class="tag">Core</span>
+<span class="tag">Undergraduate</span>
+<span class="tag">Graduate</span>
+<span class="tag">Engineering</span>
+
+<span class="tag">Companion Repo</span></div>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Python syntax patterns that matter for ML projects: functions, classes, iterators, typing, and error handling.</li>
+<li>NumPy arrays, pandas tables, JSON and CSV handling, pathlib, and simple data cleaning workflows.</li>
+<li>Plotting and inspection with matplotlib-style tools for quick model and dataset diagnostics.</li>
+<li>Reading and writing common media and metadata files used later in the book.</li>
+<li>Notebook hygiene, scripts versus notebooks, and reproducible project layout basics.</li>
+</ol>
+<div class="label">Learning Outcomes</div>
+<ul><li>Get comfortable with the Python and data-handling patterns assumed by later labs.</li><li>Manipulate tabular metadata and media manifests confidently.</li><li>Recognize when debugging issues come from code structure rather than model behavior.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Python, NumPy, pandas, matplotlib, pathlib, JSON/CSV utilities, and notebook workflows.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>A_python-data-primer.ipynb</code>, <code>A_media-manifest-cleaning-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">B</div>
 <div>
 <h3><span id="basic-mathematics-refresher">Basic Mathematics Refresher</span></h3>
 <p class="chapter-desc">Linear algebra, probability, optimization, signal processing, and embedding geometry as a targeted support resource.</p>
@@ -87,11 +118,39 @@
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>Toy tensors, miniature spectrograms, tiny embedding examples, and shape-tracing exercises.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>A_math-refresher-workbook.ipynb</code>, <code>A_tensor-shape-walkthrough-demo</code></li></ul>
+<ul><li><code>B_math-refresher-workbook.ipynb</code>, <code>B_tensor-shape-walkthrough-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
-<div class="chapter-no">B</div>
+<div class="chapter-no">C</div>
+<div>
+<h3><span id="deep-learning-foundations-and-training-patterns">Deep Learning Foundations and Training Patterns</span></h3>
+<p class="chapter-desc">Explains the minimum deep-learning ideas needed so later architecture chapters do not feel like a jump cut.</p>
+<div class="meta">
+<span class="tag">Core</span>
+<span class="tag">Undergraduate</span>
+<span class="tag">Graduate</span>
+<span class="tag">Engineering</span>
+
+<span class="tag">Companion Repo</span></div>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Supervised learning, train/validation/test splits, overfitting, regularization, and basic generalization logic.</li>
+<li>Neural-network building blocks: linear layers, convolutions, pooling, normalization, activations, embeddings, attention at a high level, and output heads.</li>
+<li>Losses, optimization, schedulers, batch size, gradient accumulation, and checkpointing.</li>
+<li>Transfer learning, fine-tuning, frozen backbones, adapters, and representation reuse.</li>
+<li>Evaluation basics: confusion matrices, precision/recall, ranking metrics, WER-style task metrics, and slice-based evaluation.</li>
+</ol>
+<div class="label">Learning Outcomes</div>
+<ul><li>Understand the training skeleton behind the rest of the book.</li><li>Interpret what it means to train, fine-tune, freeze, or adapt a model.</li><li>Read later architecture chapters without needing an external deep-learning textbook first.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Core neural-network concepts, training loops, evaluation utilities, and transfer-learning patterns.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>C_deep-learning-foundations.ipynb</code>, <code>C_train-validate-overfit-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">D</div>
 <div>
 <h3><span id="pytorch-tutorial-and-workflow-primer">PyTorch Tutorial and Workflow Primer</span></h3>
 <p class="chapter-desc">A practical bridge from Python and ML basics to modern PyTorch training and debugging patterns.</p>
@@ -134,11 +193,39 @@
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>MNIST or Fashion-MNIST, tiny image folders, Speech Commands, and toy sequence datasets.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>B_pytorch-primer-lab.ipynb</code>, <code>B_training-loop-and-debug-demo</code></li></ul>
+<ul><li><code>D_pytorch-primer-lab.ipynb</code>, <code>D_training-loop-and-debug-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
-<div class="chapter-no">C</div>
+<div class="chapter-no">E</div>
+<div>
+<h3><span id="media-dataset-formats-and-annotation-file-primer">Media, Dataset Formats, and Annotation File Primer</span></h3>
+<p class="chapter-desc">Covers the practical file formats and dataset structures that later chapters rely on without always stopping to explain them.</p>
+<div class="meta">
+<span class="tag">Core</span>
+<span class="tag">Undergraduate</span>
+<span class="tag">Graduate</span>
+<span class="tag">Engineering</span>
+
+<span class="tag">Companion Repo</span></div>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Images, video, audio, spectrograms, codecs, frame rates, sample rates, and why format choices affect training.</li>
+<li>Common dataset structures: folders, CSV or JSON manifests, COCO-style detection formats, segmentation masks, clip metadata, diarization files, and transcript formats.</li>
+<li>How annotation tools export labels and how to normalize them into training-ready datasets.</li>
+<li>Train/validation/test splits, shard layouts, WebDataset-style packaging, and artifact naming conventions.</li>
+<li>Common data integrity failures: path mismatches, codec issues, wrong sample rates, broken timestamps, and malformed labels.</li>
+</ol>
+<div class="label">Learning Outcomes</div>
+<ul><li>Read and organize the media and annotation formats used across the book.</li><li>Recognize common dataset engineering bugs before they poison training.</li><li>Bridge labeling tools and training code with less friction.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>OpenCV, PyAV, torchaudio, librosa, JSON/CSV tooling, COCO-style schemas, diarization and transcript manifests.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>E_dataset-formats-primer.ipynb</code>, <code>E_annotation-export-normalization-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">F</div>
 <div>
 <h3><span id="installation-instructions-and-local-environment-setup">Installation Instructions and Local Environment Setup</span></h3>
 <p class="chapter-desc">Platform setup, dependencies, troubleshooting, and hardware tiers for readers and instructors.</p>
@@ -181,11 +268,11 @@
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>Environment smoke-test scripts, codec test files, GPU verification prompts, and sample media assets.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>C_environment-smoke-tests.ipynb</code>, <code>C_gpu-and-codec-setup-demo</code></li></ul>
+<ul><li><code>F_environment-smoke-tests.ipynb</code>, <code>F_gpu-and-codec-setup-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
-<div class="chapter-no">D</div>
+<div class="chapter-no">G</div>
 <div>
 <h3><span id="provisioning-cloud-models-and-hosted-infrastructure">Provisioning Cloud Models and Hosted Infrastructure</span></h3>
 <p class="chapter-desc">Managed notebooks, rented GPUs, hosted APIs, cost controls, secrets, and migration between local and cloud environments.</p>
@@ -228,11 +315,11 @@
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>Cloud cost worksheets, hosted-model test prompts, artifact-storage templates, and deployment checklists.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>D_cloud-provisioning-workbook.ipynb</code>, <code>D_local-to-cloud-migration-demo</code></li></ul>
+<ul><li><code>G_cloud-provisioning-workbook.ipynb</code>, <code>G_local-to-cloud-migration-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
-<div class="chapter-no">E</div>
+<div class="chapter-no">H</div>
 <div>
 <h3><span id="audio-companion-and-modular-learning-guide">Audio Companion and Modular Learning Guide</span></h3>
 <p class="chapter-desc">Explains how the book also supports audio-first learning through concept capsules, recap episodes, guided thought experiments, and project-focused companion narration.</p>
@@ -284,7 +371,7 @@
 </div>
 </article>
 <article class="chapter">
-<div class="chapter-no">F</div>
+<div class="chapter-no">I</div>
 <div>
 <h3><span id="research-methods-companion-appendix">Research Methods Companion Appendix</span></h3>
 <p class="chapter-desc">A compact research-methods appendix that turns the book into a stronger base for seminar projects, capstones, replication studies, and workshop-style papers.</p>
