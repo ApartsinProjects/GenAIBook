@@ -41,7 +41,7 @@
 <section class="part" id="part3">
 <div class="part-label">Part III</div>
 <h2>Representations, Architectures, and Model Selection</h2>
-<p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging.</p>
+<p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging. Every named model family is treated from the inside out, with explicit attention to architecture, algorithm, intuition, and failure modes rather than brand-level description.</p>
 <article class="chapter">
 <div class="chapter-no">09</div>
 <div>
@@ -188,11 +188,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
-<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
-<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
-<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
-<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
+<li><strong>Inner workings:</strong> autoregressive next-token decoders, VAE encoders and decoders, latent bottlenecks, diffusion U-Nets versus DiTs, flow-matching vector fields, and codec-token pipelines such as EnCodec-style residual quantization.</li>
+<li><strong>Algorithm sketch:</strong> tokenization or latent encoding, denoising or decoding loop, conditioning injection, guidance or sampler choice, and final reconstruction back into image, audio, or video space.</li>
+<li><strong>Intuition:</strong> why each family makes a different bet about generation: token prediction for sequential coherence, latent-variable compression for compact structure, diffusion for controllable refinement, and codec-token pipelines for audio realism and compression.</li>
+<li><strong>Tradeoffs:</strong> autoregressive coherence versus speed, diffusion controllability versus sampling cost, VAE compression versus reconstruction loss, and flow-matching acceleration versus maturity and tooling depth.</li>
+<li><strong>Common failure modes:</strong> exposure bias, posterior collapse, oversmoothing, denoising artifacts, prompt leakage, mode dropping, and codec or token bottlenecks that damage label fidelity.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -246,11 +246,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> how foundation models combine perception, grounding, retrieval, and generation, and what remains modular versus unified.</li>
-<li><strong>Algorithm sketch:</strong> retrieval-grounding-generation loops, schema validation paths, and modular tool-calling sequences.</li>
-<li><strong>Intuition:</strong> why a decomposed system often beats a monolithic prompt when evidence quality and traceability matter.</li>
-<li><strong>Tradeoffs:</strong> omni-model simplicity versus modular debuggability, retrieval quality versus latency, and flexibility versus governance control.</li>
-<li><strong>Common failure modes:</strong> retrieval miss, OCR corruption, grounding mismatch, invalid structured output, and brittle tool orchestration.</li>
+<li><strong>Inner workings:</strong> visual encoders, OCR or layout encoders, audio encoders, connector modules such as projection layers and Q-Former-style bridges, grounding heads, and the decoder or reasoning stack sitting on top.</li>
+<li><strong>Algorithm sketch:</strong> perception tokens enter through modality-specific encoders, pass through connectors or cross-attention layers, optionally interact with retrieval and grounding modules, and then flow into generation or structured-output heads.</li>
+<li><strong>Intuition:</strong> foundation models look unified from the outside, but they are usually compositions of encoders, adapters, fusion blocks, retrieval interfaces, and decoders with distinct roles and distinct failure points.</li>
+<li><strong>Tradeoffs:</strong> omni-model simplicity versus modular debuggability, OCR/layout specialization versus general VLM flexibility, and promptable perception stacks versus end-to-end generalist systems.</li>
+<li><strong>Common failure modes:</strong> weak OCR tokens, connector bottlenecks, grounding mismatch, retrieval miss, invalid structured output, and brittle orchestration between perception and generation modules.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -304,11 +304,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
-<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
-<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
-<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
-<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
+<li><strong>Inner workings:</strong> where failures can originate inside encoders, fusion blocks, grounding heads, retrievers, prompt templates, and serving paths rather than only at the dataset surface.</li>
+<li><strong>Algorithm sketch:</strong> isolate the failing stage, reproduce the issue on a controlled slice, inspect intermediate artifacts, trace the error through embeddings or outputs, and map the finding to data, prompt, architecture, or system changes.</li>
+<li><strong>Intuition:</strong> modern multimodal debugging works by opening the box and inspecting internal stages, not by treating the model as a mysterious input-output oracle.</li>
+<li><strong>Tradeoffs:</strong> exhaustive instrumentation versus iteration speed, modular traceability versus stack complexity, and slice-specific diagnosis versus benchmark-level summaries.</li>
+<li><strong>Common failure modes:</strong> misleading benchmark averages, false attribution to the wrong component, hidden retrieval misses, grounding drift, OCR token corruption, and representation collapse on long-tail slices.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>

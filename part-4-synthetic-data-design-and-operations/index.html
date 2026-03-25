@@ -43,7 +43,7 @@
 <section class="part" id="part4">
 <div class="part-label">Part IV</div>
 <h2>Synthetic Data Design and Operations</h2>
-<p class="part-intro">This part is explicitly organized around the synthetic-data engine: choose a strategy, create or repurpose data, validate it operationally, and prepare clean inputs for later training and evaluation.</p>
+<p class="part-intro">This part is explicitly organized around the synthetic-data engine: choose a strategy, create or repurpose data, validate it operationally, and prepare clean inputs for later training and evaluation. The internals of generators, editors, trackers, diarizers, simulators, and judge models are made explicit so readers understand how these systems produce labels, artifacts, and control signals.</p>
 <article class="chapter">
 <div class="chapter-no">14</div>
 <div>
@@ -122,11 +122,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
-<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
-<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
-<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
-<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
+<li><strong>Inner workings:</strong> latent diffusion anatomy, VAE compression, text-token cross-attention, U-Net or DiT denoising blocks, ControlNet residual control paths, T2I-Adapter side branches, IP-Adapter image-conditioning paths, and how textual inversion, DreamBooth, and LoRA alter the base model.</li>
+<li><strong>Algorithm sketch:</strong> encode to latent space, inject text and structural controls, denoise across scheduled steps, decode to pixels, then run filtering and label-verification loops before assets enter the training set.</li>
+<li><strong>Intuition:</strong> image synthetic data works best when generation is treated as controllable latent editing rather than one-shot prompt magic.</li>
+<li><strong>Tradeoffs:</strong> prompt-only simplicity versus explicit control, personalization fidelity versus overfitting, and fast LCM-style sampling versus peak quality and edit precision.</li>
+<li><strong>Common failure modes:</strong> mask leakage, control overconstraint, identity drift, shortcut backgrounds, prompt entanglement, and synthetic textures that train the wrong cues.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -180,11 +180,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
-<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
-<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
-<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
-<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
+<li><strong>Inner workings:</strong> frame-token or latent-video pipelines, temporal attention, keyframe conditioning, motion modules, tracking memory in SAM 2-style propagation, and temporal grounding heads for clip-level labels.</li>
+<li><strong>Algorithm sketch:</strong> define clip schema and tracks, generate or repurpose clips, propagate labels over time, review interpolation and tracking artifacts, and export temporal annotations for training.</li>
+<li><strong>Intuition:</strong> synthetic video is not just many synthetic images; the model must preserve identity, motion, and event continuity across time.</li>
+<li><strong>Tradeoffs:</strong> clip length versus stability, keyframe control versus natural motion, tracker assistance versus reviewer effort, and temporal realism versus labeling throughput.</li>
+<li><strong>Common failure modes:</strong> jitter, identity swaps, track drift, temporal label leakage, implausible motion, and event boundaries that shift under reviewer correction.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -238,11 +238,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
-<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
-<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
-<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
-<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
+<li><strong>Inner workings:</strong> spectrogram and waveform pipelines, self-supervised audio encoders, CTC or sequence-to-sequence transcribers, diarization segmentation-plus-clustering stacks, TTS acoustic models and vocoders, and audio watermark or provenance mechanisms.</li>
+<li><strong>Algorithm sketch:</strong> create or repurpose audio, simulate channel and speaker conditions, auto-label with ASR or diarization systems, synthesize speech or events where needed, and score samples with task-aware QA before training.</li>
+<li><strong>Intuition:</strong> useful synthetic audio is shaped by temporal structure, speaker identity, channel effects, and downstream task objectives rather than perceptual realism alone.</li>
+<li><strong>Tradeoffs:</strong> augmentation versus full synthesis, multilingual coverage versus voice consistency, TTS controllability versus naturalness, and diarization accuracy versus pipeline complexity.</li>
+<li><strong>Common failure modes:</strong> pronunciation artifacts, speaker leakage, timing drift, synthetic reverberation cues that do not match real channels, and weak-label errors from ASR or diarization systems.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -289,11 +289,11 @@
 </ol>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> core generation mechanism, conditioning path, sampling or decoding loop, and control interfaces used to shape outputs.</li>
-<li><strong>Algorithm sketch:</strong> forward/reverse diffusion or decoding process, control injection, editing loop, and QA handoff into a training-ready dataset.</li>
-<li><strong>Intuition:</strong> why controllable generation is valuable for coverage expansion, rare-case creation, and label-preserving edits.</li>
-<li><strong>Tradeoffs:</strong> realism versus usefulness, controllability versus diversity, and generation speed versus quality or fidelity.</li>
-<li><strong>Common failure modes:</strong> synthetic artifacts, temporal inconsistency, prompt leakage, label drift, shortcut cues, and simulator mismatch.</li>
+<li><strong>Inner workings:</strong> asset libraries, scene graphs, render engines, sensor models, domain-randomization parameters, physics or motion priors, and automatic label generation paths inside simulators.</li>
+<li><strong>Algorithm sketch:</strong> assemble scene assets, randomize controllable factors, render camera or sensor outputs, emit labels and metadata, then validate sim-to-real transfer before adding outputs to the training mix.</li>
+<li><strong>Intuition:</strong> simulators win when controllable geometry, physics, and annotation exhaustiveness matter more than photorealism alone.</li>
+<li><strong>Tradeoffs:</strong> simulator setup cost versus annotation savings, realism versus control, and domain randomization breadth versus plausibility.</li>
+<li><strong>Common failure modes:</strong> sim-to-real mismatch, unrealistic textures or dynamics, bad sensor assumptions, and missing nuisance factors that make transfer brittle.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>

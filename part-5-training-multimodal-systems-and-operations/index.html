@@ -41,7 +41,7 @@
 <section class="part" id="part5">
 <div class="part-label">Part V</div>
 <h2>Training, Multimodal Systems, and Operations</h2>
-<p class="part-intro">Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh.</p>
+<p class="part-intro">Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh. The chapter plans here explicitly unpack what changes inside each model family during tuning, retrieval, serving, and post-launch monitoring.</p>
 <article class="chapter">
 <div class="chapter-no">21</div>
 <div>
@@ -70,11 +70,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
-<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
-<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
-<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
-<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
+<li><strong>Inner workings:</strong> how adaptation touches CNN stages, ViT blocks, DETR object queries, SAM-style mask decoders, video attention layers, and adapter or LoRA injection points.</li>
+<li><strong>Algorithm sketch:</strong> choose a baseline encoder, attach or unfreeze task heads, run mixture-aware training, evaluate slices, and compare frozen, adapter-based, and full-tuning variants.</li>
+<li><strong>Intuition:</strong> fine-tuning works by changing where task information enters the network, not just by running more epochs on a new dataset.</li>
+<li><strong>Tradeoffs:</strong> frozen backbones versus end-to-end adaptation, adapter efficiency versus expressivity, and video temporal capacity versus memory cost.</li>
+<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, broken spatial priors, object-query instability, segmentation regressions, and temporal overfitting on short clips.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -127,11 +127,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
-<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
-<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
-<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
-<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
+<li><strong>Inner workings:</strong> audio encoder layers, CTC heads, encoder-decoder attention, transducer alignment logic, speaker-embedding spaces, diarization segmentation-plus-clustering stages, and streaming-state caches.</li>
+<li><strong>Algorithm sketch:</strong> choose encoder and decoding objective, tune with synthetic or hybrid mixtures, evaluate channel and speaker slices, and compare offline versus streaming inference behavior.</li>
+<li><strong>Intuition:</strong> audio adaptation succeeds when the model learns timing, speaker, and channel invariances without learning synthetic artifacts as shortcuts.</li>
+<li><strong>Tradeoffs:</strong> CTC simplicity versus seq2seq flexibility, streaming latency versus context quality, and augmentation breadth versus speaker or language fidelity.</li>
+<li><strong>Common failure modes:</strong> timing drift, speaker confusion, overlap breakdown, language imbalance, synthetic pronunciation artifacts, and streaming regressions hidden by offline evaluation.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -241,11 +241,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
-<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
-<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
-<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
-<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
+<li><strong>Inner workings:</strong> KV-cache layout, continuous batching, paged attention, quantized weights and activations, adapter merging, structured-output validators, and runtime-specific memory behavior.</li>
+<li><strong>Algorithm sketch:</strong> export or package the model, pick a runtime, apply quantization or adapters, benchmark latency and throughput, validate outputs, and gate release on regression and schema checks.</li>
+<li><strong>Intuition:</strong> inference engineering is about preserving the useful internal computation of a model while changing the resource envelope in which it runs.</li>
+<li><strong>Tradeoffs:</strong> throughput versus latency, quantization savings versus accuracy, generic APIs versus specialized runtimes, and interactive serving versus batch efficiency.</li>
+<li><strong>Common failure modes:</strong> cache thrash, unsupported export paths, quantization regressions, schema-invalid outputs, streaming stalls, and misleading benchmark setups.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
@@ -298,11 +298,11 @@
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> what changes during adaptation, what remains frozen, and how serving/runtime choices alter final system behavior.</li>
-<li><strong>Algorithm sketch:</strong> training loop, evaluation loop, regression gate, deployment path, and post-launch feedback loop.</li>
-<li><strong>Intuition:</strong> why optimization, deployment, and monitoring are one connected lifecycle rather than separate engineering chores.</li>
-<li><strong>Tradeoffs:</strong> full tuning versus adapters, quality versus latency, quantization versus fidelity, and modular observability versus platform simplicity.</li>
-<li><strong>Common failure modes:</strong> overfitting to synthetic artifacts, slice regressions, quantization regressions, drift, silent retrieval failures, and broken rollback logic.</li>
+<li><strong>Inner workings:</strong> monitoring signals tied back to model internals such as embedding drift, retrieval miss rates, OCR degradation, diarization drift, cache regressions, and abstention behavior.</li>
+<li><strong>Algorithm sketch:</strong> collect telemetry, map failures to slices and components, trigger rollback or fallback paths, generate refresh data, retrain or retune, and redeploy with regression checks.</li>
+<li><strong>Intuition:</strong> post-launch monitoring keeps the internal assumptions of the model honest by exposing where real-world traffic violates the training-time picture.</li>
+<li><strong>Tradeoffs:</strong> rich observability versus operational cost, fast rollback versus deeper diagnosis, and automated refresh loops versus human review safeguards.</li>
+<li><strong>Common failure modes:</strong> silent drift, bad refresh data, false alarms, delayed rollback, poisoned retrieval corpora, and governance failures around generated media or voice identity.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
