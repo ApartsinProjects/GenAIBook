@@ -11,30 +11,267 @@
   .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
   .mini-nav { display:grid; gap:8px; }
   .mini-nav a { text-decoration:none; color:var(--accent); }
+  .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .chapter-anchor-list li { margin:0; }
+  .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topbar">
-    <div class="crumbs">
-      <a href="../">High-Level TOC</a>
-      <span class="tag">Part III</span>
-    </div>
-    <div class="mini-nav">
-      <a class="inline-link" href="../">Back to High-Level TOC</a>
-      <a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
-    </div>
-  </div>
-  <section class="part" id="part3">
-             <div class="part-label">Part III</div>         <h2>Representations, Architectures, and Model Selection</h2>         <p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging.</p>         <article class="chapter">           <div class="chapter-no">09</div>           <div>             <h3>Embeddings, Self-Supervision, and Shared Representation Spaces</h3>             <p class="chapter-desc">Explains the representation layer that powers retrieval, filtering, zero-shot transfer, and multimodal alignment.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>From features to embeddings: ViT patch tokens, AST spectrogram tokens, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>               <li>Contrastive learning, masked modeling, DINO-style pretraining, CLIP-style alignment, and wav2vec2 / HuBERT-style self-supervision.</li>               <li>Retrieval, nearest neighbors, clustering, ANN indexes, vector databases, and representation-driven QA with FAISS-like workflows.</li>               <li>Shared embedding spaces across text, image, audio, video, and documents using CLIP, OpenCLIP, SigLIP, audio-text alignment models, and document retrieval encoders.</li>               <li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>Why embeddings are often the first useful baseline before full fine-tuning.</li>               <li>How representation learning supports filtering, labeling, and synthetic-data validation.</li>               <li>Which retrieval workflows matter for later multimodal chapters.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Use embeddings for retrieval, filtering, and first-pass baselines.</li><li>Interpret where self-supervised representations help low-label regimes.</li><li>Diagnose basic representation-space failures.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a nearest-neighbor and clustering inspection notebook.</li><li>Use embeddings to filter or relabel a data subset.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare two representation models for the same downstream task.</li><li>Analyze zero-shot versus task-specific representation quality.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>CLIP, OpenCLIP, SigLIP, timm, torchvision feature extractors, FAISS-style indexes, FiftyOne embeddings panels.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>ImageNet, Flickr30k, LAION subsets, AudioSet, FLEURS, and MSR-VTT for representation and retrieval examples.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>09_embedding-space-lab.ipynb</code>, <code>09_retrieval-and-clustering-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">10</div>           <div>             <h3>Attention, Transformers, and Multimodal Fusion</h3>             <p class="chapter-desc">Builds from token interactions to dual-encoder, cross-attention, connector, and omni-style systems.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Attention as contextual similarity weighting and learned routing.</li>               <li>Transformer blocks, RoPE and learned positional information, scaling behavior, KV-cache costs, and FlashAttention-era efficiency patterns.</li>               <li>Dual encoders, late fusion, cross-attention, Q-Former-style connectors, Perceiver-style resamplers, and adapter bridges.</li>               <li>Temporal aggregation for audio and video sequences using pooling, attention pooling, TimeSformer-style blocks, and conformer-style context mixing.</li>               <li>Long-context multimodal reasoning, memory compression, chunking, and current bottlenecks in video and audio-plus-text systems.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>The architecture vocabulary needed to read modern multimodal papers and repos.</li>               <li>How fusion choices affect retrieval, grounding, and downstream fine-tuning.</li>               <li>Where later system chapters inherit their design tradeoffs.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Read and compare multimodal architecture diagrams with confidence.</li><li>Understand the tradeoffs between dual-encoder and cross-attention systems.</li><li>Connect fusion design to latency, memory, and model quality.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Trace token flow through one dual-encoder and one cross-attention system.</li><li>Prototype a simple fusion baseline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame connector choice as an ablation variable.</li><li>Analyze where long-context multimodal reasoning still breaks.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Transformers, flash-attn, xformers, Q-Former-style connectors, Perceiver resamplers, attention visualization tools, torchtune.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>MSCOCO captions, Flickr30k, VQAv2, AudioCaps, MSR-VTT, and Ego4D clips for fusion examples.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>10_attention-and-fusion-lab.ipynb</code>, <code>10_dual-encoder-vs-cross-attention-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">11</div>           <div>             <h3>Generative Model Families for Image, Audio, and Video</h3>             <p class="chapter-desc">Compares autoregressive, latent-variable, diffusion, flow-matching, and codec-token approaches from a utility perspective.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Autoregressive models, tokenization choices, next-token objectives, and sequential generation for image tokens, audio tokens, and multimodal streams.</li>               <li>Latent-variable models, VAEs, representation compression, latent bottlenecks, and reconstruction tradeoffs.</li>               <li>Diffusion models: forward and reverse processes, DDPM/DDIM families, schedulers, samplers, classifier-free guidance, and latent diffusion U-Nets and DiTs.</li>               <li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, turbo or distilled generators, and faster-generation trends for image and video systems.</li>               <li>Codec-token and audio generation models for speech and sound, including neural codecs, residual vector quantization, and token-LM generation.</li>               <li>How model-family choice affects deployment format, latency, memory footprint, and downstream synthetic-data economics.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to choose a generative family based on controllability, label fidelity, and cost.</li>               <li>Why diffusion is dominant for editing and controllable image/video generation.</li>               <li>Which model families are best suited for synthetic-data creation rather than pure media generation.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Compare generative model families using engineering and data-utility criteria.</li><li>Understand why diffusion pipelines dominate editing workflows.</li><li>Map model families to the downstream tasks they best support.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Select one generator family for each case-study modality.</li><li>Benchmark quality, controllability, and speed at a small scale.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Formulate when flow-matching-style methods may change the trade space.</li><li>Compare usefulness and realism as distinct objectives.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Diffusers, latent diffusion and DiT-style models, AutoencoderKL-style VAEs, LCM-LoRA-style acceleration, MusicGen / AudioCraft-style stacks, EnCodec-style codecs, autoregressive token generators.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Prompt evaluation suites, image-generation challenge prompts, AudioCaps, MusicCaps, and internal labeled generation challenge sets.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>11_generator-family-comparison.ipynb</code>, <code>11_diffusion-vs-autoregressive-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">12</div>           <div>             <h3>Foundation Models, Document AI, and Omni Systems in Practice</h3>             <p class="chapter-desc">Covers vision-language, audio-language, video-language, document-centric, segmentation, grounding, and omni-style model families with a focus on where each one belongs in a real system.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, SmolDocling-, and document-VLM families.</li>               <li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, audio-chat models, and omni interfaces.</li>               <li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>               <li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, and grounded-segmentation stacks.</li>               <li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>               <li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>               <li>When a generalist open model is enough and when a specialized stack is stronger.</li>               <li>How to shortlist models for later chapters using task, cost, latency, controllability, governance, and deployment-target criteria.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, retrieval, and task-specialized models.</li><li>Create a shortlist for the project pipeline using explicit selection heuristics.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>12_foundation-model-shortlisting.ipynb</code>, <code>12_vlm-audio-model-role-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">13</div>           <div>             <h3>Pre-Deployment Debugging for Modern Multimodal Models</h3>             <p class="chapter-desc">Separates model and dataset debugging before deployment from the later chapter on post-deployment monitoring, drift, and incident response.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Separating data, prompt, representation, architecture, and serving-path failures.</li>               <li>Embedding inspection, error clustering, nearest-neighbor diagnostics, and slice dashboards in FiftyOne-style QA flows.</li>               <li>Prompt sensitivity, hallucination, grounding failures, and brittle OCR or retrieval behavior in VLM systems.</li>               <li>Temporal failure analysis for video, tracking drift, and overlap/noise analysis for audio and speech systems.</li>               <li>Benchmark mismatch analysis, contamination debugging, and separating retrieval failures from model failures.</li>               <li>Debugging workflows from notebook experiments to production incidents using logs, traces, and dataset-level audits.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to tell whether poor performance is caused by the model or the dataset.</li>               <li>How to create actionable failure buckets that feed the synthetic-data engine.</li>               <li>Why debugging is a core skill for both research and deployment.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Trace failures to data, prompt, representation, or architecture causes.</li><li>Build diagnostic views that support iteration.</li><li>Connect debugging to later regeneration and fine-tuning decisions.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create failure buckets and one debugging dashboard for the case study.</li><li>Run an embedding-based error analysis pass.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Use debugging artifacts to motivate new ablations.</li><li>Separate measurement artifacts from real method weaknesses.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>FiftyOne, confusion analysis notebooks, embedding indexes, prompt traces, evaluation dashboards, incident review templates.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Failure-slice subsets derived from COCO, AudioSet, LibriSpeech, Ego4D, and project-specific hidden examples.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>13_failure-bucket-debugger.ipynb</code>, <code>13_prompt-and-data-debug-demo</code></li></ul>           </div>         </article>       
-  </section>
-  <section class="closing">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a class="inline-link" href="../">Return to the high-level TOC</a></li>
-      <li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
-    </ul>
-  </section>
+<div class="topbar">
+<div class="crumbs">
+<a href="../index.html">High-Level TOC</a>
+<span class="tag">Part III</span>
+</div>
+<div class="mini-nav">
+<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
+</div>
+</div>
+<section class="panel">
+<h2>Chapter Jump List</h2>
+<ul class="chapter-anchor-list">
+<li><a href="#embeddings-self-supervision-and-shared-representation-spaces">09 - Embeddings, Self-Supervision, and Shared Representation Spaces</a></li>
+<li><a href="#attention-transformers-and-multimodal-fusion">10 - Attention, Transformers, and Multimodal Fusion</a></li>
+<li><a href="#generative-model-families-for-image-audio-and-video">11 - Generative Model Families for Image, Audio, and Video</a></li>
+<li><a href="#foundation-models-document-ai-and-omni-systems-in-practice">12 - Foundation Models, Document AI, and Omni Systems in Practice</a></li>
+<li><a href="#pre-deployment-debugging-for-modern-multimodal-models">13 - Pre-Deployment Debugging for Modern Multimodal Models</a></li>
+</ul>
+</section>
+<section class="part" id="part3">
+<div class="part-label">Part III</div>
+<h2>Representations, Architectures, and Model Selection</h2>
+<p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging.</p>
+<article class="chapter">
+<div class="chapter-no">09</div>
+<div>
+<h3><span id="embeddings-self-supervision-and-shared-representation-spaces">Embeddings, Self-Supervision, and Shared Representation Spaces</span></h3>
+<p class="chapter-desc">Explains the representation layer that powers retrieval, filtering, zero-shot transfer, and multimodal alignment.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>From features to embeddings: ViT patch tokens, AST spectrogram tokens, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>
+<li>Contrastive learning, masked modeling, DINO-style pretraining, CLIP-style alignment, and wav2vec2 / HuBERT-style self-supervision.</li>
+<li>Retrieval, nearest neighbors, clustering, ANN indexes, vector databases, and representation-driven QA with FAISS-like workflows.</li>
+<li>Shared embedding spaces across text, image, audio, video, and documents using CLIP, OpenCLIP, SigLIP, audio-text alignment models, and document retrieval encoders.</li>
+<li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>Why embeddings are often the first useful baseline before full fine-tuning.</li>
+<li>How representation learning supports filtering, labeling, and synthetic-data validation.</li>
+<li>Which retrieval workflows matter for later multimodal chapters.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Inner workings of embedding construction, pooling, contrastive objectives, and why representation geometry matters for retrieval and filtering.</li>
+<li>Algorithmic discussion of positive and negative pairs, masked prediction, collapse risks, and how representation failures show up downstream.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Embedding-space diagrams, positive-vs-negative pair graphics, clustering views, and nearest-neighbor retrieval schematics.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Build an embedding index for one multimodal slice, inspect neighbors, and show how representation errors influence relabeling or QA.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Use embeddings for retrieval, filtering, and first-pass baselines.</li><li>Interpret where self-supervised representations help low-label regimes.</li><li>Diagnose basic representation-space failures.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a nearest-neighbor and clustering inspection notebook.</li><li>Use embeddings to filter or relabel a data subset.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare two representation models for the same downstream task.</li><li>Analyze zero-shot versus task-specific representation quality.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>CLIP, OpenCLIP, SigLIP, timm, torchvision feature extractors, FAISS-style indexes, FiftyOne embeddings panels.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>ImageNet, Flickr30k, LAION subsets, AudioSet, FLEURS, and MSR-VTT for representation and retrieval examples.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>09_embedding-space-lab.ipynb</code>, <code>09_retrieval-and-clustering-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">10</div>
+<div>
+<h3><span id="attention-transformers-and-multimodal-fusion">Attention, Transformers, and Multimodal Fusion</span></h3>
+<p class="chapter-desc">Builds from token interactions to dual-encoder, cross-attention, connector, and omni-style systems.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Attention as contextual similarity weighting and learned routing.</li>
+<li>Transformer blocks, RoPE and learned positional information, scaling behavior, KV-cache costs, and FlashAttention-era efficiency patterns.</li>
+<li>Dual encoders, late fusion, cross-attention, Q-Former-style connectors, Perceiver-style resamplers, and adapter bridges.</li>
+<li>Temporal aggregation for audio and video sequences using pooling, attention pooling, TimeSformer-style blocks, and conformer-style context mixing.</li>
+<li>Long-context multimodal reasoning, memory compression, chunking, and current bottlenecks in video and audio-plus-text systems.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>The architecture vocabulary needed to read modern multimodal papers and repos.</li>
+<li>How fusion choices affect retrieval, grounding, and downstream fine-tuning.</li>
+<li>Where later system chapters inherit their design tradeoffs.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Mechanics of attention scores, token mixing, positional information, connector modules, and the cost-quality tradeoffs between dual encoders and cross-attention systems.</li>
+<li>Why multimodal fusion choices change memory use, latency, grounding quality, and long-context behavior.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Token-flow diagrams, attention heatmaps, connector schematics, and side-by-side fusion architecture comparisons.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Trace one image-text and one audio-text query through dual-encoder and cross-attention pipelines and compare output behavior and compute cost.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Read and compare multimodal architecture diagrams with confidence.</li><li>Understand the tradeoffs between dual-encoder and cross-attention systems.</li><li>Connect fusion design to latency, memory, and model quality.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Trace token flow through one dual-encoder and one cross-attention system.</li><li>Prototype a simple fusion baseline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame connector choice as an ablation variable.</li><li>Analyze where long-context multimodal reasoning still breaks.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Transformers, flash-attn, xformers, Q-Former-style connectors, Perceiver resamplers, attention visualization tools, torchtune.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>MSCOCO captions, Flickr30k, VQAv2, AudioCaps, MSR-VTT, and Ego4D clips for fusion examples.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>10_attention-and-fusion-lab.ipynb</code>, <code>10_dual-encoder-vs-cross-attention-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">11</div>
+<div>
+<h3><span id="generative-model-families-for-image-audio-and-video">Generative Model Families for Image, Audio, and Video</span></h3>
+<p class="chapter-desc">Compares autoregressive, latent-variable, diffusion, flow-matching, and codec-token approaches from a utility perspective.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Autoregressive models, tokenization choices, next-token objectives, and sequential generation for image tokens, audio tokens, and multimodal streams.</li>
+<li>Latent-variable models, VAEs, representation compression, latent bottlenecks, and reconstruction tradeoffs.</li>
+<li>Diffusion models: forward and reverse processes, DDPM/DDIM families, schedulers, samplers, classifier-free guidance, and latent diffusion U-Nets and DiTs.</li>
+<li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, turbo or distilled generators, and faster-generation trends for image and video systems.</li>
+<li>Codec-token and audio generation models for speech and sound, including neural codecs, residual vector quantization, and token-LM generation.</li>
+<li>How model-family choice affects deployment format, latency, memory footprint, and downstream synthetic-data economics.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to choose a generative family based on controllability, label fidelity, and cost.</li>
+<li>Why diffusion is dominant for editing and controllable image/video generation.</li>
+<li>Which model families are best suited for synthetic-data creation rather than pure media generation.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Inner workings of the core generation mechanism, conditioning path, sampling or decoding loop, and the engineering consequences of those choices for controllability and label fidelity.</li>
+<li>Discussion of where the model family is useful for synthetic data, where it fails, and what artifacts or biases it tends to introduce.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Compare generative model families using engineering and data-utility criteria.</li><li>Understand why diffusion pipelines dominate editing workflows.</li><li>Map model families to the downstream tasks they best support.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Select one generator family for each case-study modality.</li><li>Benchmark quality, controllability, and speed at a small scale.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Formulate when flow-matching-style methods may change the trade space.</li><li>Compare usefulness and realism as distinct objectives.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Diffusers, latent diffusion and DiT-style models, AutoencoderKL-style VAEs, LCM-LoRA-style acceleration, MusicGen / AudioCraft-style stacks, EnCodec-style codecs, autoregressive token generators.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Prompt evaluation suites, image-generation challenge prompts, AudioCaps, MusicCaps, and internal labeled generation challenge sets.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>11_generator-family-comparison.ipynb</code>, <code>11_diffusion-vs-autoregressive-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">12</div>
+<div>
+<h3><span id="foundation-models-document-ai-and-omni-systems-in-practice">Foundation Models, Document AI, and Omni Systems in Practice</span></h3>
+<p class="chapter-desc">Covers foundation-model families with a selection focus, showing where each belongs in a real system before later chapters build full retrieval, RAG, and agent workflows on top of them.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, SmolDocling-, and document-VLM families.</li>
+<li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, audio-chat models, and omni interfaces.</li>
+<li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>
+<li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, and grounded-segmentation stacks.</li>
+<li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>
+<li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>
+<li>When a generalist open model is enough and when a specialized stack is stronger.</li>
+<li>How to shortlist models for later chapters using task, cost, latency, controllability, governance, and deployment-target criteria.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Mechanism-level treatment of how foundation models are wired for perception, grounding, retrieval, and generation, including what remains modular versus unified.</li>
+<li>System-level discussion of why retrieval, tool use, schema validation, and grounding often outperform naive end-to-end prompting.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>System architecture diagrams, document or multimodal retrieval pipelines, grounding loops, and modular-vs-omni design comparisons.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Assemble a retrieval-grounding-generation workflow with explicit intermediate artifacts, then compare it with a direct omni-model baseline.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, retrieval, and task-specialized models.</li><li>Create a shortlist for the project pipeline using explicit selection heuristics.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>12_foundation-model-shortlisting.ipynb</code>, <code>12_vlm-audio-model-role-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">13</div>
+<div>
+<h3><span id="pre-deployment-debugging-for-modern-multimodal-models">Pre-Deployment Debugging for Modern Multimodal Models</span></h3>
+<p class="chapter-desc">Separates model and dataset debugging before deployment from the later chapter on post-deployment monitoring, drift, and incident response.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Separating data, prompt, representation, architecture, and serving-path failures.</li>
+<li>Embedding inspection, error clustering, nearest-neighbor diagnostics, and slice dashboards in FiftyOne-style QA flows.</li>
+<li>Prompt sensitivity, hallucination, grounding failures, and brittle OCR or retrieval behavior in VLM systems.</li>
+<li>Temporal failure analysis for video, tracking drift, and overlap/noise analysis for audio and speech systems.</li>
+<li>Benchmark mismatch analysis, contamination debugging, and separating retrieval failures from model failures.</li>
+<li>Debugging workflows from notebook experiments to production incidents using logs, traces, and dataset-level audits.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to tell whether poor performance is caused by the model or the dataset.</li>
+<li>How to create actionable failure buckets that feed the synthetic-data engine.</li>
+<li>Why debugging is a core skill for both research and deployment.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
+<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Trace failures to data, prompt, representation, or architecture causes.</li><li>Build diagnostic views that support iteration.</li><li>Connect debugging to later regeneration and fine-tuning decisions.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create failure buckets and one debugging dashboard for the case study.</li><li>Run an embedding-based error analysis pass.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Use debugging artifacts to motivate new ablations.</li><li>Separate measurement artifacts from real method weaknesses.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>FiftyOne, confusion analysis notebooks, embedding indexes, prompt traces, evaluation dashboards, incident review templates.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Failure-slice subsets derived from COCO, AudioSet, LibriSpeech, Ego4D, and project-specific hidden examples.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>13_failure-bucket-debugger.ipynb</code>, <code>13_prompt-and-data-debug-demo</code></li></ul>
+</div>
+</article>
+</section>
+<section class="closing">
+<h2>Navigation</h2>
+<ul>
+<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
+</ul>
+</section>
 </div>
 </body>
 </html>
+
+
+
+

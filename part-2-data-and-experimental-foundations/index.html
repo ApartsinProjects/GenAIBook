@@ -11,30 +11,214 @@
   .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
   .mini-nav { display:grid; gap:8px; }
   .mini-nav a { text-decoration:none; color:var(--accent); }
+  .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .chapter-anchor-list li { margin:0; }
+  .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topbar">
-    <div class="crumbs">
-      <a href="../">High-Level TOC</a>
-      <span class="tag">Part II</span>
-    </div>
-    <div class="mini-nav">
-      <a class="inline-link" href="../">Back to High-Level TOC</a>
-      <a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
-    </div>
-  </div>
-  <section class="part" id="part2">
-             <div class="part-label">Part II</div>         <h2>Data and Experimental Foundations</h2>         <p class="part-intro">This part makes data design, documentation, and methodology first-class. It fixes one of the biggest gaps in most AI books: readers need to know how to design credible studies, not just run models.</p>         <article class="chapter">           <div class="chapter-no">05</div>           <div>             <h3>Data Rights, Provenance, and Responsible Acquisition</h3>             <p class="chapter-desc">Covers licensing, consent, identity, traceability, and commercial-use constraints across image, audio, and video data.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Public, licensed, internal, and partner datasets.</li>               <li>Voice, face, copyright, likeness, and domain-specific sensitivity.</li>               <li>What synthetic data mitigates and what new risks it creates.</li>               <li>Documentation expectations: model cards, data cards, provenance logs.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Understand legal and governance constraints before acquiring or generating data.</li>               <li>Distinguish provenance requirements across image, audio, and video applications.</li>               <li>Know when synthetic data reduces exposure and when it does not.</li>             </ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a data-rights and provenance checklist for a project.</li><li>Audit a candidate dataset source before using it.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Define governance assumptions that affect claims and reproducibility.</li><li>Identify where legal constraints shape dataset design.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Dataset cards, model cards, provenance logs, risk registers.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Hugging Face dataset cards, Data Statements, model cards, internal governance templates.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>05_data-rights-audit-template.ipynb</code>, <code>05_provenance-review-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">06</div>           <div>             <h3>Dataset Design, Schemas, and Versioning</h3>             <p class="chapter-desc">Teaches readers how to represent datasets so they can be trained, audited, compared, and published.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Schemas for images, waveforms, clips, segments, tracks, and multimodal prompts.</li>               <li>Metadata for seeds, prompts, generators, edits, judges, and reviewers.</li>               <li>Versioning prompts, labels, datasets, adapters, and evaluation reports together.</li>               <li>Dataset cards, benchmark packs, and reproducibility bundles.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Design schemas that support training, auditing, and future reuse.</li>               <li>Version data, prompts, and evaluations in a coherent way.</li>               <li>Build reproducibility into the dataset rather than bolting it on later.</li>             </ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a schema for the chosen modality and task.</li><li>Version an initial dataset release with metadata and splits.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design metadata needed for later ablations and slice analysis.</li><li>Define what a publishable dataset bundle would require.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>DVC, MLflow artifacts, dataset cards, JSONL/Parquet schemas, benchmark manifests.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>COCO JSON, AudioSet metadata, Parquet multimodal manifests, WebDataset shards, and clip-level schema examples.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>06_schema-designer.ipynb</code>, <code>06_dataset-versioning-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">07</div>           <div>             <h3>Annotation Systems, Weak Supervision, and Auto-Labeling</h3>             <p class="chapter-desc">Treats labeling as a system, not a manual afterthought.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Human annotation workflows, adjudication, and quality control.</li>               <li>Auto-label pipelines with captioning, grounding, segmentation, diarization, transcription models, detector-assisted labeling, and tracker-assisted video annotation.</li>               <li>Teacher models, judge models, and pseudo-labeling loops.</li>               <li>Label disagreement, noisy labels, correction queues, interpolation workflows, and annotation-ops productivity metrics.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Build annotation pipelines that mix humans and models productively.</li>               <li>Understand where weak supervision helps and where it introduces risk.</li>               <li>Turn labeling into an iterative system instead of a static stage.</li>             </ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Stand up an auto-label plus review workflow for one data slice.</li><li>Create correction queues and quality checks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the effect of auto-label noise on downstream results.</li><li>Compare two weak-supervision strategies under the same evaluation slices.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Label Studio, CVAT, CVAT AI tools, FiftyOne, Argilla, supervision, SAHI, SAM-style models, grounding models, Whisper-class models, pyannote.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>COCO, LVIS, DocVQA-style samples, AudioSet clips, LibriSpeech segments, and CVAT video tasks.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>07_auto-label-and-review-loop.ipynb</code>, <code>07_annotation-ops-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">08</div>           <div>             <h3>Baselines, Ablations, and Credible Claims</h3>             <p class="chapter-desc">Builds the methodological spine needed for course projects, benchmark reports, and research papers.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Real-only, synthetic-only, hybrid, and repurposed-data comparisons.</li>               <li>Baseline design, hidden test sets, contamination checks, leakage checks, and slice construction.</li>               <li>What counts as a defensible synthetic-data claim, including calibration, uncertainty, abstention reporting, and documented benchmark mismatch.</li>               <li>Replication discipline, confidence intervals, challenge sets, benchmark skepticism, contamination controls, and memorization audits.</li>             </ol>             <div class="pedagogy">               <div><strong>Milestone:</strong><br/>Experiment plan</div>               <div><strong>Pitfall:</strong><br/>Leakage</div>               <div><strong>Exercise:</strong><br/>Ablation design</div>               <div><strong>Output:</strong><br/>Study template</div>             </div>             <div class="label">Learning Outcomes</div>             <ul>               <li>Design defensible synthetic-data experiments with proper baselines and ablations.</li>               <li>Recognize leakage, novelty inflation, and weak evaluation design.</li>               <li>Prepare the methodological scaffold for later chapters.</li>             </ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Write an experiment template with baselines, slices, and outputs.</li><li>Define hidden-test and failure-slice policies.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a project idea into a claim, baseline, and ablation table.</li><li>Specify what evidence would falsify the claim.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Evaluate, custom benchmark harnesses, calibration metrics, uncertainty plots, contamination audits, confidence interval tooling, memorization checks, experiment tracking systems.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>ImageNet, COCO, AudioSet, LibriSpeech, FLEURS, custom challenge sets, and hidden holdout splits.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>08_ablation-planner.ipynb</code>, <code>08_hidden-test-and-calibration-demo</code></li></ul>           </div>         </article>       
-  </section>
-  <section class="closing">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a class="inline-link" href="../">Return to the high-level TOC</a></li>
-      <li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
-    </ul>
-  </section>
+<div class="topbar">
+<div class="crumbs">
+<a href="../index.html">High-Level TOC</a>
+<span class="tag">Part II</span>
+</div>
+<div class="mini-nav">
+<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
+</div>
+</div>
+<section class="panel">
+<h2>Chapter Jump List</h2>
+<ul class="chapter-anchor-list">
+<li><a href="#data-rights-provenance-and-responsible-acquisition">05 - Data Rights, Provenance, and Responsible Acquisition</a></li>
+<li><a href="#dataset-design-schemas-and-versioning">06 - Dataset Design, Schemas, and Versioning</a></li>
+<li><a href="#annotation-systems-weak-supervision-and-auto-labeling">07 - Annotation Systems, Weak Supervision, and Auto-Labeling</a></li>
+<li><a href="#baselines-ablations-and-credible-claims">08 - Baselines, Ablations, and Credible Claims</a></li>
+</ul>
+</section>
+<section class="part" id="part2">
+<div class="part-label">Part II</div>
+<h2>Data and Experimental Foundations</h2>
+<p class="part-intro">This part makes data design, documentation, and methodology first-class. It fixes one of the biggest gaps in most AI books: readers need to know how to design credible studies, not just run models.</p>
+<article class="chapter">
+<div class="chapter-no">05</div>
+<div>
+<h3><span id="data-rights-provenance-and-responsible-acquisition">Data Rights, Provenance, and Responsible Acquisition</span></h3>
+<p class="chapter-desc">Covers licensing, consent, identity, traceability, and commercial-use constraints across image, audio, and video data.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Public, licensed, internal, and partner datasets.</li>
+<li>Voice, face, copyright, likeness, and domain-specific sensitivity.</li>
+<li>What synthetic data mitigates and what new risks it creates.</li>
+<li>Documentation expectations: model cards, data cards, provenance logs.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Understand legal and governance constraints before acquiring or generating data.</li>
+<li>Distinguish provenance requirements across image, audio, and video applications.</li>
+<li>Know when synthetic data reduces exposure and when it does not.</li>
+</ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a data-rights and provenance checklist for a project.</li><li>Audit a candidate dataset source before using it.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Define governance assumptions that affect claims and reproducibility.</li><li>Identify where legal constraints shape dataset design.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Dataset cards, model cards, provenance logs, risk registers.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Hugging Face dataset cards, Data Statements, model cards, internal governance templates.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>05_data-rights-audit-template.ipynb</code>, <code>05_provenance-review-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">06</div>
+<div>
+<h3><span id="dataset-design-schemas-and-versioning">Dataset Design, Schemas, and Versioning</span></h3>
+<p class="chapter-desc">Teaches readers how to represent datasets so they can be trained, audited, compared, and published.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Schemas for images, waveforms, clips, segments, tracks, and multimodal prompts.</li>
+<li>Metadata for seeds, prompts, generators, edits, judges, and reviewers.</li>
+<li>Versioning prompts, labels, datasets, adapters, and evaluation reports together.</li>
+<li>Dataset cards, benchmark packs, and reproducibility bundles.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Design schemas that support training, auditing, and future reuse.</li>
+<li>Version data, prompts, and evaluations in a coherent way.</li>
+<li>Build reproducibility into the dataset rather than bolting it on later.</li>
+</ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a schema for the chosen modality and task.</li><li>Version an initial dataset release with metadata and splits.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design metadata needed for later ablations and slice analysis.</li><li>Define what a publishable dataset bundle would require.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>DVC, MLflow artifacts, dataset cards, JSONL/Parquet schemas, benchmark manifests.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>COCO JSON, AudioSet metadata, Parquet multimodal manifests, WebDataset shards, and clip-level schema examples.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>06_schema-designer.ipynb</code>, <code>06_dataset-versioning-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">07</div>
+<div>
+<h3><span id="annotation-systems-weak-supervision-and-auto-labeling">Annotation Systems, Weak Supervision, and Auto-Labeling</span></h3>
+<p class="chapter-desc">Treats label creation, correction, and weak-supervision workflows as a system before generation-time QA begins.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Human annotation workflows, adjudication, and quality control.</li>
+<li>Auto-label pipelines with captioning, grounding, segmentation, diarization, transcription models, detector-assisted labeling, and tracker-assisted video annotation.</li>
+<li>Teacher models, judge models, and pseudo-labeling loops.</li>
+<li>Label disagreement, noisy labels, correction queues, interpolation workflows, and annotation-ops productivity metrics.</li><li>Boundary note: this chapter is about creating and repairing labels; Chapter 19 is about accepting or rejecting synthetic outputs after generation; Chapter 25 is about failures that only appear after deployment.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Build annotation pipelines that mix humans and models productively.</li>
+<li>Understand where weak supervision helps and where it introduces risk.</li>
+<li>Turn labeling into an iterative system instead of a static stage.</li>
+</ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Stand up an auto-label plus review workflow for one data slice.</li><li>Create correction queues and quality checks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the effect of auto-label noise on downstream results.</li><li>Compare two weak-supervision strategies under the same evaluation slices.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Label Studio, CVAT, CVAT AI tools, FiftyOne, Argilla, supervision, SAHI, SAM-style models, grounding models, Whisper-class models, pyannote.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>COCO, LVIS, DocVQA-style samples, AudioSet clips, LibriSpeech segments, and CVAT video tasks.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>07_auto-label-and-review-loop.ipynb</code>, <code>07_annotation-ops-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">08</div>
+<div>
+<h3><span id="baselines-ablations-and-credible-claims">Baselines, Ablations, and Credible Claims</span></h3>
+<p class="chapter-desc">Builds the methodological spine needed for course projects, benchmark reports, and research papers.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Real-only, synthetic-only, hybrid, and repurposed-data comparisons.</li>
+<li>Baseline design, hidden test sets, contamination checks, leakage checks, and slice construction.</li>
+<li>What counts as a defensible synthetic-data claim, including calibration, uncertainty, abstention reporting, and documented benchmark mismatch.</li>
+<li>Replication discipline, confidence intervals, challenge sets, benchmark skepticism, contamination controls, and memorization audits.</li>
+</ol>
+<div class="pedagogy">
+<div><strong>Milestone:</strong><br/>Experiment plan</div>
+<div><strong>Pitfall:</strong><br/>Leakage</div>
+<div><strong>Exercise:</strong><br/>Ablation design</div>
+<div><strong>Output:</strong><br/>Study template</div>
+</div>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Design defensible synthetic-data experiments with proper baselines and ablations.</li>
+<li>Recognize leakage, novelty inflation, and weak evaluation design.</li>
+<li>Prepare the methodological scaffold for later chapters.</li>
+</ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Write an experiment template with baselines, slices, and outputs.</li><li>Define hidden-test and failure-slice policies.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a project idea into a claim, baseline, and ablation table.</li><li>Specify what evidence would falsify the claim.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Evaluate, custom benchmark harnesses, calibration metrics, uncertainty plots, contamination audits, confidence interval tooling, memorization checks, experiment tracking systems.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>ImageNet, COCO, AudioSet, LibriSpeech, FLEURS, custom challenge sets, and hidden holdout splits.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>08_ablation-planner.ipynb</code>, <code>08_hidden-test-and-calibration-demo</code></li></ul>
+</div>
+</article>
+</section>
+<section class="closing">
+<h2>Navigation</h2>
+<ul>
+<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
+</ul>
+</section>
 </div>
 </body>
 </html>
+
+
+
+

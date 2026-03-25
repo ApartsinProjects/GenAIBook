@@ -11,30 +11,160 @@
   .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
   .mini-nav { display:grid; gap:8px; }
   .mini-nav a { text-decoration:none; color:var(--accent); }
+  .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .chapter-anchor-list li { margin:0; }
+  .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topbar">
-    <div class="crumbs">
-      <a href="../">High-Level TOC</a>
-      <span class="tag">Front Matter</span>
-    </div>
-    <div class="mini-nav">
-      <a class="inline-link" href="../">Back to High-Level TOC</a>
-      <a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
-    </div>
-  </div>
-  <section class="part" id="front">
-             <div class="part-label">Front Matter</div>         <h2>How This Book Works</h2>         <p class="part-intro">The front matter is part of the product, not just packaging. It tells instructors how to adopt the book, tells learners how to move through it, makes the five-lens design visible before Chapter 1, and defines the project spine that runs across the whole book.</p>         <article class="chapter">           <div class="chapter-no">FM</div>           <div>             <h3>Front Matter Package</h3>             <p class="chapter-desc">A publisher-facing and reader-facing opening package that clarifies audience, pedagogy, assets, and chapter conventions.</p>             <div class="meta">               <span class="tag">Preface</span>               <span class="tag">How to Use</span>               <span class="tag">Instructor Guide</span>               <span class="tag">Companion Assets</span>             </div>             <div class="label">Included Components</div>             <ol>               <li>Preface and market positioning: why synthetic-data-first multimodal AI deserves a dedicated book.</li>               <li>How to use this book: course path, practitioner path, research path, philosopher path, teacher path, and accelerated path.</li>               <li>Case-study guide: the three recurring systems and how they reappear across chapters.</li>               <li>Visual pedagogy plan: architecture diagrams, data schemas, labeling examples, evaluation dashboards, and deployment flowcharts.</li>               <li>Companion package: notebooks, starter repos, datasets, slides, rubrics, project templates, and audio companion material.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Understand how the book is structured for courses, self-study, and research use.</li>               <li>Know which case studies and assets to follow through the book.</li>               <li>Choose an appropriate reading path before starting the main chapters.</li>             </ul>             <div class="track-grid">               <div class="track-box">                 <h4>Hands-On Track</h4>                 <ul>                   <li>Set up the repository, assets, and chapter workflow.</li>                   <li>Choose a case study and create a working project folder.</li>                 </ul>               </div>               <div class="track-box">                 <h4>Research Track</h4>                 <ul>                   <li>Map the book’s themes to a candidate seminar or project topic.</li>                   <li>Define which kinds of claims the later chapters will support.</li>                 </ul>               </div>             </div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul>               <li>Companion notebooks, project templates, slide decks, rubric templates.</li>             </ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">FM2</div>           <div>             <h3>How to Read, Study, Teach, and Think With This Book</h3>             <p class="chapter-desc">Defines the internal chapter template and shows how the same material should serve builders, learners, researchers, deep thinkers, and instructors.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>The standard chapter pattern: motivation, intuition, formal core, practical tools, evaluation, recap, exercises, and project milestone.</li>               <li>How a self-learner should move through microlearning blocks and checkpoints.</li>               <li>How an instructor should map chapters to lectures, labs, and assessments.</li>               <li>How a researcher should distinguish established knowledge, best practice, emerging direction, and unresolved question.</li>               <li>How a philosopher-reader should look for assumptions, tradeoffs, and conceptual tensions.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Use the book intentionally rather than passively reading it front to back.</li>               <li>Understand how the same chapter supports different reader goals.</li>               <li>Recognize the editorial logic behind the five-lens design.</li>             </ul>             <div class="track-grid">               <div class="track-box">                 <h4>Hands-On Track</h4>                 <ul>                   <li>Choose a workflow for code, notes, experiments, and project milestones.</li>                   <li>Set up a study or lab rhythm for the rest of the book.</li>                 </ul>               </div>               <div class="track-box">                 <h4>Research Track</h4>                 <ul>                   <li>Choose how to log claims, evidence, and open questions chapter by chapter.</li>                   <li>Define an evaluation notebook or paper notebook that grows with the book.</li>                 </ul>               </div>             </div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul>               <li>Reading guides, project journals, experiment trackers, slide decks, and assessment templates.</li>             </ul>           </div>         </article>       
-  </section>
-  <section class="closing">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a class="inline-link" href="../">Return to the high-level TOC</a></li>
-      <li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
-    </ul>
-  </section>
+<div class="topbar">
+<div class="crumbs">
+<a href="../index.html">High-Level TOC</a>
+<span class="tag">Front Matter</span>
+</div>
+<div class="mini-nav">
+<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
+</div>
+</div>
+<section class="panel">
+<h2>Chapter Jump List</h2>
+<ul class="chapter-anchor-list">
+<li><a href="#front-matter-package">FM - Front Matter Package</a></li>
+<li><a href="#how-to-read-study-teach-and-think-with-this-book">FM2 - How to Read, Study, Teach, and Think With This Book</a></li>
+</ul>
+</section>
+<section class="part" id="front">
+<div class="part-label">Front Matter</div>
+<h2>How This Book Works</h2>
+<p class="part-intro">The front matter is part of the product, not just packaging. It tells instructors how to adopt the book, tells learners how to move through it, makes the five-lens design visible before Chapter 1, and defines the project spine that runs across the whole book.</p>
+<article class="chapter">
+<div class="chapter-no">FM</div>
+<div>
+<h3><span id="front-matter-package">Front Matter Package</span></h3>
+<p class="chapter-desc">A publisher-facing and reader-facing opening package that clarifies audience, pedagogy, assets, and chapter conventions.</p>
+<div class="meta">
+<span class="tag">Preface</span>
+<span class="tag">How to Use</span>
+<span class="tag">Instructor Guide</span>
+<span class="tag">Companion Assets</span>
+</div>
+<div class="label">Included Components</div>
+<ol>
+<li>Preface and market positioning: why synthetic-data-first multimodal AI deserves a dedicated book.</li>
+<li>How to use this book: course path, practitioner path, research path, philosopher path, teacher path, and accelerated path.</li>
+<li>Case-study guide: the three recurring systems and how they reappear across chapters.</li>
+<li>Visual pedagogy plan: architecture diagrams, data schemas, labeling examples, evaluation dashboards, and deployment flowcharts.</li>
+<li>Companion package: notebooks, starter repos, datasets, slides, rubrics, project templates, and audio companion material.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Understand how the book is structured for courses, self-study, and research use.</li>
+<li>Know which case studies and assets to follow through the book.</li>
+<li>Choose an appropriate reading path before starting the main chapters.</li>
+</ul>
+<div class="track-grid">
+<div class="track-box">
+<h4>Hands-On Track</h4>
+<ul>
+<li>Set up the repository, assets, and chapter workflow.</li>
+<li>Choose a case study and create a working project folder.</li>
+</ul>
+</div>
+<div class="track-box">
+<h4>Research Track</h4>
+<ul>
+<li>Map the book’s themes to a candidate seminar or project topic.</li>
+<li>Define which kinds of claims the later chapters will support.</li>
+</ul>
+</div>
+</div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul>
+<li>Companion notebooks, project templates, slide decks, rubric templates.</li>
+</ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">FM2</div>
+<div>
+<h3><span id="how-to-read-study-teach-and-think-with-this-book">How to Read, Study, Teach, and Think With This Book</span></h3>
+<p class="chapter-desc">Defines the internal chapter template and shows how the same material should serve builders, learners, researchers, deep thinkers, and instructors.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>The standard chapter pattern: motivation, intuition, formal core, practical tools, evaluation, recap, exercises, and project milestone.</li>
+<li>How a self-learner should move through microlearning blocks and checkpoints.</li>
+<li>How an instructor should map chapters to lectures, labs, and assessments.</li>
+<li>How a researcher should distinguish established knowledge, best practice, emerging direction, and unresolved question.</li>
+<li>How a philosopher-reader should look for assumptions, tradeoffs, and conceptual tensions.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Use the book intentionally rather than passively reading it front to back.</li>
+<li>Understand how the same chapter supports different reader goals.</li>
+<li>Recognize the editorial logic behind the five-lens design.</li>
+</ul>
+<div class="track-grid">
+<div class="track-box">
+<h4>Hands-On Track</h4>
+<ul>
+<li>Choose a workflow for code, notes, experiments, and project milestones.</li>
+<li>Set up a study or lab rhythm for the rest of the book.</li>
+</ul>
+</div>
+<div class="track-box">
+<h4>Research Track</h4>
+<ul>
+<li>Choose how to log claims, evidence, and open questions chapter by chapter.</li>
+<li>Define an evaluation notebook or paper notebook that grows with the book.</li>
+</ul>
+</div>
+</div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul>
+<li>Reading guides, project journals, experiment trackers, slide decks, and assessment templates.</li>
+</ul>
+</div>
+</article>
+</section>
+<section class="closing">
+<h2>Navigation</h2>
+<ul>
+<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
+</ul>
+</section>
 </div>
 </body>
 </html>
+
+
+
+

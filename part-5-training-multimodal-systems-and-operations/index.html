@@ -11,30 +11,264 @@
   .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
   .mini-nav { display:grid; gap:8px; }
   .mini-nav a { text-decoration:none; color:var(--accent); }
+  .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .chapter-anchor-list li { margin:0; }
+  .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topbar">
-    <div class="crumbs">
-      <a href="../">High-Level TOC</a>
-      <span class="tag">Part V</span>
-    </div>
-    <div class="mini-nav">
-      <a class="inline-link" href="../">Back to High-Level TOC</a>
-      <a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
-    </div>
-  </div>
-  <section class="part" id="part5">
-             <div class="part-label">Part V</div>         <h2>Training, Multimodal Systems, and Operations</h2>         <p class="part-intro">Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh.</p>         <article class="chapter">           <div class="chapter-no">21</div>           <div>             <h3>Fine-Tuning Vision and Video Models</h3>             <p class="chapter-desc">Covers task-model training, adapter-based tuning, slice-based evaluation, and interpretation of gains from synthetic mixtures.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, ViT, DETR-style, and segmentation backbones.</li>               <li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>               <li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>               <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules, sample weighting policies, and replay strategies.</li>               <li>Slice-based evaluation across viewpoint, lighting, motion, occlusion, domain shift, and rare cases.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to measure whether synthetic data actually improves model utility.</li>               <li>How to structure fine-tuning so later deployment remains feasible.</li>               <li>How video fine-tuning differs from image-only adaptation.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Run a real-only vs hybrid fine-tuning comparison.</li><li>Evaluate across rare slices and motion-heavy slices.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design a synthetic-data ablation for one vision or video task.</li><li>Compare representation-first and end-to-end tuning.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, detection and segmentation heads, video backbones, FiftyOne evaluation views.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>ImageNet, COCO, LVIS, YouTube-VIS, MSR-VTT, Ego4D slices, and custom hybrid train/eval splits.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>21_vision-video-finetuning-lab.ipynb</code>, <code>21_real-vs-hybrid-training-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">22</div>           <div>             <h3>Fine-Tuning Audio Models and Streaming Speech Systems</h3>             <p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, synthetic-speech adaptation, and streaming speech systems.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, spoken-intent or meeting analytics, and voiceprint-sensitive workflows.</li>               <li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, speaker-ID-aware pipelines, and audio-language model training patterns.</li>               <li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>               <li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>               <li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to adapt audio models under realistic acoustic stress.</li>               <li>Why synthetic audio should be evaluated by task utility, not audio realism alone.</li>               <li>How to compare speech and audio pipelines fairly.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Train one audio model under channel/noise stress conditions.</li><li>Compare at least two evaluation slice families.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure where synthetic audio helps and where it overfits to artifacts.</li><li>Test whether speech and event tasks respond differently to synthetic data.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, VAD and diarization tooling, Evaluate metrics.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>LibriSpeech, FLEURS, VoxPopuli, VoxCeleb, AudioSet, ESC-50, AMI-style diarization data.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>22_audio-finetuning-lab.ipynb</code>, <code>22_noise-overlap-slice-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">23</div>           <div>             <h3>Building Multimodal Retrieval, RAG, and Agent Systems</h3>             <p class="chapter-desc">Assembles retrieval, generation, grounding, structured outputs, and temporal reasoning into end-to-end multimodal products.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Retrieval systems with shared embeddings, multimodal indexes, vector stores, reranking stages, and document-centric retrieval for PDFs, charts, and slides.</li>               <li>Grounded generation with retrieval, perception, tool use, structured outputs, schema validation, and explanation components.</li>               <li>Chat-with-image, chat-with-audio, chat-with-video, document-question-answering, multimodal RAG, and mixed-modality workflow interfaces.</li>               <li>Temporal reasoning, diarized evidence, and event understanding across audio and video.</li>               <li>System decomposition: modular pipelines, orchestrated tool use, agentic workflows, versus generalist omni interfaces.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to move from model demos to complete multimodal systems.</li>               <li>How retrieval and generation complement each other.</li>               <li>How to architect systems that remain debuggable and extensible.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a multimodal retrieval-plus-generation prototype.</li><li>Implement one audio-video or image-text interaction flow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular and omni-style architectures on one case-study slice.</li><li>Measure where grounding improves reliability.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators, and agent runtime frameworks.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Flickr30k retrieval, DocVQA, ChartQA, MMDocIR-style long-document retrieval, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>23_multimodal-system-builder.ipynb</code>, <code>23_retrieval-plus-generation-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">24</div>           <div>             <h3>Inference Engineering, Deployment, and Cost Control</h3>             <p class="chapter-desc">Covers quantization, adapters, serving stacks, throughput, latency, cost budgets, and regression checks.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Quantization, QLoRA, quantization-aware training, adapter merging, KV-cache implications, and memory-aware inference.</li>               <li>Serving stacks: vLLM, TGI, TEI, SGLang, FastAPI, Gradio, task-specific microservices, and structured-output or tool-calling serving paths.</li>               <li>Batch pipelines versus interactive applications, streaming speech pipelines, asynchronous job queues, and export-format compatibility checks.</li>               <li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, runtime-selection heuristics, and cost forecasting.</li>               <li>Regression testing, compatibility testing, eval-on-deploy checks, structured-output validation, and release checklists.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How to choose a serving path that matches model type and product constraints.</li>               <li>How training choices affect deployment feasibility later.</li>               <li>How to keep costs visible instead of discovering them too late.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Serve one model path and benchmark throughput, latency, and cost.</li><li>Run a regression check after an optimization change.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how inference choices change measured model behavior.</li><li>Compare a deployable stack to a research-only stack.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices, and deployment checklists.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Internal latency benchmark suites, throughput test prompts, streaming speech eval sets, and schema-validation test fixtures.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>24_inference-benchmark-lab.ipynb</code>, <code>24_quantization-and-serving-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">25</div>           <div>             <h3>Monitoring, Drift, and Failure Analysis in the Wild</h3>             <p class="chapter-desc">Adds the missing post-deployment chapter on feedback loops, drift detection, rollback logic, and failure triage.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Operational metrics, latency regressions, quality drift, and abstention-rate drift.</li>               <li>Embedding drift, data drift, prompt drift, model-output drift, retrieval-index drift, and annotation-policy drift.</li>               <li>Human escalation, rollback, safe fallback patterns, and abuse-response playbooks.</li>               <li>User feedback loops, production trace capture, and post-deployment synthetic-data refresh cycles.</li>               <li>Incident review, root-cause analysis templates, multimodal prompt-injection, retrieval poisoning or misuse checks, and provenance or watermark verification for generated media where relevant.</li>             </ol>             <div class="label">What This Chapter Covers</div>             <ul>               <li>How deployed multimodal systems fail after launch.</li>               <li>How to turn production failures into new slices for data generation and tuning.</li>               <li>How to operationalize the book’s iterative workflow end to end.</li>             </ul>             <div class="label">Learning Outcomes</div>             <ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>             <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a monitoring and triage template for the selected case study.</li><li>Define one post-launch refresh loop using synthetic data.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame production drift as a research question about generalization.</li><li>Compare two refresh-loop strategies after a simulated deployment failure.</li></ul></div></div>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists, and abuse-response playbooks.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Post-deployment logs, drift slices, failure replays, and curated incident-review examples.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>25_monitoring-and-refresh-loop.ipynb</code>, <code>25_drift-and-rollback-demo</code></li></ul>           </div>         </article>       
-  </section>
-  <section class="closing">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a class="inline-link" href="../">Return to the high-level TOC</a></li>
-      <li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
-    </ul>
-  </section>
+<div class="topbar">
+<div class="crumbs">
+<a href="../index.html">High-Level TOC</a>
+<span class="tag">Part V</span>
+</div>
+<div class="mini-nav">
+<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
+</div>
+</div>
+<section class="panel">
+<h2>Chapter Jump List</h2>
+<ul class="chapter-anchor-list">
+<li><a href="#fine-tuning-vision-and-video-models">21 - Fine-Tuning Vision and Video Models</a></li>
+<li><a href="#fine-tuning-audio-models-and-streaming-speech-systems">22 - Fine-Tuning Audio Models and Streaming Speech Systems</a></li>
+<li><a href="#building-multimodal-retrieval-rag-and-agent-systems">23 - Building Multimodal Retrieval, RAG, and Agent Systems</a></li>
+<li><a href="#inference-engineering-deployment-and-cost-control">24 - Inference Engineering, Deployment, and Cost Control</a></li>
+<li><a href="#monitoring-drift-and-failure-analysis-in-the-wild">25 - Monitoring, Drift, and Failure Analysis in the Wild</a></li>
+</ul>
+</section>
+<section class="part" id="part5">
+<div class="part-label">Part V</div>
+<h2>Training, Multimodal Systems, and Operations</h2>
+<p class="part-intro">Once the dataset is credible, the book moves into model adaptation, multimodal system assembly, inference engineering, and then the operational realities of deployment and refresh.</p>
+<article class="chapter">
+<div class="chapter-no">21</div>
+<div>
+<h3><span id="fine-tuning-vision-and-video-models">Fine-Tuning Vision and Video Models</span></h3>
+<p class="chapter-desc">Covers task-model training, adapter-based tuning, slice-based evaluation, and interpretation of gains from synthetic mixtures.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, ViT, DETR-style, and segmentation backbones.</li>
+<li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>
+<li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>
+<li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules, sample weighting policies, and replay strategies.</li>
+<li>Slice-based evaluation across viewpoint, lighting, motion, occlusion, domain shift, and rare cases.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to measure whether synthetic data actually improves model utility.</li>
+<li>How to structure fine-tuning so later deployment remains feasible.</li>
+<li>How video fine-tuning differs from image-only adaptation.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
+<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Run a real-only vs hybrid fine-tuning comparison.</li><li>Evaluate across rare slices and motion-heavy slices.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design a synthetic-data ablation for one vision or video task.</li><li>Compare representation-first and end-to-end tuning.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, detection and segmentation heads, video backbones, FiftyOne evaluation views.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>ImageNet, COCO, LVIS, YouTube-VIS, MSR-VTT, Ego4D slices, and custom hybrid train/eval splits.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>21_vision-video-finetuning-lab.ipynb</code>, <code>21_real-vs-hybrid-training-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">22</div>
+<div>
+<h3><span id="fine-tuning-audio-models-and-streaming-speech-systems">Fine-Tuning Audio Models and Streaming Speech Systems</span></h3>
+<p class="chapter-desc">Extends the same discipline to ASR, diarization, event detection, language ID, synthetic-speech adaptation, and streaming speech systems.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, spoken-intent or meeting analytics, and voiceprint-sensitive workflows.</li>
+<li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, speaker-ID-aware pipelines, and audio-language model training patterns.</li>
+<li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>
+<li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>
+<li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to adapt audio models under realistic acoustic stress.</li>
+<li>Why synthetic audio should be evaluated by task utility, not audio realism alone.</li>
+<li>How to compare speech and audio pipelines fairly.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
+<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Train one audio model under channel/noise stress conditions.</li><li>Compare at least two evaluation slice families.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure where synthetic audio helps and where it overfits to artifacts.</li><li>Test whether speech and event tasks respond differently to synthetic data.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, VAD and diarization tooling, Evaluate metrics.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>LibriSpeech, FLEURS, VoxPopuli, VoxCeleb, AudioSet, ESC-50, AMI-style diarization data.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>22_audio-finetuning-lab.ipynb</code>, <code>22_noise-overlap-slice-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">23</div>
+<div>
+<h3><span id="building-multimodal-retrieval-rag-and-agent-systems">Building Multimodal Retrieval, RAG, and Agent Systems</span></h3>
+<p class="chapter-desc">Assembles retrieval, generation, grounding, structured outputs, and temporal reasoning into end-to-end multimodal products.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Retrieval systems with shared embeddings, multimodal indexes, vector stores, reranking stages, and document-centric retrieval for PDFs, charts, and slides.</li>
+<li>Grounded generation with retrieval, perception, tool use, structured outputs, schema validation, and explanation components.</li>
+<li>Chat-with-image, chat-with-audio, chat-with-video, document-question-answering, multimodal RAG, and mixed-modality workflow interfaces.</li>
+<li>Temporal reasoning, diarized evidence, and event understanding across audio and video.</li>
+<li>System decomposition: modular pipelines, orchestrated tool use, agentic workflows, versus generalist omni interfaces.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to move from model demos to complete multimodal systems.</li>
+<li>How retrieval and generation complement each other.</li>
+<li>How to architect systems that remain debuggable and extensible.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Mechanism-level treatment of how foundation models are wired for perception, grounding, retrieval, and generation, including what remains modular versus unified.</li>
+<li>System-level discussion of why retrieval, tool use, schema validation, and grounding often outperform naive end-to-end prompting.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>System architecture diagrams, document or multimodal retrieval pipelines, grounding loops, and modular-vs-omni design comparisons.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Assemble a retrieval-grounding-generation workflow with explicit intermediate artifacts, then compare it with a direct omni-model baseline.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Assemble complete multimodal systems from reusable components.</li><li>Combine retrieval, grounding, and generation in coherent product flows.</li><li>Choose modular versus generalist architectures based on constraints.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a multimodal retrieval-plus-generation prototype.</li><li>Implement one audio-video or image-text interaction flow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular and omni-style architectures on one case-study slice.</li><li>Measure where grounding improves reliability.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>OpenCLIP, VLMs, omni and any-to-any models, retrieval indices, vector databases or FAISS-style stores, ColPali/ViDoRe-style document retrieval components, FastAPI or Gradio-based service layers, orchestration templates, tool-calling and schema-driven workflows, structured-output validators, and agent runtime frameworks.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Flickr30k retrieval, DocVQA, ChartQA, MMDocIR-style long-document retrieval, video-language tasks, audio-chat evaluation sets, and case-study document stores.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>23_multimodal-system-builder.ipynb</code>, <code>23_retrieval-plus-generation-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">24</div>
+<div>
+<h3><span id="inference-engineering-deployment-and-cost-control">Inference Engineering, Deployment, and Cost Control</span></h3>
+<p class="chapter-desc">Covers quantization, adapters, serving stacks, throughput, latency, cost budgets, and regression checks.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Quantization, QLoRA, quantization-aware training, adapter merging, KV-cache implications, and memory-aware inference.</li>
+<li>Serving stacks: vLLM, TGI, TEI, SGLang, FastAPI, Gradio, task-specific microservices, and structured-output or tool-calling serving paths.</li>
+<li>Batch pipelines versus interactive applications, streaming speech pipelines, asynchronous job queues, and export-format compatibility checks.</li>
+<li>Latency, throughput, GPU budgets, storage, autoscaling assumptions, export targets, runtime-selection heuristics, and cost forecasting.</li>
+<li>Regression testing, compatibility testing, eval-on-deploy checks, structured-output validation, and release checklists.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How to choose a serving path that matches model type and product constraints.</li>
+<li>How training choices affect deployment feasibility later.</li>
+<li>How to keep costs visible instead of discovering them too late.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
+<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Design inference stacks that fit latency, memory, and cost constraints.</li><li>Connect quantization and adapter choices to serving behavior.</li><li>Benchmark quality and performance together.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Serve one model path and benchmark throughput, latency, and cost.</li><li>Run a regression check after an optimization change.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study how inference choices change measured model behavior.</li><li>Compare a deployable stack to a research-only stack.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>vLLM, TGI, TEI, SGLang, FastAPI, Gradio, torchao/bitsandbytes-style quantization stacks, adapter-merging tools, ONNX Runtime, TensorRT, OpenVINO, Core ML export paths, benchmark harnesses, schema-validation layers, runtime-decision matrices, and deployment checklists.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Internal latency benchmark suites, throughput test prompts, streaming speech eval sets, and schema-validation test fixtures.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>24_inference-benchmark-lab.ipynb</code>, <code>24_quantization-and-serving-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">25</div>
+<div>
+<h3><span id="monitoring-drift-and-failure-analysis-in-the-wild">Monitoring, Drift, and Failure Analysis in the Wild</span></h3>
+<p class="chapter-desc">Adds the post-deployment chapter on telemetry, drift detection, rollback logic, and failure triage after a system is already live.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Operational metrics, latency regressions, quality drift, and abstention-rate drift.</li>
+<li>Embedding drift, data drift, prompt drift, model-output drift, retrieval-index drift, and annotation-policy drift.</li>
+<li>Human escalation, rollback, safe fallback patterns, and abuse-response playbooks.</li>
+<li>User feedback loops, production trace capture, and post-deployment synthetic-data refresh cycles.</li><li>Boundary note: this chapter begins only after deployment; dataset-label creation belongs in Chapter 7, and synthetic-asset acceptance QA belongs in Chapter 19.</li>
+<li>Incident review, root-cause analysis templates, multimodal prompt-injection, retrieval poisoning or misuse checks, and provenance or watermark verification for generated media where relevant.</li>
+</ol>
+<div class="label">What This Chapter Covers</div>
+<ul>
+<li>How deployed multimodal systems fail after launch.</li>
+<li>How to turn production failures into new slices for data generation and tuning.</li>
+<li>How to operationalize the book’s iterative workflow end to end.</li>
+</ul>
+<div class="label">Deep Dive</div>
+<ul>
+<li>Algorithmic treatment of what changes during adaptation, where gains can come from synthetic mixtures, and how optimization, quantization, serving, and monitoring choices interact.</li>
+<li>Failure-mode discussion that separates data problems, optimization problems, runtime regressions, and post-deployment drift.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Training-to-serving lifecycle diagrams, ablation tables, latency-quality tradeoff charts, and drift or failure-bucket dashboards.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>Run one training or deployment decision from baseline through evaluation, then show the regression checks or monitoring signals that justify the final choice.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Monitor deployed systems for drift and degradation.</li><li>Turn post-deployment failures into actionable data and training changes.</li><li>Design rollback and safe fallback patterns for multimodal systems.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a monitoring and triage template for the selected case study.</li><li>Define one post-launch refresh loop using synthetic data.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame production drift as a research question about generalization.</li><li>Compare two refresh-loop strategies after a simulated deployment failure.</li></ul></div></div>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Monitoring dashboards, embedding drift checks, incident templates, rollback policies, misuse red-team checklists, security review templates, provenance audit checklists, and abuse-response playbooks.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Post-deployment logs, drift slices, failure replays, and curated incident-review examples.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>25_monitoring-and-refresh-loop.ipynb</code>, <code>25_drift-and-rollback-demo</code></li></ul>
+</div>
+</article>
+</section>
+<section class="closing">
+<h2>Navigation</h2>
+<ul>
+<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
+</ul>
+</section>
 </div>
 </body>
 </html>
+
+
+
+

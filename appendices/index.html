@@ -11,30 +11,233 @@
   .crumbs a, .inline-link { text-decoration:none; color:var(--accent); font-weight:700; }
   .mini-nav { display:grid; gap:8px; }
   .mini-nav a { text-decoration:none; color:var(--accent); }
+  .chapter-anchor-list { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .chapter-anchor-list li { margin:0; }
+  .chapter-anchor-list a { text-decoration:none; color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topbar">
-    <div class="crumbs">
-      <a href="../">High-Level TOC</a>
-      <span class="tag">Appendices</span>
-    </div>
-    <div class="mini-nav">
-      <a class="inline-link" href="../">Back to High-Level TOC</a>
-      <a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
-    </div>
-  </div>
-  <section class="part" id="appendix">
-             <div class="part-label">Appendices</div>         <h2>Reference, Setup, and Onboarding</h2>         <p class="part-intro">The appendices keep the main text focused while still supporting readers who need review material, environment guidance, or cloud provisioning help.</p>         <article class="chapter">           <div class="chapter-no">A</div>           <div>             <h3>Basic Mathematics Refresher</h3>             <p class="chapter-desc">Linear algebra, probability, optimization, signal processing, and embedding geometry as a targeted support resource.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Vectors, matrices, tensors, and projections.</li>               <li>Probability, entropy, cross-entropy, and KL divergence.</li>               <li>Gradients, optimization, and regularization.</li>               <li>Spectrograms, patches, clips, and representation math.</li>               <li>Similarity metrics and embedding geometry.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul><li>Refresh the minimum mathematics needed for the main chapters.</li><li>Interpret common objectives and representations with confidence.</li><li>Use the appendix selectively when stuck.</li></ul>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Worked examples, notation sheets, tensor-shape references.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Toy tensors, miniature spectrograms, tiny embedding examples, and shape-tracing exercises.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>A_math-refresher-workbook.ipynb</code>, <code>A_tensor-shape-walkthrough-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">B</div>           <div>             <h3>PyTorch Tutorial and Workflow Primer</h3>             <p class="chapter-desc">A practical bridge from Python and ML basics to modern PyTorch training and debugging patterns.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Tensors, modules, dataloaders, losses, and optimizers.</li>               <li>Training loops, evaluation loops, checkpointing, and mixed precision.</li>               <li>Minimal image, audio, and sequence examples.</li>               <li>Debugging shapes, devices, and numerical issues.</li>               <li>Project structure for later book chapters.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul><li>Get productive in modern PyTorch quickly.</li><li>Understand the training skeleton used across the book.</li><li>Debug common device and tensor-shape issues.</li></ul>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>PyTorch, torchvision, torchaudio, accelerate-ready training skeletons.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>MNIST or Fashion-MNIST, tiny image folders, Speech Commands, and toy sequence datasets.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>B_pytorch-primer-lab.ipynb</code>, <code>B_training-loop-and-debug-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">C</div>           <div>             <h3>Installation Instructions and Local Environment Setup</h3>             <p class="chapter-desc">Platform setup, dependencies, troubleshooting, and hardware tiers for readers and instructors.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Python, CUDA, drivers, and platform-specific setup.</li>               <li>Installing core libraries and modality-specific extras.</li>               <li>Environment pinning and reproducibility basics.</li>               <li>GPU verification, codec checks, and common setup failures.</li>               <li>Recommended hardware tiers for self-study and teaching labs.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul><li>Set up a reproducible environment for the book’s projects.</li><li>Troubleshoot common installation and GPU issues.</li><li>Choose sensible local hardware assumptions.</li></ul>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Python environments, CUDA toolchains, package managers, codec toolchains.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Environment smoke-test scripts, codec test files, GPU verification prompts, and sample media assets.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>C_environment-smoke-tests.ipynb</code>, <code>C_gpu-and-codec-setup-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">D</div>           <div>             <h3>Provisioning Cloud Models and Hosted Infrastructure</h3>             <p class="chapter-desc">Managed notebooks, rented GPUs, hosted APIs, cost controls, secrets, and migration between local and cloud environments.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Hosted APIs, rented GPUs, managed notebooks, and inference endpoints.</li>               <li>Storage, secrets, budget alerts, and access control.</li>               <li>Running training, labeling, and judging workloads in the cloud.</li>               <li>Migration between local prototypes and cloud-scale execution.</li>               <li>Data-governance concerns in hosted environments.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul><li>Choose between local, cloud, and hosted-model execution paths.</li><li>Provision compute with cost and governance constraints in mind.</li><li>Move between local prototypes and cloud workflows safely.</li></ul>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Managed notebooks, GPU instances, hosted APIs, secret managers, storage and budget controls.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Cloud cost worksheets, hosted-model test prompts, artifact-storage templates, and deployment checklists.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>D_cloud-provisioning-workbook.ipynb</code>, <code>D_local-to-cloud-migration-demo</code></li></ul>           </div>         </article>         <article class="chapter">           <div class="chapter-no">E</div>           <div>             <h3>Audio Companion and Modular Learning Guide</h3>             <p class="chapter-desc">Explains how the book also supports audio-first learning through concept capsules, recap episodes, guided thought experiments, and project-focused companion narration.</p>             <div class="label">Detailed Sections</div>             <ol>               <li>Which chapter material works well in spoken form and which requires visual or notebook support.</li>               <li>How to narrate code, equations, and architecture without losing clarity.</li>               <li>Recommended audio segmentation: intro episode, concept capsules, recap, and project episode.</li>               <li>How instructors and self-learners can use audio recap layers between readings and labs.</li>               <li>How to convert diagrams and workflows into strong spoken explanations.</li>             </ol>             <div class="label">Learning Outcomes</div>             <ul>               <li>Use the book in audio-supported and mixed-modality learning settings.</li>               <li>Understand which content belongs in speech, text, code, or diagrams.</li>               <li>Adapt chapter material into shorter review and recap formats.</li>             </ul>             <div class="label">Key Tools, Libraries, and Models</div>             <ul><li>Audio scripts, recap outlines, spoken-code summaries, chapter capsule templates.</li></ul>             <div class="label">Representative Benchmarks and Datasets</div>             <ul><li>Audio companion scripts, recap outlines, concept capsules, and spoken-workflow storyboards.</li></ul>             <div class="label">Suggested Notebooks and Demos</div>             <ul><li><code>E_audio-companion-planner.ipynb</code>, <code>E_concept-capsule-demo</code></li></ul>           </div>         </article>       
-  </section>
-  <section class="closing">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a class="inline-link" href="../">Return to the high-level TOC</a></li>
-      <li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
-    </ul>
-  </section>
+<div class="topbar">
+<div class="crumbs">
+<a href="../index.html">High-Level TOC</a>
+<span class="tag">Appendices</span>
+</div>
+<div class="mini-nav">
+<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../book-toc.html">Alternate High-Level TOC URL</a>
+</div>
+</div>
+<section class="panel">
+<h2>Chapter Jump List</h2>
+<ul class="chapter-anchor-list">
+<li><a href="#basic-mathematics-refresher">A - Basic Mathematics Refresher</a></li>
+<li><a href="#pytorch-tutorial-and-workflow-primer">B - PyTorch Tutorial and Workflow Primer</a></li>
+<li><a href="#installation-instructions-and-local-environment-setup">C - Installation Instructions and Local Environment Setup</a></li>
+<li><a href="#provisioning-cloud-models-and-hosted-infrastructure">D - Provisioning Cloud Models and Hosted Infrastructure</a></li>
+<li><a href="#audio-companion-and-modular-learning-guide">E - Audio Companion and Modular Learning Guide</a></li>
+</ul>
+</section>
+<section class="part" id="appendix">
+<div class="part-label">Appendices</div>
+<h2>Reference, Setup, and Onboarding</h2>
+<p class="part-intro">The appendices keep the main text focused while still supporting readers who need review material, environment guidance, or cloud provisioning help.</p>
+<article class="chapter">
+<div class="chapter-no">A</div>
+<div>
+<h3><span id="basic-mathematics-refresher">Basic Mathematics Refresher</span></h3>
+<p class="chapter-desc">Linear algebra, probability, optimization, signal processing, and embedding geometry as a targeted support resource.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Vectors, matrices, tensors, and projections.</li>
+<li>Probability, entropy, cross-entropy, and KL divergence.</li>
+<li>Gradients, optimization, and regularization.</li>
+<li>Spectrograms, patches, clips, and representation math.</li>
+<li>Similarity metrics and embedding geometry.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Refresh the minimum mathematics needed for the main chapters.</li><li>Interpret common objectives and representations with confidence.</li><li>Use the appendix selectively when stuck.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Worked examples, notation sheets, tensor-shape references.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Toy tensors, miniature spectrograms, tiny embedding examples, and shape-tracing exercises.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>A_math-refresher-workbook.ipynb</code>, <code>A_tensor-shape-walkthrough-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">B</div>
+<div>
+<h3><span id="pytorch-tutorial-and-workflow-primer">PyTorch Tutorial and Workflow Primer</span></h3>
+<p class="chapter-desc">A practical bridge from Python and ML basics to modern PyTorch training and debugging patterns.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Tensors, modules, dataloaders, losses, and optimizers.</li>
+<li>Training loops, evaluation loops, checkpointing, and mixed precision.</li>
+<li>Minimal image, audio, and sequence examples.</li>
+<li>Debugging shapes, devices, and numerical issues.</li>
+<li>Project structure for later book chapters.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Get productive in modern PyTorch quickly.</li><li>Understand the training skeleton used across the book.</li><li>Debug common device and tensor-shape issues.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>PyTorch, torchvision, torchaudio, accelerate-ready training skeletons.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>MNIST or Fashion-MNIST, tiny image folders, Speech Commands, and toy sequence datasets.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>B_pytorch-primer-lab.ipynb</code>, <code>B_training-loop-and-debug-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">C</div>
+<div>
+<h3><span id="installation-instructions-and-local-environment-setup">Installation Instructions and Local Environment Setup</span></h3>
+<p class="chapter-desc">Platform setup, dependencies, troubleshooting, and hardware tiers for readers and instructors.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Python, CUDA, drivers, and platform-specific setup.</li>
+<li>Installing core libraries and modality-specific extras.</li>
+<li>Environment pinning and reproducibility basics.</li>
+<li>GPU verification, codec checks, and common setup failures.</li>
+<li>Recommended hardware tiers for self-study and teaching labs.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Set up a reproducible environment for the book’s projects.</li><li>Troubleshoot common installation and GPU issues.</li><li>Choose sensible local hardware assumptions.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Python environments, CUDA toolchains, package managers, codec toolchains.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Environment smoke-test scripts, codec test files, GPU verification prompts, and sample media assets.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>C_environment-smoke-tests.ipynb</code>, <code>C_gpu-and-codec-setup-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">D</div>
+<div>
+<h3><span id="provisioning-cloud-models-and-hosted-infrastructure">Provisioning Cloud Models and Hosted Infrastructure</span></h3>
+<p class="chapter-desc">Managed notebooks, rented GPUs, hosted APIs, cost controls, secrets, and migration between local and cloud environments.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Hosted APIs, rented GPUs, managed notebooks, and inference endpoints.</li>
+<li>Storage, secrets, budget alerts, and access control.</li>
+<li>Running training, labeling, and judging workloads in the cloud.</li>
+<li>Migration between local prototypes and cloud-scale execution.</li>
+<li>Data-governance concerns in hosted environments.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul><li>Choose between local, cloud, and hosted-model execution paths.</li><li>Provision compute with cost and governance constraints in mind.</li><li>Move between local prototypes and cloud workflows safely.</li></ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Managed notebooks, GPU instances, hosted APIs, secret managers, storage and budget controls.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Cloud cost worksheets, hosted-model test prompts, artifact-storage templates, and deployment checklists.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>D_cloud-provisioning-workbook.ipynb</code>, <code>D_local-to-cloud-migration-demo</code></li></ul>
+</div>
+</article>
+<article class="chapter">
+<div class="chapter-no">E</div>
+<div>
+<h3><span id="audio-companion-and-modular-learning-guide">Audio Companion and Modular Learning Guide</span></h3>
+<p class="chapter-desc">Explains how the book also supports audio-first learning through concept capsules, recap episodes, guided thought experiments, and project-focused companion narration.</p>
+<div class="label">Detailed Sections</div>
+<ol>
+<li>Which chapter material works well in spoken form and which requires visual or notebook support.</li>
+<li>How to narrate code, equations, and architecture without losing clarity.</li>
+<li>Recommended audio segmentation: intro episode, concept capsules, recap, and project episode.</li>
+<li>How instructors and self-learners can use audio recap layers between readings and labs.</li>
+<li>How to convert diagrams and workflows into strong spoken explanations.</li>
+</ol>
+<div class="label">Deep Dive</div>
+<ul>
+<li>First-principles treatment of the core decision logic in this chapter, including why the workflow exists, what assumptions it makes, and which downstream chapters depend on getting it right.</li>
+<li>Discussion of the most common failure modes when teams skip this step or reduce it to checklist work.</li>
+</ul>
+<div class="label">Illustrations</div>
+<ul>
+<li>Decision trees, workflow maps, schema diagrams, evaluation matrices, or project-roadmap graphics that make the chapter operational instead of purely verbal.</li>
+</ul>
+<div class="label">Worked Example</div>
+<ul>
+<li>One concrete case-study walkthrough showing how the chapter's framework changes a real modeling or data decision.</li>
+</ul>
+<div class="label">Learning Outcomes</div>
+<ul>
+<li>Use the book in audio-supported and mixed-modality learning settings.</li>
+<li>Understand which content belongs in speech, text, code, or diagrams.</li>
+<li>Adapt chapter material into shorter review and recap formats.</li>
+</ul>
+<div class="label">Key Tools, Libraries, and Models</div>
+<ul><li>Audio scripts, recap outlines, spoken-code summaries, chapter capsule templates.</li></ul>
+<div class="label">Representative Benchmarks and Datasets</div>
+<ul><li>Audio companion scripts, recap outlines, concept capsules, and spoken-workflow storyboards.</li></ul>
+<div class="label">Suggested Notebooks and Demos</div>
+<ul><li><code>E_audio-companion-planner.ipynb</code>, <code>E_concept-capsule-demo</code></li></ul>
+</div>
+</article>
+</section>
+<section class="closing">
+<h2>Navigation</h2>
+<ul>
+<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../book-toc.html">Open the alternate high-level TOC URL</a></li>
+</ul>
+</section>
 </div>
 </body>
 </html>
+
+
+
+
