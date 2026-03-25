@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Representations, Architectures, and Model Selection - Detailed TOC</title>
+<title>Vision, Audio, and Generative Model Internals - Detailed TOC</title>
 <style>
    :root { --bg:#f5efe5; --paper:#fffdfa; --ink:#1d1f1b; --muted:#5d655b; --line:#d9d0c4; --accent:#0f5a48; --accent-2:#8e5622; --soft:#edf5f0; --soft-2:#f6efe4; --shadow:0 18px 54px rgba(29,31,27,.08); --max:1240px; }   * { box-sizing:border-box; }   body { margin:0; font-family:Georgia,"Times New Roman",serif; color:var(--ink); line-height:1.62; background:radial-gradient(circle at top right, rgba(15,90,72,.12), transparent 28%), linear-gradient(180deg, #f8f3eb 0%, #f2ecdf 100%); }   .page { max-width:var(--max); margin:0 auto; padding:28px 20px 64px; }   .hero { background:linear-gradient(135deg,#153a32 0%,#1d6955 100%); color:#f8f7f2; border-radius:30px; padding:40px 36px; box-shadow:var(--shadow); margin-bottom:22px; }   .eyebrow { margin:0 0 10px; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; opacity:.86; }   h1 { margin:0 0 12px; font-size:clamp(2.2rem,4vw,4.1rem); line-height:1.04; max-width:12ch; }   .hero p { margin:0; max-width:80ch; color:rgba(248,247,242,.93); font-size:1.03rem; }   .hero-note { margin-top:16px; display:inline-block; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); font-size:.92rem; }   .grid { display:grid; grid-template-columns:320px minmax(0,1fr); gap:22px; align-items:start; }   .sidebar { position:sticky; top:16px; display:grid; gap:16px; }   .panel, .part, .closing { background:var(--paper); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }   .panel { padding:18px; }   .panel h2, .closing h2 { margin:0 0 10px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; font-size:.96rem; }   .summary { list-style:none; margin:0; padding:0; display:grid; gap:10px; }   .summary li { background:var(--soft-2); border-radius:14px; padding:10px 12px; font-size:.94rem; }   .part-link { padding:12px 0; border-top:1px solid #e7ddd0; }   .part-link:first-child { border-top:0; padding-top:0; }   .part-link a { text-decoration:none; color:var(--accent); font-weight:700; }   .part-link p { margin:6px 0 0; color:var(--muted); font-size:.92rem; }   .part { padding:26px 24px; margin-bottom:22px; }   .part-label { margin-bottom:8px; color:var(--accent-2); text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; }   .part h2 { margin:0 0 8px; font-size:2rem; line-height:1.1; }   .part-intro { margin:0 0 18px; color:var(--muted); }   .chapter { display:grid; grid-template-columns:76px minmax(0,1fr); gap:18px; padding:18px 0; border-top:1px solid #e7ddd0; }   .chapter:first-of-type { border-top:0; padding-top:0; }   .chapter-no { width:58px; height:58px; border-radius:18px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.02rem; font-weight:700; }   .chapter h3 { margin:0 0 6px; font-size:1.38rem; line-height:1.2; }   .chapter-desc { margin:0 0 10px; color:var(--muted); }   .meta { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }   .tag { background:var(--soft); color:var(--accent); border-radius:999px; padding:5px 10px; font-size:.84rem; }   .label { margin:14px 0 6px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; }   ol, ul { margin:0 0 0 20px; padding:0; }   li { margin-bottom:6px; }   .pedagogy { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }   .pedagogy div { background:linear-gradient(180deg,#fcfaf5 0%,#f6efe4 100%); border:1px solid #e7dece; border-radius:16px; padding:10px 12px; font-size:.9rem; }   .track-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }   .track-box { background:linear-gradient(180deg,#f7fbf8 0%,#eef5f0 100%); border:1px solid #dce9e0; border-radius:16px; padding:12px 14px; }   .track-box h4 { margin:0 0 8px; color:var(--accent); font-size:1rem; }   .closing { padding:24px; }   @media (max-width:980px) { .grid { grid-template-columns:1fr; } .sidebar { position:static; } .pedagogy { grid-template-columns:1fr 1fr; } .track-grid { grid-template-columns:1fr; } } 
   .topbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px; }
@@ -25,28 +25,28 @@
 </div>
 <div class="mini-nav">
 <a class="inline-link" href="../index.html">Back to High-Level TOC</a>
-<a class="inline-link" href="../index.html">Back to High-Level TOC</a>
+<a class="inline-link" href="../training-finetuning-toolkit-matrix.html">Open Toolkit Matrix</a>
 </div>
 </div>
 <section class="panel">
 <h2>Chapter Jump List</h2>
 <ul class="chapter-anchor-list">
-<li><a href="#embeddings-self-supervision-and-shared-representation-spaces">09 - Embeddings, Self-Supervision, and Shared Representation Spaces</a></li>
-<li><a href="#attention-transformers-and-multimodal-fusion">10 - Attention, Transformers, and Multimodal Fusion</a></li>
-<li><a href="#generative-model-families-for-image-audio-and-video">11 - Generative Model Families for Image, Audio, and Video</a></li>
-<li><a href="#foundation-models-document-ai-and-omni-systems-in-practice">12 - Foundation Models, Document AI, and Omni Systems in Practice</a></li>
+<li><a href="#vision-models">09 - Vision Models</a></li>
+<li><a href="#audio-models">10 - Audio Models</a></li>
+<li><a href="#generative-models-for-vision">11 - Generative Models for Vision</a></li>
+<li><a href="#generative-models-for-audio">12 - Generative Models for Audio</a></li>
 <li><a href="#pre-deployment-debugging-for-modern-multimodal-models">13 - Pre-Deployment Debugging for Modern Multimodal Models</a></li>
 </ul>
 </section>
 <section class="part" id="part3">
 <div class="part-label">Part III</div>
-<h2>Representations, Architectures, and Model Selection</h2>
-<p class="part-intro">This part now follows a cleaner technical arc: representations first, fusion and transformer mechanics second, generative families third, then foundation-model selection and pre-deployment debugging. Every named model family is treated from the inside out, with explicit attention to architecture, algorithm, intuition, and failure modes rather than brand-level description.</p>
+<h2>Vision, Audio, and Generative Model Internals</h2>
+<p class="part-intro">This part now follows a clearer four-track technical arc: vision models first, audio models second, generative models for vision third, and generative models for audio fourth. It then closes with a debugging chapter that helps readers decide what to trust, what to fine-tune, and what to regenerate before deployment.</p>
 <article class="chapter">
 <div class="chapter-no">09</div>
 <div>
-<h3><span id="embeddings-self-supervision-and-shared-representation-spaces">Embeddings, Self-Supervision, and Shared Representation Spaces</span></h3>
-<p class="chapter-desc">Explains the representation layer that powers retrieval, filtering, zero-shot transfer, and multimodal alignment.</p>
+<h3><span id="vision-models">Vision Models</span></h3>
+<p class="chapter-desc">Explains the internals of modern vision models: CNNs, ViTs, vision foundation models, grounding systems, segmentation stacks, document models, and video encoders.</p>
 <div class="meta">
 <span class="tag">Advanced</span>
 <span class="tag">Undergraduate</span>
@@ -57,54 +57,54 @@
 <span class="tag">Companion Repo</span></div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>From features to embeddings: CNN feature maps and pooled convolutional representations from ResNet/EfficientNet-style backbones, ViT patch tokens, AST spectrogram tokens, wav2vec2 / HuBERT / WavLM latent speech representations, BEATs-style audio event embeddings, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>
-<li>Contrastive learning, masked modeling, MAE and BEiT-style pretraining, DINO / DINOv2-style self-distillation, CLIP-style alignment, and wav2vec2 / HuBERT / WavLM / BEATs-style self-supervision.</li>
-<li>Retrieval, nearest neighbors, clustering, ANN indexes, vector databases, and representation-driven QA with FAISS-like workflows.</li>
-<li>Shared embedding spaces across text, image, audio, video, and documents using CLIP, OpenCLIP, SigLIP, audio-text alignment models, and document retrieval encoders.</li>
-<li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>
+<li>CNN backbones, feature pyramids, pooling, residual blocks, and why convolution still matters for detection, segmentation, and low-latency deployment.</li>
+<li>Vision transformers, patch embeddings, self-attention over visual tokens, MAE / BEiT / DINOv2-style pretraining, and transfer into downstream tasks.</li>
+<li>Task-specific vision heads for classification, detection, segmentation, grounding, tracking, and document understanding, including DETR, SAM 2, Grounding DINO, Florence-2, Donut, LayoutLMv3, and ColPali-style retrieval encoders.</li>
+<li>Video encoders and temporal models such as VideoMAE, TimeSformer, and clip-level or track-level aggregation strategies.</li>
+<li>Failure modes: shortcut texture cues, missed small objects, broken grounding, temporal collapse, and OCR or layout mismatch.</li>
 </ol>
 <div class="label">What This Chapter Covers</div>
 <ul>
-<li>Why embeddings are often the first useful baseline before full fine-tuning.</li>
-<li>How representation learning supports filtering, labeling, and synthetic-data validation.</li>
-<li>Which retrieval workflows matter for later multimodal chapters.</li>
+<li>How modern vision encoders and task heads are built and where they fit in the downstream stack.</li>
+<li>How vision models support synthetic-data filtering, auto-labeling, grounding, and later fine-tuning.</li>
+<li>Which vision architectures matter most for images, video, documents, and retrieval.</li>
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> embedding construction, pooling, contrastive objectives, and representation geometry for retrieval, filtering, and zero-shot transfer.</li>
-<li><strong>Algorithm sketch:</strong> positive/negative pair formation, masked prediction, projection heads, and nearest-neighbor retrieval loops.</li>
-<li><strong>Intuition:</strong> why semantically useful geometry can act like a reusable substrate before task-specific fine-tuning.</li>
-<li><strong>Tradeoffs:</strong> generic transfer versus task fit, open-world flexibility versus calibration, and retrieval quality versus compute footprint.</li>
-<li><strong>Common failure modes:</strong> collapsed clusters, shortcut features, biased neighborhoods, and brittle zero-shot behavior.</li>
+<li><strong>Inner workings:</strong> convolutions, residual pathways, patch embeddings, self-attention over image tokens, detection and segmentation heads, grounding pathways, and temporal aggregation for video.</li>
+<li><strong>Algorithm sketch:</strong> image or video frames become tokens or feature maps, backbone features flow into task heads, and outputs become labels, masks, boxes, tracks, embeddings, or retrieval signals.</li>
+<li><strong>Intuition:</strong> vision models differ mainly in how they represent spatial structure, global context, and task-specific output geometry.</li>
+<li><strong>Tradeoffs:</strong> CNN efficiency versus transformer flexibility, closed-task heads versus promptable perception, and frame-level precision versus temporal context.</li>
+<li><strong>Common failure modes:</strong> shortcut textures, poor small-object recall, grounding drift, weak OCR, and unstable video aggregation.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
-<li>Embedding-space diagrams, positive-vs-negative pair graphics, clustering views, and nearest-neighbor retrieval schematics.</li>
+<li>CNN versus ViT block diagrams, detection and segmentation heads, grounding and SAM-style promptable perception loops, and temporal video token-flow diagrams.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
-<li>Build an embedding index for one multimodal slice, inspect neighbors, and show how representation errors influence relabeling or QA.</li>
+<li>Compare a CNN, a ViT, and a promptable perception stack on one synthetic-data curation task and one downstream task shortlist.</li>
 </ul>
 <div class="label">Case Study Thread</div>
 <ul>
-<li>Use the industrial inspection, multilingual speech analytics, and multimodal incident-review case studies to show how one representation layer supports three very different downstream workflows.</li>
+<li>Use industrial inspection and incident review to compare detection, segmentation, grounding, document evidence, and video reasoning workflows.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
-<ul><li>Use embeddings for retrieval, filtering, and first-pass baselines.</li><li>Interpret where self-supervised representations help low-label regimes.</li><li>Diagnose basic representation-space failures.</li></ul>
-<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a nearest-neighbor and clustering inspection notebook.</li><li>Use embeddings to filter or relabel a data subset.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare two representation models for the same downstream task.</li><li>Analyze zero-shot versus task-specific representation quality.</li></ul></div></div>
+<ul><li>Distinguish CNN, ViT, grounding, document, and video model roles.</li><li>Choose a vision-model family for synthetic-data generation support or downstream training.</li><li>Diagnose common vision-model failure sources before fine-tuning.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Compare visual backbones and promptable perception tools on one labeling or filtering task.</li><li>Build a shortlist for one downstream vision pipeline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare CNNs, ViTs, and promptable perception models on a long-tail slice.</li><li>Analyze representation versus task-head bottlenecks.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>CLIP, OpenCLIP, SigLIP, DINOv2, CNN backbones such as ResNet and EfficientNet, MAE/BEiT-style encoders, audio encoders such as AST, BEATs, wav2vec2, HuBERT, and WavLM, timm, torchvision feature extractors, FAISS-style indexes, and FiftyOne embeddings panels.</li></ul>
+<ul><li>ResNet, EfficientNet, ViT, Swin, DINOv2, MAE, BEiT, DETR, SAM 2, Grounding DINO, Florence-2, Donut, LayoutLMv3, ColPali, VideoMAE, TimeSformer, timm, torchvision, supervision, SAHI, and FiftyOne.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
-<ul><li>ImageNet, Flickr30k, LAION subsets, AudioSet, FLEURS, and MSR-VTT for representation and retrieval examples.</li></ul>
+<ul><li>ImageNet, COCO, LVIS, DocVQA, ChartQA, VQAv2, Ego4D, Something-Something, and MSR-VTT.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>09_embedding-space-lab.ipynb</code>, <code>09_retrieval-and-clustering-demo</code></li></ul>
+<ul><li><code>09_vision-models-lab.ipynb</code>, <code>09_backbone-grounding-comparison-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
 <div class="chapter-no">10</div>
 <div>
-<h3><span id="attention-transformers-and-multimodal-fusion">Attention, Transformers, and Multimodal Fusion</span></h3>
-<p class="chapter-desc">Builds from token interactions to dual-encoder, cross-attention, connector, and omni-style systems.</p>
+<h3><span id="audio-models">Audio Models</span></h3>
+<p class="chapter-desc">Explains the internals of audio encoders, ASR systems, diarization stacks, speaker models, audio-language models, and streaming speech pipelines.</p>
 <div class="meta">
 <span class="tag">Advanced</span>
 <span class="tag">Undergraduate</span>
@@ -115,54 +115,54 @@
 <span class="tag">Companion Repo</span></div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Attention as contextual similarity weighting and learned routing.</li>
-<li>Transformer blocks, RoPE and learned positional information, scaling behavior, KV-cache costs, and FlashAttention-era efficiency patterns.</li>
-<li>Dual encoders, late fusion, cross-attention, Q-Former-style connectors, Perceiver-style resamplers, and adapter bridges.</li>
-<li>Temporal aggregation for audio and video sequences using pooling, attention pooling, TimeSformer-style blocks, and conformer-style context mixing.</li>
-<li>Long-context multimodal reasoning, memory compression, chunking, and current bottlenecks in video and audio-plus-text systems.</li>
+<li>Audio front ends: waveforms, spectrograms, learned filterbanks, patching strategies, and tokenization for speech and general audio.</li>
+<li>Core audio encoders and self-supervision: wav2vec2, HuBERT, WavLM, AST, BEATs, Conformer, and what each architecture assumes about temporal structure.</li>
+<li>Task models for ASR, diarization, speaker identification, audio event detection, language ID, and streaming inference.</li>
+<li>Speech and audio-language systems such as Whisper-class models, transducer and CTC pipelines, pyannote-style diarization, and audio-chat or omni audio stacks.</li>
+<li>Failure modes: noisy timestamps, overlap confusion, accent or domain shift, speaker leakage, and streaming-state errors.</li>
 </ol>
 <div class="label">What This Chapter Covers</div>
 <ul>
-<li>The architecture vocabulary needed to read modern multimodal papers and repos.</li>
-<li>How fusion choices affect retrieval, grounding, and downstream fine-tuning.</li>
-<li>Where later system chapters inherit their design tradeoffs.</li>
+<li>How audio encoders and task models are structured for speech, events, speakers, and streaming systems.</li>
+<li>How audio models support synthetic-data augmentation, filtering, transcription, diarization, and downstream fine-tuning.</li>
+<li>Which audio-model families matter most for practical system building.</li>
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> attention scores, token mixing, positional encoding, connector modules, and multimodal fusion pathways.</li>
-<li><strong>Algorithm sketch:</strong> query-key-value computation, residual block flow, connector insertion, and cross-attention versus dual-encoder inference paths.</li>
-<li><strong>Intuition:</strong> attention as learned routing that decides what each token should look at and what context it should ignore.</li>
-<li><strong>Tradeoffs:</strong> dual encoders versus cross-attention, context quality versus memory cost, and modular fusion versus tightly coupled stacks.</li>
-<li><strong>Common failure modes:</strong> context dilution, connector bottlenecks, hallucinated grounding, and long-context degradation.</li>
+<li><strong>Inner workings:</strong> audio tokenization, convolutional and transformer front ends, CTC and seq2seq decoders, diarization clustering, speaker embeddings, and streaming caches.</li>
+<li><strong>Algorithm sketch:</strong> audio becomes tokens or latent units, passes through an encoder, branches into task heads or decoders, and is decoded into transcripts, segments, speaker turns, or labels.</li>
+<li><strong>Intuition:</strong> audio models differ mainly in how they compress time, preserve local detail, and handle long-range sequential context.</li>
+<li><strong>Tradeoffs:</strong> CTC versus seq2seq, encoder-only versus encoder-decoder, offline accuracy versus streaming latency, and speech specialization versus broader audio coverage.</li>
+<li><strong>Common failure modes:</strong> timestamp drift, overlap errors, noisy diarization clusters, accent sensitivity, and unstable streaming behavior.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
-<li>Token-flow diagrams, attention heatmaps, connector schematics, and side-by-side fusion architecture comparisons.</li>
+<li>Spectrogram-to-token diagrams, encoder-decoder and CTC pipeline schematics, diarization clustering loops, and streaming-state diagrams.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
-<li>Trace one image-text and one audio-text query through dual-encoder and cross-attention pipelines and compare output behavior and compute cost.</li>
+<li>Trace one audio clip through encoder, decoder, diarization, and streaming paths to compare ASR, speaker, and event-model behavior.</li>
 </ul>
 <div class="label">Case Study Thread</div>
 <ul>
-<li>Show how the same fusion choices change an inspection assistant, a streaming speech copilot, and a multimodal incident-review system.</li>
+<li>Use multilingual speech analytics and incident review to compare transcription, diarization, speaker, and event-detection workflows.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
-<ul><li>Read and compare multimodal architecture diagrams with confidence.</li><li>Understand the tradeoffs between dual-encoder and cross-attention systems.</li><li>Connect fusion design to latency, memory, and model quality.</li></ul>
-<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Trace token flow through one dual-encoder and one cross-attention system.</li><li>Prototype a simple fusion baseline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Frame connector choice as an ablation variable.</li><li>Analyze where long-context multimodal reasoning still breaks.</li></ul></div></div>
+<ul><li>Distinguish audio-encoder, ASR, diarization, and speaker-model roles.</li><li>Choose an audio-model family for augmentation, downstream training, or streaming deployment.</li><li>Diagnose common audio-model and speech-pipeline failures.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Compare ASR and diarization stacks on one noisy slice.</li><li>Build a shortlist for one audio task pipeline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare self-supervised audio encoders under domain shift.</li><li>Analyze timestamping and overlap errors as architecture problems.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>Transformers, flash-attn, xformers, Q-Former-style connectors, Perceiver resamplers, attention visualization tools, torchtune.</li></ul>
+<ul><li>wav2vec2, HuBERT, WavLM, Conformer, AST, BEATs, Whisper, pyannote, torchaudio, librosa, nnAudio, SpeechBrain, and streaming ASR utilities.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
-<ul><li>MSCOCO captions, Flickr30k, VQAv2, AudioCaps, MSR-VTT, and Ego4D clips for fusion examples.</li></ul>
+<ul><li>LibriSpeech, FLEURS, VoxCeleb, AMI, AudioSet, Common Voice, and multilingual in-domain speech slices.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>10_attention-and-fusion-lab.ipynb</code>, <code>10_dual-encoder-vs-cross-attention-demo</code></li></ul>
+<ul><li><code>10_audio-models-lab.ipynb</code>, <code>10_asr-diarization-streaming-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
 <div class="chapter-no">11</div>
 <div>
-<h3><span id="generative-model-families-for-image-audio-and-video">Generative Model Families for Image, Audio, and Video</span></h3>
-<p class="chapter-desc">Compares autoregressive, latent-variable, diffusion, flow-matching, and codec-token approaches from a utility perspective.</p>
+<h3><span id="generative-models-for-vision">Generative Models for Vision</span></h3>
+<p class="chapter-desc">Explains the vision-side generator families used for synthetic images, videos, edits, simulation, and controllable rare-case construction.</p>
 <div class="meta">
 <span class="tag">Advanced</span>
 <span class="tag">Undergraduate</span>
@@ -173,55 +173,54 @@
 <span class="tag">Companion Repo</span></div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Autoregressive models, tokenization choices, next-token objectives, and sequential generation for image tokens, audio tokens, and multimodal streams.</li>
-<li>Latent-variable models, VAEs, representation compression, latent bottlenecks, and reconstruction tradeoffs.</li>
-<li>Diffusion models: forward and reverse processes, DDPM/DDIM families, schedulers, samplers, classifier-free guidance, and latent diffusion U-Nets and DiTs.</li>
-<li>Flow matching, rectified flows, consistency-style acceleration, LCM-style fast sampling, turbo or distilled generators, and faster-generation trends for image and video systems.</li>
-<li>Codec-token and audio generation models for speech and sound, including neural codecs, residual vector quantization, and token-LM generation.</li>
-<li>How model-family choice affects deployment format, latency, memory footprint, and downstream synthetic-data economics.</li>
+<li>Autoregressive, latent-variable, and diffusion-family image generators, including latent diffusion, DiTs, and editing-focused pipelines.</li>
+<li>Vision editing and control methods: image-to-image, inpainting, outpainting, ControlNet, T2I-Adapter, IP-Adapter, textual inversion, DreamBooth, and LoRA adaptation.</li>
+<li>Video generation and temporal synthesis: clip generation, video diffusion, temporal consistency, and controllable motion or scene variation.</li>
+<li>Simulation and procedural generation for vision tasks using renderers, scene graphs, sensor models, and real-to-sim-to-real workflows.</li>
+<li>Failure modes: unrealistic textures, label corruption during editing, temporal flicker, bad conditioning, and synthetic artifacts that hurt downstream training.</li>
 </ol>
 <div class="label">What This Chapter Covers</div>
 <ul>
-<li>How to choose a generative family based on controllability, label fidelity, and cost.</li>
-<li>Why diffusion is dominant for editing and controllable image/video generation.</li>
-<li>Which model families are best suited for synthetic-data creation rather than pure media generation.</li>
+<li>How to choose a vision generator based on controllability, label fidelity, geometry, and cost.</li>
+<li>Why diffusion and adapter-based control dominate editing-heavy synthetic-data workflows.</li>
+<li>How image, video, and simulation pipelines serve different synthetic-data needs.</li>
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> autoregressive next-token decoders, VAE encoders and decoders, latent bottlenecks, diffusion U-Nets versus DiTs, flow-matching vector fields, and codec-token pipelines such as EnCodec-style residual quantization.</li>
-<li><strong>Algorithm sketch:</strong> tokenization or latent encoding, denoising or decoding loop, conditioning injection, guidance or sampler choice, and final reconstruction back into image, audio, or video space.</li>
-<li><strong>Intuition:</strong> why each family makes a different bet about generation: token prediction for sequential coherence, latent-variable compression for compact structure, diffusion for controllable refinement, and codec-token pipelines for audio realism and compression.</li>
-<li><strong>Tradeoffs:</strong> autoregressive coherence versus speed, diffusion controllability versus sampling cost, VAE compression versus reconstruction loss, and flow-matching acceleration versus maturity and tooling depth.</li>
-<li><strong>Common failure modes:</strong> exposure bias, posterior collapse, oversmoothing, denoising artifacts, prompt leakage, mode dropping, and codec or token bottlenecks that damage label fidelity.</li>
+<li><strong>Inner workings:</strong> latent encoders and decoders, diffusion U-Nets versus DiTs, conditioning pathways, adapters and control branches, and temporal constraints for video generation.</li>
+<li><strong>Algorithm sketch:</strong> encode or initialize latent state, inject prompt and control signals, run denoising or sampling steps, decode into image or video space, then validate labels and coverage.</li>
+<li><strong>Intuition:</strong> vision generators differ mainly in how much structure they preserve, how directly they can be controlled, and how safely they can change data without corrupting labels.</li>
+<li><strong>Tradeoffs:</strong> controllability versus speed, realism versus label fidelity, editing convenience versus artifact risk, and simulation precision versus authoring effort.</li>
+<li><strong>Common failure modes:</strong> unrealistic surfaces, prompt leakage, broken masks, temporal flicker, label drift, and overfitting to synthetic textures.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
-<li>Pipeline schematics for generation, editing, conditioning, or simulation control; temporal diagrams where time is a first-class variable; and label-flow diagrams from generator to QA.</li>
+<li>Diffusion and control diagrams, image-editing pipelines, simulation scene graphs, and temporal video-synthesis schematics.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
-<li>Walk through one end-to-end synthetic-data recipe, show the conditioning inputs, generated outputs, QA gates, and the final training-ready artifact.</li>
+<li>Walk through one image or video synthetic-data recipe from prompt and control signal through QA and downstream training readiness.</li>
 </ul>
 <div class="label">Case Study Thread</div>
 <ul>
-<li>Revisit the recurring industrial defect, multilingual speech, and incident-review projects to show how the synthetic-data engine changes across image, audio, video, and simulation-heavy settings.</li>
+<li>Revisit industrial inspection and multimodal incident review to compare defect generation, scene editing, video synthesis, and simulation-heavy workflows.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
-<ul><li>Compare generative model families using engineering and data-utility criteria.</li><li>Understand why diffusion pipelines dominate editing workflows.</li><li>Map model families to the downstream tasks they best support.</li></ul>
-<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Select one generator family for each case-study modality.</li><li>Benchmark quality, controllability, and speed at a small scale.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Formulate when flow-matching-style methods may change the trade space.</li><li>Compare usefulness and realism as distinct objectives.</li></ul></div></div>
+<ul><li>Choose a vision generator for image editing, video synthesis, or simulation.</li><li>Understand the internals of control and conditioning in modern vision generation pipelines.</li><li>Map vision generators to downstream synthetic-data use cases.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Benchmark image editing, control, and simulation options on one data bottleneck.</li><li>Compare controllability, quality, and label preservation.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study which generator families best preserve downstream label structure.</li><li>Compare synthetic usefulness versus visual impressiveness.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>Diffusers, latent diffusion and DiT-style models, AutoencoderKL-style VAEs, LCM-LoRA-style acceleration, MusicGen / AudioCraft-style stacks, EnCodec-style codecs, autoregressive token generators.</li></ul>
+<ul><li>Diffusers, Stable Diffusion-class pipelines, Flux-style pipelines, AutoencoderKL, DiT, ControlNet, T2I-Adapter, IP-Adapter, textual inversion, DreamBooth, LoRA, AnimateDiff, BlenderProc, Isaac Sim / Replicator, and OpenCV-based video utilities.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
-<ul><li>Prompt evaluation suites, image-generation challenge prompts, AudioCaps, MusicCaps, and internal labeled generation challenge sets.</li></ul>
+<ul><li>COCO-style prompt sets, LVIS rare-class slices, MVTEC AD, VisA, MSR-VTT, ActivityNet, Something-Something, and project-specific synthetic challenge sets.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>11_generator-family-comparison.ipynb</code>, <code>11_diffusion-vs-autoregressive-demo</code></li></ul>
+<ul><li><code>11_vision-generators-lab.ipynb</code>, <code>11_controlnet-inpainting-video-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
 <div class="chapter-no">12</div>
 <div>
-<h3><span id="foundation-models-document-ai-and-omni-systems-in-practice">Foundation Models, Document AI, and Omni Systems in Practice</span></h3>
-<p class="chapter-desc">Covers foundation-model families with a selection focus, showing where each belongs in a real system before later chapters build full retrieval, RAG, and agent workflows on top of them.</p>
+<h3><span id="generative-models-for-audio">Generative Models for Audio</span></h3>
+<p class="chapter-desc">Explains the audio-side generator families used for speech augmentation, TTS, dubbing, voice transformation, sound generation, and evaluation-set construction.</p>
 <div class="meta">
 <span class="tag">Advanced</span>
 <span class="tag">Graduate</span>
@@ -231,48 +230,47 @@
 <span class="tag">Companion Repo</span></div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-2-, SmolDocling-, Donut-, LayoutLMv3-, and document-VLM families.</li>
-<li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts`, audio-chat models, and omni interfaces.</li>
-<li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>
-<li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, Florence-2 promptable perception patterns, and grounded-segmentation stacks.</li>
-<li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>
-<li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>
+<li>Speech generation families: TTS stacks, neural vocoders, acoustic models, codec-token generators, and controllable voice pipelines.</li>
+<li>Sound and music generation families, event-conditioned audio generation, and when structured audio generation is useful for downstream tasks.</li>
+<li>Voice conversion, dubbing, speaker-preserving synthesis, and multilingual augmentation workflows.</li>
+<li>Audio-language and omni generation paths, including speech-to-speech and any-to-any interfaces where generation and understanding are tightly coupled.</li>
+<li>Failure modes: unnatural prosody, speaker leakage, timing drift, synthetic watermark artifacts, and low downstream usefulness despite impressive audio quality.</li>
 </ol>
 <div class="label">What This Chapter Covers</div>
 <ul>
-<li>How foundation models fit into generation, annotation, filtering, and downstream systems.</li>
-<li>When a generalist open model is enough and when a specialized stack is stronger.</li>
-<li>How to shortlist models for later chapters using task, cost, latency, controllability, governance, and deployment-target criteria.</li>
+<li>How audio generators support augmentation, synthetic dataset construction, TTS, dubbing, and stress-test creation.</li>
+<li>When speech generation, sound generation, or voice conversion is the right synthetic-data strategy.</li>
+<li>How to shortlist audio generators using control, realism, timing, speaker consistency, and governance criteria.</li>
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
-<li><strong>Inner workings:</strong> visual encoders, OCR or layout encoders, audio encoders, connector modules such as projection layers and Q-Former-style bridges, grounding heads, and the decoder or reasoning stack sitting on top.</li>
-<li><strong>Algorithm sketch:</strong> perception tokens enter through modality-specific encoders, pass through connectors or cross-attention layers, optionally interact with retrieval and grounding modules, and then flow into generation or structured-output heads.</li>
-<li><strong>Intuition:</strong> foundation models look unified from the outside, but they are usually compositions of encoders, adapters, fusion blocks, retrieval interfaces, and decoders with distinct roles and distinct failure points.</li>
-<li><strong>Tradeoffs:</strong> omni-model simplicity versus modular debuggability, OCR/layout specialization versus general VLM flexibility, and promptable perception stacks versus end-to-end generalist systems.</li>
-<li><strong>Common failure modes:</strong> weak OCR tokens, connector bottlenecks, grounding mismatch, retrieval miss, invalid structured output, and brittle orchestration between perception and generation modules.</li>
+<li><strong>Inner workings:</strong> acoustic models, neural vocoders, codec-token pipelines, speaker conditioning, prosody control, and speech-to-speech or text-to-speech generation loops.</li>
+<li><strong>Algorithm sketch:</strong> text, prompts, speaker signals, or audio context are encoded, converted into latent audio plans or tokens, decoded through a vocoder or codec decoder, and then checked for timing, identity, and downstream utility.</li>
+<li><strong>Intuition:</strong> audio generators differ mainly in how they trade off controllability, speaker consistency, timing precision, and realism.</li>
+<li><strong>Tradeoffs:</strong> TTS clarity versus expressiveness, voice consistency versus privacy risk, codec-token efficiency versus fidelity, and synthetic naturalness versus downstream label usefulness.</li>
+<li><strong>Common failure modes:</strong> flat prosody, wrong speaker identity, unstable timing, articulation artifacts, watermark interference, and augmentation that teaches the wrong cues.</li>
 </ul>
 <div class="label">Illustrations and Figures</div>
 <ul>
-<li>System architecture diagrams, document or multimodal retrieval pipelines, grounding loops, and modular-vs-omni design comparisons.</li>
+<li>TTS and codec-token diagrams, vocoder stacks, speaker-conditioning flows, and dubbing or voice-conversion pipelines.</li>
 </ul>
 <div class="label">Worked Example</div>
 <ul>
-<li>Assemble a retrieval-grounding-generation workflow with explicit intermediate artifacts, then compare it with a direct omni-model baseline.</li>
+<li>Walk through one speech-augmentation or TTS pipeline from prompt and speaker control through QA and downstream training readiness.</li>
 </ul>
 <div class="label">Case Study Thread</div>
 <ul>
-<li>Compare how the recurring case studies use generalist foundation models differently: retrieval-heavy incident review, OCR-like visual evidence, and audio-plus-text operational analytics.</li>
+<li>Use multilingual speech analytics and incident review to compare TTS augmentation, speaker-conditioned generation, dubbing, and sound-event synthesis.</li>
 </ul>
 <div class="label">Learning Outcomes</div>
-<ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, retrieval, and task-specialized models.</li><li>Create a shortlist for the project pipeline using explicit selection heuristics.</li></ul>
-<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
+<ul><li>Choose an audio generator for augmentation, TTS, or voice transformation.</li><li>Understand the internals of modern speech and audio generation pipelines.</li><li>Map audio generators to downstream synthetic-data use cases and risks.</li></ul>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Benchmark TTS, voice conversion, and audio augmentation options on one task bottleneck.</li><li>Measure quality, timing, and label preservation.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Study when synthetic speech helps or hurts downstream robustness.</li><li>Compare naturalness metrics with task utility metrics.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>Qwen2.5-VL-class VLMs, Florence-2-style models, DINOv2-style visual encoders, Whisper-class audio stacks, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts`, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE- and TimeSformer-style video models, Donut- and LayoutLMv3-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, and any-to-any or omni models.</li></ul>
+<ul><li>Coqui TTS, AudioCraft, MusicGen, AudioGen, EnCodec, DAC-style audio codecs, `gpt-4o-mini-tts`, SeamlessM4T-style speech generation stacks, pyannote-assisted speaker workflows, and voice-conversion toolchains.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
-<ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>
+<ul><li>LibriTTS, VoxCeleb, FLEURS, Common Voice, AudioCaps, MusicCaps, speaker-conditioned evaluation sets, and internal augmentation challenge suites.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
-<ul><li><code>12_foundation-model-shortlisting.ipynb</code>, <code>12_vlm-audio-model-role-demo</code></li></ul>
+<ul><li><code>12_audio-generators-lab.ipynb</code>, <code>12_tts-voice-conversion-demo</code></li></ul>
 </div>
 </article>
 <article class="chapter">
@@ -338,7 +336,7 @@
 <h2>Navigation</h2>
 <ul>
 <li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
-<li><a class="inline-link" href="../index.html">Return to the high-level TOC</a></li>
+<li><a class="inline-link" href="../training-finetuning-toolkit-matrix.html">Open the training and fine-tuning toolkit matrix</a></li>
 </ul>
 </section>
 </div>

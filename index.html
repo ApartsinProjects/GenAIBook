@@ -52,7 +52,7 @@
       <div class="part-link"><a href="front-matter/index.html">Front Matter</a><p>How This Book Is Organized</p></div>
 <div class="part-link"><a href="part-1-orientation-and-fast-start/index.html">Part I</a><p>Problem Framing and Workflow Overview</p></div>
 <div class="part-link"><a href="part-2-data-and-experimental-foundations/index.html">Part II</a><p>Data, Labels, and Evaluation Foundations</p></div>
-<div class="part-link"><a href="part-3-representations-architectures-and-model-selection/index.html">Part III</a><p>Model Internals and Selection</p></div>
+<div class="part-link"><a href="part-3-representations-architectures-and-model-selection/index.html">Part III</a><p>Vision, Audio, and Generative Model Internals</p></div>
 <div class="part-link"><a href="part-4-synthetic-data-design-and-operations/index.html">Part IV</a><p>Synthetic Data Pipelines</p></div>
 <div class="part-link"><a href="part-5-training-multimodal-systems-and-operations/index.html">Part V</a><p>Training, Fine-Tuning, and Systems</p></div>
 <div class="part-link"><a href="part-6-applications-frontiers-and-capstones/index.html">Part VI</a><p>Applications, Limits, and Capstones</p></div>
@@ -198,23 +198,24 @@
 </section>
 <section class="section-card" id="part3">
   <div class="part-label">Part III</div>
-  <h2>Model Internals and Selection</h2>
-  <p>Explains the model families that matter for synthetic-data generation, representation learning, and downstream system building.</p>
+  <h2>Vision, Audio, and Generative Model Internals</h2>
+  <p>Separates the model story into four clear tracks: vision models, audio models, generative models for vision, and generative models for audio, then closes with debugging and model selection.</p>
   <div class="label">Presentation Role</div>
-  <p>Explain the internal mechanics of the model families used later for generation, training, and system building.</p>
+  <p>Explain the internal mechanics of the core model families by modality and by generative role before later chapters turn them into synthetic-data and downstream training workflows.</p>
   <div class="label">Chapter Map</div>
     <ol class="chapter-list">
-    <li><strong>09</strong> Embeddings, Self-Supervision, and Shared Representation Spaces - reusable representations and retrieval logic. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
-<li><strong>10</strong> Attention, Transformers, and Multimodal Fusion - how modern multimodal stacks combine signals. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
-<li><strong>11</strong> Generative Model Families for Image, Audio, and Video - the core generator families and why they differ. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
-<li><strong>12</strong> Foundation Models, Document AI, and Omni Systems in Practice - what to choose for real systems. <span class="tag">Advanced</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
+<li><strong>09</strong> Vision Models - encoders, task heads, and foundation-model internals for images, video, documents, and grounding. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
+<li><strong>10</strong> Audio Models - encoders, speech systems, diarization stacks, and audio-language model internals. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
+<li><strong>11</strong> Generative Models for Vision - diffusion, editing, video generation, simulation, and controllable synthesis. <span class="tag">Advanced</span> <span class="tag">Undergrad</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
+<li><strong>12</strong> Generative Models for Audio - speech, sound, codec-token, TTS, and voice-generation pipelines. <span class="tag">Advanced</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
 <li><strong>13</strong> Pre-Deployment Debugging for Modern Multimodal Models - how to locate failure causes before launch. <span class="tag">Advanced</span> <span class="tag">Graduate</span> <span class="tag">Eng</span> <span class="tag">Research</span></li>
   </ol>
   <div class="label">Labs And Notebooks</div>
   <ul class="chapter-list">
-    <li><code>09_embedding-space-lab.ipynb</code></li>
-    <li><code>10_attention-and-fusion-lab.ipynb</code></li>
-    <li><code>12_foundation-model-shortlisting.ipynb</code></li>
+    <li><code>09_vision-models-lab.ipynb</code></li>
+    <li><code>10_audio-models-lab.ipynb</code></li>
+    <li><code>11_vision-generators-lab.ipynb</code></li>
+    <li><code>12_audio-generators-lab.ipynb</code></li>
   </ul>
   <div class="label">Deep-Dive Promise</div>
   <p>Every technical chapter in this part now calls out inner workings, algorithm sketch, intuition, tradeoffs, common failure modes, figures, and a worked example.</p>
