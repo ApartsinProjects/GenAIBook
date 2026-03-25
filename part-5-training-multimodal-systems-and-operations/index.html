@@ -55,7 +55,7 @@
 </div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, DINOv2, ViT, Swin, DETR-style, SAM 2-assisted segmentation, and Florence-2- or grounding-aware backbones.</li>
+<li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, DINOv2, CNN backbones such as ResNet and EfficientNet, ViT, Swin, DETR-style, SAM 2-assisted segmentation, and Florence-2- or grounding-aware backbones.</li>
 <li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>
 <li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>
 <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules, sample weighting policies, and replay strategies.</li>
@@ -91,7 +91,7 @@
 <ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Run a real-only vs hybrid fine-tuning comparison.</li><li>Evaluate across rare slices and motion-heavy slices.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design a synthetic-data ablation for one vision or video task.</li><li>Compare representation-first and end-to-end tuning.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, CLIP/OpenCLIP and DINOv2 encoders, ViT and Swin backbones, DETR- and Grounding-DINO-style detectors, SAM 2 segmentation workflows, Florence-2 promptable perception patterns, VideoMAE and TimeSformer video backbones, and FiftyOne evaluation views.</li></ul>
+<ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, CLIP/OpenCLIP and DINOv2 encoders, CNN backbones such as ResNet and EfficientNet, ViT and Swin backbones, DETR- and Grounding-DINO-style detectors, SAM 2 segmentation workflows, Florence-2 promptable perception patterns, VideoMAE and TimeSformer video backbones, and FiftyOne evaluation views.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>ImageNet, COCO, LVIS, YouTube-VIS, MSR-VTT, Ego4D slices, and custom hybrid train/eval splits.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
