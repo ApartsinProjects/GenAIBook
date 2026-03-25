@@ -223,7 +223,7 @@
 <li>Speech, acoustic events, environmental audio, and mixed-source scenarios.</li>
 <li>Noise, reverberation, channel shift, overlap, and speaker variation simulation.</li>
 <li>Weak labeling with ASR, diarization, speaker identification, event detectors, VAD, segmentation tools, and multi-channel transcription interfaces.</li>
-<li>TTS, voice conversion, synthetic speech corpora, speaker balancing, multilingual augmentation, dubbing workflows, and optional music or structured-audio generation as an advanced branch.</li>
+<li>TTS, voice conversion, synthetic speech corpora, speaker balancing, multilingual augmentation, dubbing workflows, and optional music or structured-audio generation as an advanced branch using Coqui-style TTS, `gpt-4o-mini-tts`, SeamlessM4T-style speech translation, and AudioCraft-style generation families.</li>
 <li>Voice safety, consent, identity risk, disclosure requirements, watermarking or provenance signals, and streaming inference tradeoffs.</li>
 </ol>
 <div class="label">What This Chapter Covers</div>
@@ -256,7 +256,7 @@
 <ul><li>Generate or repurpose audio data for speech and event tasks with realistic variation.</li><li>Use TTS and voice transformation carefully within task and governance limits.</li><li>Evaluate audio synthetic-data choices with downstream metrics instead of perceptual realism alone.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Simulate channel, noise, and overlap conditions for one audio task.</li><li>Build a synthetic speech or event-augmentation workflow.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure the gap between transcription quality and downstream utility.</li><li>Compare augmentation-heavy and generation-heavy audio pipelines.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, wav2vec2/HuBERT tooling, TTS stacks such as Coqui-style systems, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling, and ViSQOL/FAD-style evaluation references.</li></ul>
+<ul><li>librosa, pyannote.audio, torchaudio, Whisper-class systems, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, wav2vec2 / HuBERT / WavLM / BEATs tooling, Conformer- and AST-style audio encoders, TTS stacks such as Coqui-style systems and `gpt-4o-mini-tts`, audio augmentation libraries, Label Studio audio and multi-channel transcription interfaces, SeamlessM4T-style speech translation systems, AudioCraft-style music or sound-generation stacks, AudioSeal-style audio provenance tooling, and ViSQOL/FAD-style evaluation references.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>LibriSpeech, FLEURS, VoxCeleb, AudioSet, ESC-50, AudioCaps, AMI-style diarization sets, and optional MusicCaps examples.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
@@ -304,7 +304,7 @@
 </ul>
 <div class="label">Learning Outcomes</div>
 <ul><li>Understand when simulation is a better tool than generative prompting.</li><li>Design procedural data with controllable labels and metadata.</li><li>Connect simulation outputs to downstream training and QA.</li></ul>
-<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Specify one procedural or simulation pipeline for a case-study slice.</li><li>Define which labels come “for free” from the simulator.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare simulation-heavy and diffusion-heavy data strategies.</li><li>Study domain randomization as an experimental variable.</li></ul></div></div>
+<div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Specify one procedural or simulation pipeline for a case-study slice.</li><li>Define which labels come ï¿½for freeï¿½ from the simulator.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare simulation-heavy and diffusion-heavy data strategies.</li><li>Study domain randomization as an experimental variable.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
 <ul><li>BlenderProc-style pipelines, Isaac Sim / Replicator-style simulator stacks, domain-randomization tools, scene-graph exporters, synthetic sensor stacks, and embodied-data generation workflows.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>

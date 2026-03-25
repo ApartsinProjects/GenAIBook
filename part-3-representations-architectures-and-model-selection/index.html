@@ -57,7 +57,7 @@
 <div class="label">Detailed Sections</div>
 <ol>
 <li>From features to embeddings: ViT patch tokens, AST spectrogram tokens, VideoMAE clip tokens, and pooled audio/video sequence embeddings.</li>
-<li>Contrastive learning, masked modeling, DINO-style pretraining, CLIP-style alignment, and wav2vec2 / HuBERT-style self-supervision.</li>
+<li>Contrastive learning, masked modeling, MAE and BEiT-style pretraining, DINO / DINOv2-style self-distillation, CLIP-style alignment, and wav2vec2 / HuBERT / WavLM / BEATs-style self-supervision.</li>
 <li>Retrieval, nearest neighbors, clustering, ANN indexes, vector databases, and representation-driven QA with FAISS-like workflows.</li>
 <li>Shared embedding spaces across text, image, audio, video, and documents using CLIP, OpenCLIP, SigLIP, audio-text alignment models, and document retrieval encoders.</li>
 <li>Failure modes: shortcut features, collapsed clusters, and brittle zero-shot transfer.</li>
@@ -92,7 +92,7 @@
 <ul><li>Use embeddings for retrieval, filtering, and first-pass baselines.</li><li>Interpret where self-supervised representations help low-label regimes.</li><li>Diagnose basic representation-space failures.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a nearest-neighbor and clustering inspection notebook.</li><li>Use embeddings to filter or relabel a data subset.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare two representation models for the same downstream task.</li><li>Analyze zero-shot versus task-specific representation quality.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>CLIP, OpenCLIP, SigLIP, timm, torchvision feature extractors, FAISS-style indexes, FiftyOne embeddings panels.</li></ul>
+<ul><li>CLIP, OpenCLIP, SigLIP, DINOv2, MAE/BEiT-style encoders, AST, BEATs, timm, torchvision feature extractors, FAISS-style indexes, and FiftyOne embeddings panels.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>ImageNet, Flickr30k, LAION subsets, AudioSet, FLEURS, and MSR-VTT for representation and retrieval examples.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
@@ -227,10 +227,10 @@
 </div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-, SmolDocling-, and document-VLM families.</li>
-<li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, audio-chat models, and omni interfaces.</li>
+<li>Vision-language models for captioning, OCR-heavy reasoning, chart understanding, visual QA, and document understanding, including Qwen2.5-VL-, Llama Vision-, Florence-2-, SmolDocling-, Donut-, LayoutLMv3-, and document-VLM families.</li>
+<li>Audio-language models, speech models, and mixed-modality assistants, including Whisper-class ASR, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts`, audio-chat models, and omni interfaces.</li>
 <li>Video-language and temporal reasoning models such as VideoMAE-style encoders, clip-based VLMs, and temporal transformer systems.</li>
-<li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, and grounded-segmentation stacks.</li>
+<li>Promptable perception models for segmentation, tracking, grounding, and auto-annotation, including SAM 2, Grounding DINO, Florence-2 promptable perception patterns, and grounded-segmentation stacks.</li>
 <li>Document retrieval and long-document reasoning stacks, including ColPali-style retrieval, MMDocIR or ViDoRe-style evaluation, OCR-aware reranking, and multi-page evidence assembly.</li>
 <li>Generalist omni models, any-to-any multimodal generation, document-VLM systems, versus modular pipelines and the engineering implications of each approach.</li>
 </ol>
@@ -264,7 +264,7 @@
 <ul><li>Choose foundation models by role rather than brand or hype.</li><li>Distinguish generation, annotation, grounding, retrieval, and task-specialized models.</li><li>Create a shortlist for the project pipeline using explicit selection heuristics.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Build a model shortlist with notes on strengths and constraints.</li><li>Assign models to generation, labeling, and downstream tasks.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare modular systems with omni-model approaches.</li><li>Identify open-model weaknesses that can become project opportunities.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>Qwen2.5-VL-class VLMs, Florence-style models, Whisper-class audio stacks, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE-style models, LayoutLMv2-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, any-to-any and omni models.</li></ul>
+<ul><li>Qwen2.5-VL-class VLMs, Florence-2-style models, DINOv2-style visual encoders, Whisper-class audio stacks, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts`, Qwen2-Audio-like systems, SAM 2, Grounding DINO, VideoMAE- and TimeSformer-style video models, Donut- and LayoutLMv3-style document models, ColPali-style document retrieval models, OCR-plus-VLM pipelines, and any-to-any or omni models.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>DocVQA, ChartQA, TextVQA, VQAv2, MMDocIR-style long-document retrieval benchmarks, video-language benchmarks, and audio-language evaluation sets.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>

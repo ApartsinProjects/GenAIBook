@@ -55,7 +55,7 @@
 </div>
 <div class="label">Detailed Sections</div>
 <ol>
-<li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, ViT, DETR-style, and segmentation backbones.</li>
+<li>Representation baselines versus end-to-end task heads using CLIP/OpenCLIP, DINOv2, ViT, Swin, DETR-style, SAM 2-assisted segmentation, and Florence-2- or grounding-aware backbones.</li>
 <li>Classification, detection, segmentation, captioning, retrieval, tracking, and temporal localization for image and video tasks.</li>
 <li>PEFT, LoRA-style adapters, selective fine-tuning, full fine-tuning, multimodal preference-alignment options, distillation options, and training-budget tradeoffs.</li>
 <li>Real-only, synthetic-only, repurposed-only, and hybrid mixture experiments with curriculum schedules, sample weighting policies, and replay strategies.</li>
@@ -91,7 +91,7 @@
 <ul><li>Fine-tune vision and video models with controlled comparisons.</li><li>Interpret gains from synthetic mixtures without overclaiming.</li><li>Connect training strategy to evaluation slices and deployment constraints.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Run a real-only vs hybrid fine-tuning comparison.</li><li>Evaluate across rare slices and motion-heavy slices.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Design a synthetic-data ablation for one vision or video task.</li><li>Compare representation-first and end-to-end tuning.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, detection and segmentation heads, video backbones, FiftyOne evaluation views.</li></ul>
+<ul><li>timm, Transformers, PEFT, Accelerate, TRL for VLM alignment, torchao/torchtune where relevant, distillation recipes, CLIP/OpenCLIP and DINOv2 encoders, ViT and Swin backbones, DETR- and Grounding-DINO-style detectors, SAM 2 segmentation workflows, Florence-2 promptable perception patterns, VideoMAE and TimeSformer video backbones, and FiftyOne evaluation views.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>ImageNet, COCO, LVIS, YouTube-VIS, MSR-VTT, Ego4D slices, and custom hybrid train/eval splits.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
@@ -112,7 +112,7 @@
 <div class="label">Detailed Sections</div>
 <ol>
 <li>Task families: ASR, KWS, event detection, diarization, speaker tasks, language ID, spoken-intent or meeting analytics, and voiceprint-sensitive workflows.</li>
-<li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, speaker-ID-aware pipelines, and audio-language model training patterns.</li>
+<li>Encoder, encoder-decoder, CTC, transducer-style, streaming ASR, diarization-aware pipelines, speaker-ID-aware pipelines, and audio-language model training patterns using wav2vec2, HuBERT, WavLM, Whisper, Conformer, AST, BEATs, pyannote, and modern API-era transcribe/TTS systems.</li>
 <li>Synthetic-only versus augmentation-heavy versus hybrid training recipes with balancing by speaker, language, environment, or curriculum stage.</li>
 <li>Noise, overlap, speaker, language, and channel-based evaluation slices.</li>
 <li>Error analysis beyond WER, including diarization error rate, event-F1, and utility-oriented downstream metrics.</li>
@@ -147,7 +147,7 @@
 <ul><li>Fine-tune audio models using realistic training and evaluation slices.</li><li>Compare augmentation-heavy and synthetic-heavy audio recipes.</li><li>Use downstream metrics that reflect actual product goals.</li></ul>
 <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Train one audio model under channel/noise stress conditions.</li><li>Compare at least two evaluation slice families.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Measure where synthetic audio helps and where it overfits to artifacts.</li><li>Test whether speech and event tasks respond differently to synthetic data.</li></ul></div></div>
 <div class="label">Key Tools, Libraries, and Models</div>
-<ul><li>wav2vec2, HuBERT, Whisper-class systems, Conformer-style models, pyannote, torchaudio, SpeechBrain-style utilities, streaming-ASR patterns, VAD and diarization tooling, Evaluate metrics.</li></ul>
+<ul><li>wav2vec2, HuBERT, WavLM, Whisper-class systems, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts`, Conformer-style models, AST and BEATs audio encoders, pyannote, torchaudio, SpeechBrain- and NeMo-style utilities, SeamlessM4T-style speech translation systems, streaming-ASR patterns, VAD and diarization tooling, and Evaluate metrics.</li></ul>
 <div class="label">Representative Benchmarks and Datasets</div>
 <ul><li>LibriSpeech, FLEURS, VoxPopuli, VoxCeleb, AudioSet, ESC-50, AMI-style diarization data.</li></ul>
 <div class="label">Suggested Notebooks and Demos</div>
@@ -289,7 +289,7 @@
 <ul>
 <li>How deployed multimodal systems fail after launch.</li>
 <li>How to turn production failures into new slices for data generation and tuning.</li>
-<li>How to operationalize the book’s iterative workflow end to end.</li>
+<li>How to operationalize the bookï¿½s iterative workflow end to end.</li>
 </ul>
 <div class="label">Deep Dive</div>
 <ul>
