@@ -1046,18 +1046,20 @@
           <div class="chapter-no">26</div>
           <div>
             <h3>Application Blueprint: Industrial Inspection and Manufacturing</h3>
-            <p class="chapter-desc">Shows how synthetic image and video data support defect detection, rare-event coverage, and inspection workflows.</p>
+            <p class="chapter-desc">Shows how synthetic image and video data support rare-defect coverage, inspection reliability, and deployment on production lines.</p>
+            <div class="label">Blueprint Template</div>
+            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Defect classes, edge cases, and cost of false negatives.</li>
-              <li>Procedural and diffusion-based data generation for scarce defect classes.</li>
-              <li>Segmentation, detection, and retrieval pipelines for inspection.</li>
-              <li>Evaluation slices: lighting, angle, material, and rarity.</li>
-              <li>Deployment patterns on factory lines and review stations.</li>
+              <li>Problem profile: defect taxonomies, edge cases, station layout, review latency, and cost of false negatives versus false positives.</li>
+              <li>Data strategy: procedural rendering, simulator-driven scenes, controlled editing, and hybrid real-plus-synthetic sampling for scarce defect classes.</li>
+              <li>Model and system stack: segmentation, detection, anomaly scoring, retrieval-assisted review, and operator-facing inspection interfaces.</li>
+              <li>Evaluation and deployment: slice design across lighting, angle, material, speed, and rarity, plus line-side deployment and human-review station patterns.</li>
+              <li>Governance and research angle: traceability of synthetic defects, acceptance thresholds, and research questions around rare-event generalization.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
-            <ul><li>Map synthetic-data methods to real inspection-system needs.</li><li>Choose between procedural, edited, and generated data for industrial vision.</li><li>Design evaluation around rare, high-cost failures.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a defect-data strategy for one inspection task.</li><li>Design a deployment-oriented evaluation plan.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a rare-defect problem into a publishable synthetic-data study.</li><li>Compare simulation-heavy and diffusion-heavy defect pipelines.</li></ul></div></div>
+            <ul><li>Map synthetic-data methods to inspection workflows with clear cost and safety constraints.</li><li>Choose between procedural, edited, and generated data for industrial vision.</li><li>Design evaluation and deployment plans around rare, high-cost failures.</li></ul>
+            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Create a defect-data strategy and model stack for one inspection task.</li><li>Design a deployment-oriented slice and review plan.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn a rare-defect problem into a synthetic-data study with clear baselines.</li><li>Compare simulation-heavy and diffusion-heavy defect pipelines.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
             <ul><li>Diffusers, simulation/procedural rendering stacks, segmentation and detection models, retrieval tools.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
@@ -1070,18 +1072,20 @@
           <div class="chapter-no">27</div>
           <div>
             <h3>Application Blueprint: Speech, Audio Analytics, and Voice Systems</h3>
-            <p class="chapter-desc">Covers multilingual ASR, diarization, event detection, voice interfaces, and synthetic speech systems.</p>
+            <p class="chapter-desc">Covers multilingual ASR, diarization, event detection, voice interfaces, and synthetic speech systems using the same blueprint template as the other domain chapters.</p>
+            <div class="label">Blueprint Template</div>
+            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Speech analytics, meeting intelligence, and customer-audio workflows.</li>
-              <li>Multilingual ASR and language-ID system design.</li>
-              <li>Diarization, event detection, and mixed-source audio reasoning.</li>
-              <li>TTS, voice assistants, and synthetic-speech augmentation.</li>
-              <li>Identity, consent, and voice safety constraints.</li>
+              <li>Problem profile: speech analytics, meeting intelligence, contact-center audio, voice interfaces, and their latency, accuracy, and privacy constraints.</li>
+              <li>Data strategy: weak labeling, multilingual balancing, overlap and channel simulation, synthetic speech augmentation, and repurposed conversational audio.</li>
+              <li>Model and system stack: multilingual ASR, language ID, diarization, event detection, TTS or voice-assistant components, and streaming speech pipelines.</li>
+              <li>Evaluation and deployment: WER plus task-utility metrics, speaker and language slices, streaming latency, and escalation-to-human workflows.</li>
+              <li>Governance and research angle: identity, consent, disclosure, provenance, and open questions around synthetic speech transfer across languages and speakers.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
-            <ul><li>Understand how audio and voice systems differ by task and risk profile.</li><li>Use synthetic and weakly labeled data to strengthen speech and event pipelines.</li><li>Incorporate identity and disclosure constraints into system design.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Outline a multilingual speech or event-detection system.</li><li>Define where TTS or synthetic speech is useful in the pipeline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare data strategies across ASR, diarization, and event tasks.</li><li>Study how synthetic speech shifts multilingual performance.</li></ul></div></div>
+            <ul><li>Understand how audio and voice systems differ by task, runtime, and risk profile.</li><li>Use synthetic and weakly labeled data to strengthen speech and event pipelines.</li><li>Incorporate identity, disclosure, and provenance constraints into system design.</li></ul>
+            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Outline a multilingual speech or event-detection system with a concrete data strategy.</li><li>Define where TTS, diarization, or synthetic speech is useful in the pipeline.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Compare data strategies across ASR, diarization, and event tasks.</li><li>Study how synthetic speech shifts multilingual performance and failure modes.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
             <ul><li>Whisper-class systems, wav2vec2-family models, pyannote, TTS stacks, audio analytics dashboards.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
@@ -1093,24 +1097,25 @@
         <article class="chapter">
           <div class="chapter-no">28</div>
           <div>
-            <h3>Application Blueprint: Robotics, Accessibility, and Incident Understanding</h3>
-            <p class="chapter-desc">Maps multimodal search, embodied perception, assistive systems, and video-plus-audio evidence workflows to the book’s methods.</p>
+            <h3>Application Blueprint: Robotics, Accessibility, and Multimodal Incident Systems</h3>
+            <p class="chapter-desc">Maps embodied perception, assistive systems, and video-plus-audio evidence workflows to the same blueprint template while avoiding overlap with the earlier document-AI and retrieval chapters.</p>
+            <div class="label">Blueprint Template</div>
+            <ul><li>Problem profile -> Data strategy -> Model and system stack -> Evaluation and deployment -> Governance and research angle.</li></ul>
             <div class="label">Detailed Sections</div>
             <ol>
-              <li>Robotics, embodied perception, and VLA-style systems with simulation-heavy data generation.</li>
-              <li>Accessibility systems: captioning, audio description, and assistive interfaces.</li>
-              <li>Video-plus-audio incident review and evidence retrieval.</li>
-              <li>Grounded multimodal copilots for operators and reviewers.</li>
-              <li>Document intelligence and visual document retrieval for charts, tables, slides, and PDFs using OCR-aware VLM and retrieval stacks.</li>
-              <li>How task framing differs across these domains.</li>
+              <li>Problem profile: embodied robotics tasks, accessibility assistance goals, and incident-review workflows with high-stakes multimodal evidence.</li>
+              <li>Data strategy: simulation-heavy robotics data, assistive captioning or audio-description corpora, incident clips, and targeted synthetic refresh for rare temporal situations.</li>
+              <li>Model and system stack: VLA-style perception modules, assistive captioning and grounding models, temporal retrieval, and operator-facing multimodal copilots.</li>
+              <li>Evaluation and deployment: safety and intervention metrics for robotics, usefulness metrics for accessibility, and evidence-quality plus time-to-resolution metrics for incident systems.</li>
+              <li>Governance and research angle: high-stakes human oversight, embodied failure recovery, accessibility quality review, and open questions in temporal grounding and multimodal evidence fusion.</li>
             </ol>
             <div class="label">Learning Outcomes</div>
-            <ul><li>Adapt the book’s toolkit to robotics, accessibility, and incident-understanding systems.</li><li>Recognize where simulation, grounding, and multimodal retrieval become essential.</li><li>Frame product goals differently across high-stakes domains.</li></ul>
-            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Choose one blueprint and sketch its end-to-end data and model flow.</li><li>Define the highest-risk failure slices for that domain.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn one blueprint into a scoped lab or capstone project.</li><li>Compare how multimodal evidence changes evaluation design.</li></ul></div></div>
+            <ul><li>Adapt the book’s toolkit to robotics, accessibility, and multimodal incident systems.</li><li>Recognize where simulation, grounding, and temporal multimodal evidence become essential.</li><li>Frame product goals differently across high-stakes domains without collapsing them into one generic architecture.</li></ul>
+            <div class="track-grid"><div class="track-box"><h4>Hands-On Track</h4><ul><li>Choose one blueprint and sketch its end-to-end data, model, and human-review flow.</li><li>Define the highest-risk failure slices and deployment constraints for that domain.</li></ul></div><div class="track-box"><h4>Research Track</h4><ul><li>Turn one blueprint into a scoped lab or capstone project with clear evaluation criteria.</li><li>Compare how simulation, assistance, or multimodal evidence changes evaluation design.</li></ul></div></div>
             <div class="label">Key Tools, Libraries, and Models</div>
-            <ul><li>Simulation stacks, VLMs, retrieval systems, captioning models, temporal reasoning pipelines, document QA and visual retrieval stacks such as LayoutLMv2-, ColPali-, and OCR-plus-reranker-style systems.</li></ul>
+            <ul><li>Simulation stacks, VLMs, temporal retrieval systems, captioning models, grounding models, temporal reasoning pipelines, and multimodal copilot interfaces.</li></ul>
             <div class="label">Representative Benchmarks and Datasets</div>
-            <ul><li>Ego4D, robotics simulation scenes, accessibility caption corpora, document QA sets, and incident-review clip collections.</li></ul>
+            <ul><li>Ego4D, robotics simulation scenes, accessibility caption corpora, and incident-review clip collections.</li></ul>
             <div class="label">Suggested Notebooks and Demos</div>
             <ul><li><code>28_robotics-accessibility-incident-blueprint.ipynb</code>, <code>28_multimodal-evidence-demo</code></li></ul>
           </div>
